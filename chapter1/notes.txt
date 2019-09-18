@@ -1,0 +1,9 @@
+1. gcc hello.c -c hello -static
+静态编译
+
+2. gcc hello.c -c hello -static --verbose
+打印详细信息
+
+3.gcc -E hello.c -o hello.i
+预编译
+
