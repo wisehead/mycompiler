@@ -13,7 +13,11 @@
 5.gcc -c hello.s -o hello.o
 汇编器生成目标文件
 
-6.objdump -sd hello.0
+6.objdump -sd hello.o
 二进制查看器
 
-7.
+7.gcc hello.o -o hello
+链接，默认动态链接
+
+8.gcc hello.o -o hello -static
+静态链接
