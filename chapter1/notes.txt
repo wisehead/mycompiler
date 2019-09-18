@@ -7,3 +7,5 @@
 3.gcc -E hello.c -o hello.i
 预编译
 
+4.gcc -S hello.i -o hello.s
+编译
