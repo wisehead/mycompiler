@@ -9,3 +9,11 @@
 
 4.gcc -S hello.i -o hello.s
 编译
+
+5.gcc -c hello.s -o hello.o
+汇编器生成目标文件
+
+6.objdump -sd hello.0
+二进制查看器
+
+7.
