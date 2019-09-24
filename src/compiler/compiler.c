@@ -33,7 +33,7 @@ Compiler::Compiler(bool l,bool sy,bool se,bool g,bool t)
 	showTab=t;
 }
 
-
+//-- for what???
 void Compiler::genCommonFile()
 {
 	fout=fopen("../work/common.s","w");//共用输出文件
@@ -67,6 +67,7 @@ void Compiler::genCommonFile()
   
   fclose(fout);
 }
+//--
 void Compiler::compile(char* name)
 {
 	fileName=name;

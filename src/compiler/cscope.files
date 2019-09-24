@@ -1,0 +1,10 @@
+./common.h
+./compiler.c
+./compiler.h
+./error.c
+./generator.c
+./lexial.c
+./main.c
+./parser.c
+./semantic.c
+./semantic.h

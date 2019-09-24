@@ -1,0 +1,270 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BACK	parser.c	/^#define BACK /;"	d	file:
+CC	Makefile	/^CC=g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-g -Wno-deprecated$/;"	m
+Compiler	compiler.c	/^Compiler::Compiler(bool l,bool sy,bool se,bool g,bool t)$/;"	f	class:Compiler
+Compiler	compiler.h	/^class Compiler$/;"	c
+EXE	Makefile	/^EXE=compiler$/;"	m
+GET_CHAR	common.h	/^#define GET_CHAR /;"	d
+ID	generator.c	/^int ID=0;$/;"	v
+OBJ	Makefile	/^OBJ=main.o compiler.o lexial.o parser.o error.o semantic.o generator.o$/;"	m
+Table	semantic.c	/^Table::Table()$/;"	f	class:Table
+Table	semantic.h	/^class Table\/\/变量表$/;"	c
+_COMMON_H_	common.h	/^#define _COMMON_H_$/;"	d
+_COMPILER_H_	compiler.h	/^#define _COMPILER_H_$/;"	d
+_SEMANTIC_H_	semantic.h	/^#define _SEMANTIC_H_$/;"	d
+addarg	semantic.c	/^void fun_record::addarg()\/\/添加一个参数$/;"	f	class:fun_record
+addfun	semantic.c	/^void Table::addfun()$/;"	f	class:Table
+addi	common.h	/^  addi,subs,mult,divi,assign,\/\/加，减，乘，除,赋值$/;"	e	enum:symbol
+addrealarg	semantic.c	/^void Table::addrealarg(var_record*arg,int&var_num)$/;"	f	class:Table
+adds	parser.c	/^void adds()$/;"	f
+addstring	semantic.c	/^int Table::addstring()\/\/返回串空间的索引,仅仅是记录串值其他符号串自动存储$/;"	f	class:Table
+addvar	semantic.c	/^void Table::addvar()$/;"	f	class:Table
+addvar	semantic.c	/^void Table::addvar(var_record*v_r)$/;"	f	class:Table
+aloexp	parser.c	/^var_record* aloexp(int & var_num)$/;"	f
+arglist	parser.c	/^void arglist(int &var_num)$/;"	f
+arglistwrong	common.h	/^  idtaillost,returnwrong,arglost,argwrong,arglistwrong,na_input,input_err,output_err,$/;"	e	enum:errcode
+arglost	common.h	/^  idtaillost,returnwrong,arglost,argwrong,arglistwrong,na_input,input_err,output_err,$/;"	e	enum:errcode
+args	semantic.h	/^  vector<symbol> *args;\/\/参数类型列表$/;"	m	struct:fun_record
+argwrong	common.h	/^  idtaillost,returnwrong,arglost,argwrong,arglistwrong,na_input,input_err,output_err,$/;"	e	enum:errcode
+assi_ncomtype	common.h	/^  void_nassi,assi_ncomtype,ret_type_err,fun_undec,var_undec,real_args_err,str_nb_cond$/;"	e	enum:errcode
+assign	common.h	/^  addi,subs,mult,divi,assign,\/\/加，减，乘，除,赋值$/;"	e	enum:symbol
+block	parser.c	/^void block(int initvar_num,int& level,int lopId,int blockAddr)$/;"	f
+break_nin_while	common.h	/^  ,void_nb_cond,break_nin_while,continue_nin_while,void_nin,\/\/语句错误$/;"	e	enum:errcode
+ch	lexial.c	/^char ch=' ';\/\/当前字符$/;"	v
+chAtLine	lexial.c	/^int chAtLine=0;\/\/当前字符列位置$/;"	v
+charVal	semantic.h	/^    char charVal;$/;"	m	union:var_record::__anon1
+chara	common.h	/^  comma,chara,strings,semicon,lparen,rparen,lbrac,rbrac,\/\/界符 , ch string ; ( ) { }$/;"	e	enum:symbol
+charwrong	common.h	/^  charwrong,strwrong,str2long,num2long,id2long,excpchar,$/;"	e	enum:errcode
+checkReserved	lexial.c	/^void checkReserved()$/;"	f
+childprogram	parser.c	/^void childprogram(int& var_num,int& level,int lopId,int blockAddr)$/;"	f
+clear	semantic.c	/^void Table::clear()\/\/清空所有符号表$/;"	f	class:Table
+cmps	parser.c	/^void cmps()$/;"	f
+comma	common.h	/^  comma,chara,strings,semicon,lparen,rparen,lbrac,rbrac,\/\/界符 , ch string ; ( ) { }$/;"	e	enum:symbol
+commalost	common.h	/^  semiconlost,commalost,typelost,identlost,semiconwrong,typewrong,\/\/变量声明部分的错误类型$/;"	e	enum:errcode
+compile	compiler.c	/^void Compiler::compile(char* name)$/;"	f	class:Compiler
+compileOk	parser.c	/^int compileOk=0;\/\/编译成功标记$/;"	v
+continue_nin_while	common.h	/^  ,void_nb_cond,break_nin_while,continue_nin_while,void_nin,\/\/语句错误$/;"	e	enum:errcode
+convert_buffer	generator.c	/^int convert_buffer=0;\/\/标志是不是对缓冲区的数据进行操作$/;"	v
+copy	semantic.c	/^void var_record::copy(const var_record*src)$/;"	f	class:var_record
+create_tmpvar	semantic.c	/^var_record*fun_record::create_tmpvar(symbol type,int hasVal,int &var_num)$/;"	f	class:fun_record
+dec	parser.c	/^void dec()\/\/tested$/;"	f
+dectail	parser.c	/^void dectail(symbol dec_type,string dec_name)\/\/untest$/;"	f
+defined	semantic.h	/^  int defined;\/\/函数是否给出定义$/;"	m	struct:fun_record
+delvar	semantic.c	/^void Table::delvar(string var_name)\/\/删除变量记录$/;"	f	class:Table
+divi	common.h	/^  addi,subs,mult,divi,assign,\/\/加，减，乘，除,赋值$/;"	e	enum:symbol
+elselost	common.h	/^  statementexcp,localidentlost,lparenlost,lparenwrong,staterparenlost,rparenwrong,elselost,elsespelterr,elsewrong,\/\/复合语句部分的错误类型$/;"	e	enum:errcode
+elsespelterr	common.h	/^  statementexcp,localidentlost,lparenlost,lparenwrong,staterparenlost,rparenwrong,elselost,elsespelterr,elsewrong,\/\/复合语句部分的错误类型$/;"	e	enum:errcode
+elsewrong	common.h	/^  statementexcp,localidentlost,lparenlost,lparenwrong,staterparenlost,rparenwrong,elselost,elsespelterr,elsewrong,\/\/复合语句部分的错误类型$/;"	e	enum:errcode
+equ	common.h	/^  gt,ge,lt,le,equ,nequ,\/\/>,>=,<,<=,==,!=$/;"	e	enum:symbol
+equal	semantic.c	/^int fun_record::equal(fun_record&f)$/;"	f	class:fun_record
+errcode	common.h	/^enum errcode\/\/所有的错误码$/;"	g
+errorNum	error.c	/^int errorNum=0,warnNum=0;\/\/所有错误的个数$/;"	v
+excep	common.h	/^  null,ident,excep,number,\/\/空，标识符，异常字符，数字$/;"	e	enum:symbol
+excpchar	common.h	/^  charwrong,strwrong,str2long,num2long,id2long,excpchar,$/;"	e	enum:errcode
+expr	parser.c	/^var_record* expr(int & var_num)$/;"	f
+exprlost	common.h	/^  opplost,oppwrong,exprlost,exprparenlost,exprwrong,\/\/表达式错误$/;"	e	enum:errcode
+exprparenlost	common.h	/^  opplost,oppwrong,exprlost,exprparenlost,exprwrong,\/\/表达式错误$/;"	e	enum:errcode
+exprwrong	common.h	/^  opplost,oppwrong,exprlost,exprparenlost,exprwrong,\/\/表达式错误$/;"	e	enum:errcode
+exptail	parser.c	/^var_record* exptail(var_record*p_factor1,int & var_num)$/;"	f
+externed	semantic.h	/^  int externed;\/\/标示变量是不是外部的符号，针对全局变量来作用$/;"	m	struct:var_record
+factor	parser.c	/^var_record* factor(int & var_num)\/\/临时变量替换方式,运算元素是地址！$/;"	f
+factortail	parser.c	/^var_record* factortail(var_record*p_factor1,int & var_num)$/;"	f
+fileName	compiler.c	/^string fileName;$/;"	v
+fin	compiler.c	/^FILE * fin=NULL;\/\/全局变量，文件输入指针$/;"	v
+flushargs	semantic.c	/^void fun_record::flushargs()\/\/将参数写到符号表$/;"	f	class:fun_record
+flushed	semantic.h	/^  int flushed;\/\/函数参数是否已经缓冲写入，标记是否再清楚的时候清除缓冲区$/;"	m	struct:fun_record
+fout	compiler.c	/^FILE * fout=NULL;\/\/全局变量，文件输出指针$/;"	v
+fun_dec_err	common.h	/^  var_redef,para_redef,localvar_redef,fun_redef,fun_def_err,fun_dec_err,\/\/声明类错误$/;"	e	enum:errcode
+fun_def_err	common.h	/^  var_redef,para_redef,localvar_redef,fun_redef,fun_def_err,fun_dec_err,\/\/声明类错误$/;"	e	enum:errcode
+fun_map	semantic.h	/^  hash_map<string, fun_record*, string_hash> fun_map;\/\/函数声明列表$/;"	m	class:Table
+fun_record	semantic.c	/^fun_record::fun_record()\/\/默认构造函数$/;"	f	class:fun_record
+fun_record	semantic.c	/^fun_record::fun_record(const fun_record& f)\/\/拷贝构造函数，仅仅拷贝函数声明信息，其他的信息忽略，代码生成时通过对tfun的管理就能生成局部代码$/;"	f	class:fun_record
+fun_record	semantic.h	/^struct fun_record\/\/函数声明记录$/;"	s
+fun_redef	common.h	/^  var_redef,para_redef,localvar_redef,fun_redef,fun_def_err,fun_dec_err,\/\/声明类错误$/;"	e	enum:errcode
+fun_undec	common.h	/^  void_nassi,assi_ncomtype,ret_type_err,fun_undec,var_undec,real_args_err,str_nb_cond$/;"	e	enum:errcode
+funtail	parser.c	/^void funtail(symbol dec_type,string dec_name)$/;"	f
+ge	common.h	/^  gt,ge,lt,le,equ,nequ,\/\/>,>=,<,<=,==,!=$/;"	e	enum:symbol
+genAssign	generator.c	/^var_record* genAssign(var_record*des,var_record*src,int &var_num)$/;"	f
+genBlock	generator.c	/^int genBlock(int n)$/;"	f
+genCall	semantic.c	/^var_record* Table::genCall(string fname,int& var_num)$/;"	f	class:Table
+genCommonFile	compiler.c	/^void Compiler::genCommonFile()$/;"	f	class:Compiler
+genCondition	generator.c	/^void genCondition(var_record*cond)$/;"	f
+genExp	generator.c	/^var_record* genExp(var_record*p_factor1,symbol opp,var_record*p_factor2,int &var_num)$/;"	f
+genFunhead	generator.c	/^void genFunhead()$/;"	f
+genFuntail	generator.c	/^void genFuntail()$/;"	f
+genInput	generator.c	/^void genInput(var_record*p_i,int& var_num)$/;"	f
+genLocvar	generator.c	/^void genLocvar(int val)$/;"	f
+genName	generator.c	/^string genName(string head,symbol type,string name)$/;"	f
+genOutput	generator.c	/^void genOutput(var_record*p_o,int&var_num)$/;"	f
+genReturn	generator.c	/^void genReturn(var_record*ret,int &var_num)$/;"	f
+getChar	lexial.c	/^int getChar()$/;"	f
+getCurAddr	semantic.c	/^int fun_record::getCurAddr()$/;"	f	class:fun_record
+getSym	lexial.c	/^int getSym()$/;"	f
+getVar	semantic.c	/^var_record * Table::getVar(string name)$/;"	f	class:Table
+getstring	semantic.c	/^string Table::getstring(int index)$/;"	f	class:Table
+gt	common.h	/^  gt,ge,lt,le,equ,nequ,\/\/>,>=,<,<=,==,!=$/;"	e	enum:symbol
+hadret	semantic.h	/^  int hadret;\/\/记录是否含有返回语句$/;"	m	struct:fun_record
+hasname	semantic.c	/^int Table::hasname(string id_name)\/\/测试局部变量，参数的名字是否重复，主要应对变量的重复定义，全局变量和函数不需要调用他$/;"	f	class:Table
+hasname	semantic.c	/^int fun_record::hasname(string id_name)\/\/防止参数的名字在写入之前重复$/;"	f	class:fun_record
+id	lexial.c	/^char id[idLen+1];\/\/存放标识符$/;"	v
+id2long	common.h	/^  charwrong,strwrong,str2long,num2long,id2long,excpchar,$/;"	e	enum:errcode
+idLen	common.h	/^#define idLen /;"	d
+ident	common.h	/^  null,ident,excep,number,\/\/空，标识符，异常字符，数字$/;"	e	enum:symbol
+identinexpr	parser.c	/^int identinexpr=0;\/\/指示标识符是否单独出现在表达式中$/;"	v
+identlost	common.h	/^  semiconlost,commalost,typelost,identlost,semiconwrong,typewrong,\/\/变量声明部分的错误类型$/;"	e	enum:errcode
+idtail	parser.c	/^var_record* idtail(string refname,int &var_num)$/;"	f
+idtaillost	common.h	/^  idtaillost,returnwrong,arglost,argwrong,arglistwrong,na_input,input_err,output_err,$/;"	e	enum:errcode
+ifID	parser.c	/^int ifID=0;$/;"	v
+ifstat	parser.c	/^void ifstat(int &var_num,int & level,int lopId,int blockAddr)$/;"	f
+init	semantic.c	/^void fun_record::init(symbol dec_type,string dec_name)\/\/初始化函数$/;"	f	class:fun_record
+init	semantic.c	/^void var_record::init(symbol dec_type,string dec_name)\/\/初始化函数$/;"	f	class:var_record
+input	common.h	/^  input,output,\/\/输入和输出$/;"	e	enum:symbol
+input_err	common.h	/^  idtaillost,returnwrong,arglost,argwrong,arglistwrong,na_input,input_err,output_err,$/;"	e	enum:errcode
+intVal	semantic.h	/^    int intVal;$/;"	m	union:var_record::__anon1
+item	parser.c	/^var_record* item(int & var_num)$/;"	f
+itemtail	parser.c	/^var_record* itemtail(var_record*p_factor1,int & var_num)$/;"	f
+lbrac	common.h	/^  comma,chara,strings,semicon,lparen,rparen,lbrac,rbrac,\/\/界符 , ch string ; ( ) { }$/;"	e	enum:symbol
+lbraclost	common.h	/^  paralost,rparenlost,lbraclost,rbraclost,\/\/函数定义部分的错误类型$/;"	e	enum:errcode
+le	common.h	/^  gt,ge,lt,le,equ,nequ,\/\/>,>=,<,<=,==,!=$/;"	e	enum:symbol
+letter	lexial.c	/^char letter=0;\/\/存放字符$/;"	v
+lexerror	error.c	/^void lexerror(enum errcode err,char c)$/;"	f
+line	lexial.c	/^char line[maxLen];$/;"	v
+lineLen	lexial.c	/^int lineLen=0;\/\/当前行的长度$/;"	v
+lineNum	lexial.c	/^int lineNum=0;\/\/行号$/;"	v
+localAddr	semantic.h	/^  int localAddr;\/\/局部变量相对与ebp指针的地址，或者临时string的索引地址$/;"	m	struct:var_record
+localdec	parser.c	/^void localdec(int& var_num,int&level)$/;"	f
+localdectail	parser.c	/^void localdectail(int& var_num,symbol local_type,int&level)$/;"	f
+localidentlost	common.h	/^  statementexcp,localidentlost,lparenlost,lparenwrong,staterparenlost,rparenwrong,elselost,elsespelterr,elsewrong,\/\/复合语句部分的错误类型$/;"	e	enum:errcode
+localvar_redef	common.h	/^  var_redef,para_redef,localvar_redef,fun_redef,fun_def_err,fun_dec_err,\/\/声明类错误$/;"	e	enum:errcode
+localvars	semantic.h	/^  vector<var_record*>*localvars;\/\/局部变量列表,指向哈希表,仅仅为函数定义服务$/;"	m	struct:fun_record
+lopID	parser.c	/^int lopID=0;$/;"	v
+lparen	common.h	/^  comma,chara,strings,semicon,lparen,rparen,lbrac,rbrac,\/\/界符 , ch string ; ( ) { }$/;"	e	enum:symbol
+lparenlost	common.h	/^  statementexcp,localidentlost,lparenlost,lparenwrong,staterparenlost,rparenwrong,elselost,elsespelterr,elsewrong,\/\/复合语句部分的错误类型$/;"	e	enum:errcode
+lparenwrong	common.h	/^  statementexcp,localidentlost,lparenlost,lparenwrong,staterparenlost,rparenwrong,elselost,elsespelterr,elsewrong,\/\/复合语句部分的错误类型$/;"	e	enum:errcode
+lt	common.h	/^  gt,ge,lt,le,equ,nequ,\/\/>,>=,<,<=,==,!=$/;"	e	enum:symbol
+main	main.c	/^int main(int argc,char*argv[])$/;"	f
+match	parser.c	/^int match(enum symbol s)$/;"	f
+maxLen	lexial.c	/^#define maxLen /;"	d	file:
+muls	parser.c	/^void muls()$/;"	f
+mult	common.h	/^  addi,subs,mult,divi,assign,\/\/加，减，乘，除,赋值$/;"	e	enum:symbol
+na_input	common.h	/^  idtaillost,returnwrong,arglost,argwrong,arglistwrong,na_input,input_err,output_err,$/;"	e	enum:errcode
+name	semantic.h	/^  string name;\/\/名称$/;"	m	struct:fun_record
+name	semantic.h	/^  string name;\/\/名称$/;"	m	struct:var_record
+nequ	common.h	/^  gt,ge,lt,le,equ,nequ,\/\/>,>=,<,<=,==,!=$/;"	e	enum:symbol
+nextToken	parser.c	/^int nextToken()$/;"	f
+null	common.h	/^  null,ident,excep,number,\/\/空，标识符，异常字符，数字$/;"	e	enum:symbol
+num	lexial.c	/^int num=0;\/\/存放的数字$/;"	v
+num2long	common.h	/^  charwrong,strwrong,str2long,num2long,id2long,excpchar,$/;"	e	enum:errcode
+numLen	common.h	/^#define numLen /;"	d
+number	common.h	/^  null,ident,excep,number,\/\/空，标识符，异常字符，数字$/;"	e	enum:symbol
+oldCh	lexial.c	/^char oldCh=' ';\/\/上一个字符$/;"	v
+oldtoken	parser.c	/^enum symbol oldtoken=null,token=null;\/\/记录最近两个token$/;"	v	typeref:enum:symbol
+operator ()	semantic.h	/^  size_t operator()(const string& str) const$/;"	f	struct:string_hash
+opplost	common.h	/^  opplost,oppwrong,exprlost,exprparenlost,exprwrong,\/\/表达式错误$/;"	e	enum:errcode
+oppwrong	common.h	/^  opplost,oppwrong,exprlost,exprparenlost,exprwrong,\/\/表达式错误$/;"	e	enum:errcode
+output	common.h	/^  input,output,\/\/输入和输出$/;"	e	enum:symbol
+output_err	common.h	/^  idtaillost,returnwrong,arglost,argwrong,arglistwrong,na_input,input_err,output_err,$/;"	e	enum:errcode
+over	semantic.c	/^void Table::over()\/\/进行最后的处理$/;"	f	class:Table
+p	parser.c	/^void p(const char* msg,int ex)$/;"	f
+para	parser.c	/^void para()\/\/untest$/;"	f
+para_redef	common.h	/^  var_redef,para_redef,localvar_redef,fun_redef,fun_def_err,fun_dec_err,\/\/声明类错误$/;"	e	enum:errcode
+paralist	parser.c	/^void paralist()\/\/untest$/;"	f
+paralost	common.h	/^  paralost,rparenlost,lbraclost,rbraclost,\/\/函数定义部分的错误类型$/;"	e	enum:errcode
+poplocalvars	semantic.c	/^void fun_record::poplocalvars(int num)\/\/弹出多个局部变量$/;"	f	class:fun_record
+program	parser.c	/^void program()\/\/untest:调用之前是否提前测试了符号$/;"	f
+pushlocalvar	semantic.c	/^void fun_record::pushlocalvar()\/\/添加一个局部变量$/;"	f	class:fun_record
+rbrac	common.h	/^  comma,chara,strings,semicon,lparen,rparen,lbrac,rbrac,\/\/界符 , ch string ; ( ) { }$/;"	e	enum:symbol
+rbracislost	parser.c	/^int rbracislost=0;\/\/}丢失异常，维护恢复,紧急恢复$/;"	v
+rbraclost	common.h	/^  paralost,rparenlost,lbraclost,rbraclost,\/\/函数定义部分的错误类型$/;"	e	enum:errcode
+real_args_err	common.h	/^  void_nassi,assi_ncomtype,ret_type_err,fun_undec,var_undec,real_args_err,str_nb_cond$/;"	e	enum:errcode
+real_args_list	semantic.h	/^  vector<var_record*> real_args_list;\/\/函数调用的实参列表，用于检查参数调用匹配和实参代码生成$/;"	m	class:Table
+realarg	parser.c	/^void realarg(string refname,int &var_num)$/;"	f
+reservedNum	lexial.c	/^#define reservedNum /;"	d	file:
+reservedSymbol	lexial.c	/^static enum symbol reservedSymbol[reservedNum]={rsv_break,rsv_char,rsv_continue,rsv_else,rsv_extern,rsv_if,rsv_in,rsv_int,rsv_out,rsv_return,rsv_string,rsv_void,rsv_while};$/;"	v	typeref:enum:symbol	file:
+reservedTable	lexial.c	/^static char reservedTable[reservedNum][idLen]={"break","char","continue","else","extern","if","in","int","out","return","string","void","while"};$/;"	v	file:
+ret_type_err	common.h	/^  void_nassi,assi_ncomtype,ret_type_err,fun_undec,var_undec,real_args_err,str_nb_cond$/;"	e	enum:errcode
+retstat	parser.c	/^void retstat(int &var_num,int & level)$/;"	f
+returntail	parser.c	/^void returntail(int & var_num,int &level)$/;"	f
+returnwrong	common.h	/^  idtaillost,returnwrong,arglost,argwrong,arglistwrong,na_input,input_err,output_err,$/;"	e	enum:errcode
+rparen	common.h	/^  comma,chara,strings,semicon,lparen,rparen,lbrac,rbrac,\/\/界符 , ch string ; ( ) { }$/;"	e	enum:symbol
+rparenlost	common.h	/^  paralost,rparenlost,lbraclost,rbraclost,\/\/函数定义部分的错误类型$/;"	e	enum:errcode
+rparenwrong	common.h	/^  statementexcp,localidentlost,lparenlost,lparenwrong,staterparenlost,rparenwrong,elselost,elsespelterr,elsewrong,\/\/复合语句部分的错误类型$/;"	e	enum:errcode
+rsv_break	common.h	/^  rsv_break,rsv_char,rsv_continue,rsv_else,rsv_extern,rsv_if,rsv_in,rsv_int,rsv_out,rsv_return,rsv_string,rsv_void,rsv_while\/\/保留字$/;"	e	enum:symbol
+rsv_char	common.h	/^  rsv_break,rsv_char,rsv_continue,rsv_else,rsv_extern,rsv_if,rsv_in,rsv_int,rsv_out,rsv_return,rsv_string,rsv_void,rsv_while\/\/保留字$/;"	e	enum:symbol
+rsv_continue	common.h	/^  rsv_break,rsv_char,rsv_continue,rsv_else,rsv_extern,rsv_if,rsv_in,rsv_int,rsv_out,rsv_return,rsv_string,rsv_void,rsv_while\/\/保留字$/;"	e	enum:symbol
+rsv_else	common.h	/^  rsv_break,rsv_char,rsv_continue,rsv_else,rsv_extern,rsv_if,rsv_in,rsv_int,rsv_out,rsv_return,rsv_string,rsv_void,rsv_while\/\/保留字$/;"	e	enum:symbol
+rsv_extern	common.h	/^  rsv_break,rsv_char,rsv_continue,rsv_else,rsv_extern,rsv_if,rsv_in,rsv_int,rsv_out,rsv_return,rsv_string,rsv_void,rsv_while\/\/保留字$/;"	e	enum:symbol
+rsv_if	common.h	/^  rsv_break,rsv_char,rsv_continue,rsv_else,rsv_extern,rsv_if,rsv_in,rsv_int,rsv_out,rsv_return,rsv_string,rsv_void,rsv_while\/\/保留字$/;"	e	enum:symbol
+rsv_in	common.h	/^  rsv_break,rsv_char,rsv_continue,rsv_else,rsv_extern,rsv_if,rsv_in,rsv_int,rsv_out,rsv_return,rsv_string,rsv_void,rsv_while\/\/保留字$/;"	e	enum:symbol
+rsv_int	common.h	/^  rsv_break,rsv_char,rsv_continue,rsv_else,rsv_extern,rsv_if,rsv_in,rsv_int,rsv_out,rsv_return,rsv_string,rsv_void,rsv_while\/\/保留字$/;"	e	enum:symbol
+rsv_max	common.h	/^  ,rsv_max$/;"	e	enum:symbol
+rsv_min	common.h	/^  rsv_min,$/;"	e	enum:symbol
+rsv_out	common.h	/^  rsv_break,rsv_char,rsv_continue,rsv_else,rsv_extern,rsv_if,rsv_in,rsv_int,rsv_out,rsv_return,rsv_string,rsv_void,rsv_while\/\/保留字$/;"	e	enum:symbol
+rsv_return	common.h	/^  rsv_break,rsv_char,rsv_continue,rsv_else,rsv_extern,rsv_if,rsv_in,rsv_int,rsv_out,rsv_return,rsv_string,rsv_void,rsv_while\/\/保留字$/;"	e	enum:symbol
+rsv_string	common.h	/^  rsv_break,rsv_char,rsv_continue,rsv_else,rsv_extern,rsv_if,rsv_in,rsv_int,rsv_out,rsv_return,rsv_string,rsv_void,rsv_while\/\/保留字$/;"	e	enum:symbol
+rsv_void	common.h	/^  rsv_break,rsv_char,rsv_continue,rsv_else,rsv_extern,rsv_if,rsv_in,rsv_int,rsv_out,rsv_return,rsv_string,rsv_void,rsv_while\/\/保留字$/;"	e	enum:symbol
+rsv_while	common.h	/^  rsv_break,rsv_char,rsv_continue,rsv_else,rsv_extern,rsv_if,rsv_in,rsv_int,rsv_out,rsv_return,rsv_string,rsv_void,rsv_while\/\/保留字$/;"	e	enum:symbol
+semerr	error.c	/^int semerr=0;\/\/语义错误个数，一旦有语义错误，就不进行代码生成，因为没有太大的价值，但是没有语义错误不代表就可以，有可能是语法错误，语义分析没有进行$/;"	v
+semerror	error.c	/^void semerror(enum errcode err)$/;"	f
+semicon	common.h	/^  comma,chara,strings,semicon,lparen,rparen,lbrac,rbrac,\/\/界符 , ch string ; ( ) { }$/;"	e	enum:symbol
+semiconlost	common.h	/^  semiconlost,commalost,typelost,identlost,semiconwrong,typewrong,\/\/变量声明部分的错误类型$/;"	e	enum:errcode
+semiconwrong	common.h	/^  semiconlost,commalost,typelost,identlost,semiconwrong,typewrong,\/\/变量声明部分的错误类型$/;"	e	enum:errcode
+showGen	compiler.c	/^bool showGen;$/;"	v
+showLex	compiler.c	/^bool showLex;$/;"	v
+showSem	compiler.c	/^bool showSem;$/;"	v
+showSyn	compiler.c	/^bool showSyn;$/;"	v
+showTab	compiler.c	/^bool showTab;$/;"	v
+sp	parser.c	/^void sp(const char* msg)$/;"	f
+statement	parser.c	/^void statement(int & var_num ,int& level,int lopId,int blockAddr)$/;"	f
+statementexcp	common.h	/^  statementexcp,localidentlost,lparenlost,lparenwrong,staterparenlost,rparenwrong,elselost,elsespelterr,elsewrong,\/\/复合语句部分的错误类型$/;"	e	enum:errcode
+staterparenlost	common.h	/^  statementexcp,localidentlost,lparenlost,lparenwrong,staterparenlost,rparenwrong,elselost,elsespelterr,elsewrong,\/\/复合语句部分的错误类型$/;"	e	enum:errcode
+str	lexial.c	/^char str[stringLen+1];\/\/存放字符串$/;"	v
+str2long	common.h	/^  charwrong,strwrong,str2long,num2long,id2long,excpchar,$/;"	e	enum:errcode
+strValId	semantic.h	/^    int strValId;\/\/用strValId=-1来标示临时string$/;"	m	union:var_record::__anon1
+str_nadd	common.h	/^  str_nadd,void_ncal,\/\/表达式类错误$/;"	e	enum:errcode
+str_nb_cond	common.h	/^  void_nassi,assi_ncomtype,ret_type_err,fun_undec,var_undec,real_args_err,str_nb_cond$/;"	e	enum:errcode
+stringId	semantic.c	/^int stringId=0;\/\/串空间标志串的Id——唯一$/;"	v
+stringLen	common.h	/^#define stringLen /;"	d
+stringTable	semantic.h	/^  vector<string*>stringTable;\/\/串空间$/;"	m	class:Table
+string_hash	semantic.h	/^struct string_hash$/;"	s
+strings	common.h	/^  comma,chara,strings,semicon,lparen,rparen,lbrac,rbrac,\/\/界符 , ch string ; ( ) { }$/;"	e	enum:symbol
+strwrong	common.h	/^  charwrong,strwrong,str2long,num2long,id2long,excpchar,$/;"	e	enum:errcode
+subs	common.h	/^  addi,subs,mult,divi,assign,\/\/加，减，乘，除,赋值$/;"	e	enum:symbol
+sym	lexial.c	/^enum symbol sym=null;\/\/当前符号$/;"	v	typeref:enum:symbol
+symName	parser.c	/^char symName[][30]=$/;"	v
+symbol	common.h	/^enum symbol\/\/所有符号的枚举$/;"	g
+synerr	error.c	/^int synerr=0;\/\/语法错误的个数，一旦有语法错误，就不进行语义处理，因为没有太大的价值$/;"	v
+synterror	error.c	/^void synterror(enum errcode err,int pos)$/;"	f
+table	semantic.c	/^Table table;\/\/符号表全局对象$/;"	v
+tfun	semantic.c	/^fun_record tfun;\/\/临时函数声明临时记录$/;"	v
+token	parser.c	/^enum symbol oldtoken=null,token=null;\/\/记录最近两个token$/;"	v	typeref:enum:
+tvar	semantic.c	/^var_record tvar;\/\/临时变量声明临时记录$/;"	v
+type	parser.c	/^symbol type()\/\/tested$/;"	f
+type	semantic.h	/^  symbol type;\/\/类型$/;"	m	struct:var_record
+type	semantic.h	/^  symbol type;\/\/返回类型$/;"	m	struct:fun_record
+typelost	common.h	/^  semiconlost,commalost,typelost,identlost,semiconwrong,typewrong,\/\/变量声明部分的错误类型$/;"	e	enum:errcode
+typewrong	common.h	/^  semiconlost,commalost,typelost,identlost,semiconwrong,typewrong,\/\/变量声明部分的错误类型$/;"	e	enum:errcode
+var_map	semantic.h	/^  hash_map<string, var_record*, string_hash> var_map;\/\/变量声明列表$/;"	m	class:Table
+var_record	semantic.c	/^var_record::var_record()\/\/默认构造函数$/;"	f	class:var_record
+var_record	semantic.c	/^var_record::var_record(const var_record& v)\/\/拷贝构造函数$/;"	f	class:var_record
+var_record	semantic.h	/^struct var_record\/\/变量声明记录$/;"	s
+var_redef	common.h	/^  var_redef,para_redef,localvar_redef,fun_redef,fun_def_err,fun_dec_err,\/\/声明类错误$/;"	e	enum:errcode
+var_undec	common.h	/^  void_nassi,assi_ncomtype,ret_type_err,fun_undec,var_undec,real_args_err,str_nb_cond$/;"	e	enum:errcode
+varlist	parser.c	/^void varlist(symbol dec_type)\/\/tested$/;"	f
+voidVal	semantic.h	/^    int voidVal;$/;"	m	union:var_record::__anon1
+void_nassi	common.h	/^  void_nassi,assi_ncomtype,ret_type_err,fun_undec,var_undec,real_args_err,str_nb_cond$/;"	e	enum:errcode
+void_nb_cond	common.h	/^  ,void_nb_cond,break_nin_while,continue_nin_while,void_nin,\/\/语句错误$/;"	e	enum:errcode
+void_ncal	common.h	/^  str_nadd,void_ncal,\/\/表达式类错误$/;"	e	enum:errcode
+void_nin	common.h	/^  ,void_nb_cond,break_nin_while,continue_nin_while,void_nin,\/\/语句错误$/;"	e	enum:errcode
+wait	parser.c	/^int wait=0;\/\/指导nextToken是否继续取符号，每次设置只能作用一次$/;"	v
+warnNum	error.c	/^int errorNum=0,warnNum=0;\/\/所有错误的个数$/;"	v
+whilestat	parser.c	/^void whilestat(int &var_num,int& level)$/;"	f
+~Table	semantic.c	/^Table::~Table()\/\/注销所有空间$/;"	f	class:Table
+~fun_record	semantic.c	/^fun_record::~fun_record()$/;"	f	class:fun_record
+~var_record	semantic.c	/^var_record::~var_record()$/;"	f	class:var_record

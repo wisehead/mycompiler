@@ -61,7 +61,7 @@ void synterror(enum errcode err,int pos);
   读取下一个有效的符号，testSym[]作为测试观察使用
   返回值:编译结束返回-1，一般情况现返回0.
 */
-
+//--
 int nextToken()
 {
   if(wait==1)
@@ -159,6 +159,7 @@ void sp(const char* msg)
 */
 int compileOk=0;//编译成功标记
 //<program>	->	<dec><program>|^
+//--
 void program()//untest:调用之前是否提前测试了符号
 {
   if(nextToken()==-1)//文件末尾 #
