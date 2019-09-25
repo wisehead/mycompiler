@@ -162,7 +162,7 @@ int getSym()
 			{
 			  GET_CHAR
 			  if(ch=='/')
-			break;
+			  break;
 			}
 		  }
 		  while(1);
@@ -275,19 +275,19 @@ int getSym()
 			  f=getChar();
 			  if(f==-1)//文件结束
 			  {
-			lexerror(strwrong,0);
-			return -1;
+				lexerror(strwrong,0);
+				return -1;
 			  }
 			  switch(ch)
 			  {
-			case 'n':
-			  str[strCount]=10;
-			  break;
-			case 't':
-			  str[strCount]=9;
-			  break;
-			default:
-			  str[strCount]=ch;
+				case 'n':
+				  str[strCount]=10;
+				  break;
+				case 't':
+				  str[strCount]=9;
+				  break;
+				default:
+				  str[strCount]=ch;
 			  }
 			}
 			else

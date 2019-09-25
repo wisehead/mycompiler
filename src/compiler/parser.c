@@ -77,35 +77,35 @@ int nextToken()
     {
       if(flag==-1)//文件结束
       {
-	oldtoken=token;
-	token=null;
-	//int n=switchFile();//只处理一个源文件，关闭文件切换功能
-	//if(n==0)//切换成功
-	  //continue;
-	return -1;
+		oldtoken=token;
+		token=null;
+		//int n=switchFile();//只处理一个源文件，关闭文件切换功能
+		//if(n==0)//切换成功
+		//continue;
+		return -1;
       }
     }
     else//get effective symbol
     {
       if(showLex)
       {
-	if(showSyn)
-	  printf("<------------------------------------------------------------------------------------------->\n");
-	else
-	  printf("<---------------------------------------------------->\n");
+		if(showSyn)
+		  printf("<------------------------------------------------------------------------------------------->\n");
+		else
+		  printf("<---------------------------------------------------->\n");
 
-	if(sym==strings)
-	  printf("字符串\t\t\"%s\"\n",str);
-	else if(sym==ident)
-	  printf("标识符\t\t(%s)\n",id);
-	else if(sym==number)
-	    printf("数字\t\t[%d]\n",num);
-	else if(sym==chara)
-	    printf("字符\t\t'%c'\n",letter);
-	else if(sym>rsv_min&&sym<rsv_max)
-	    printf("关键字\t\t<%s>\n",id);
-	else
-	    printf("界符\t\t%s\n",symName[sym]);
+		if(sym==strings)
+		  printf("字符串\t\t\"%s\"\n",str);
+		else if(sym==ident)
+		  printf("标识符\t\t(%s)\n",id);
+		else if(sym==number)
+			printf("数字\t\t[%d]\n",num);
+		else if(sym==chara)
+			printf("字符\t\t'%c'\n",letter);
+		else if(sym>rsv_min&&sym<rsv_max)
+			printf("关键字\t\t<%s>\n",id);
+		else
+			printf("界符\t\t%s\n",symName[sym]);
       }
       oldtoken=token;
       token=sym;
@@ -116,6 +116,7 @@ int nextToken()
 /**
   只做比较，不向下取符号
 */
+//--
 int match(enum symbol s)
 {
   return(token==s);
@@ -181,13 +182,14 @@ void program()//untest:调用之前是否提前测试了符号
   }
 }
 //<dec>		->	<type>ident<dectail>|semicon|rsv_extern<type>ident semicon
+//--
 void dec()//tested
 {
   if(token==semicon)//空声明
   {
     return;
   }
-  else if(token==rsv_extern)//外部变量声明
+  else if(token==rsv_extern)//外部变量声明----rsv_extern<type>ident semicon
   {
     symbol dec_type;//临时记录声明的类型
     string dec_name="";//临时记录声明标识符的名称
@@ -206,7 +208,7 @@ void dec()//tested
       tvar.externed=1;//表示外部变量
       if(dec_type==rsv_string)
       {
-				tvar.strValId=-2;//全局的string
+		tvar.strValId=-2;//全局的string
       }
       table.addvar();//添加变量记录
       p("全局变量声明",1);
@@ -216,16 +218,16 @@ void dec()//tested
     {
       if(token==rsv_extern||token==rsv_void||token==rsv_int||token==rsv_char||token==rsv_string)//丢失分号
       {
-	synterror(semiconlost,-1);
-	BACK
+		synterror(semiconlost,-1);
+		BACK
       }
       else
       {
-	synterror(semiconwrong,0);
+		synterror(semiconwrong,0);
       }
     }
   }
-  else
+  else//<type>ident<dectail>
   {
     symbol dec_type;//临时记录声明的类型
     string dec_name="";//临时记录声明标识符的名称
@@ -247,6 +249,7 @@ void dec()//tested
 /**
   返回符号的类型，错误返回null
 */
+//--
 symbol type()//tested
 {
   switch(token)
@@ -273,23 +276,23 @@ symbol type()//tested
   return null;
 }
 //<dectail>	->	semicon|<varlist>semicon|lparen<para>rparen<block>
+//--
 void dectail(symbol dec_type,string dec_name)//untest
 {
   nextToken();
   switch(token)
   {
-    case semicon:
+    case semicon://semicon
       //单独的变量声明，添加到符号表，这是全局变量，代码生成的时候要生成静态数据
       tvar.init(dec_type,dec_name);//初始化变量记录
       if(dec_type==rsv_string)
       {
-	tvar.strValId=-2;//全局的string
+		tvar.strValId=-2;//全局的string
       }
       table.addvar();//添加变量记录
       p("全局变量定义",1);
       break;
-    case lparen:
-
+    case lparen://lparen<para>rparen<block>
       tfun.init(dec_type,dec_name);//初始化函数记录，仅返回类型和函数名
       para();
       //match(rpren);
@@ -300,7 +303,7 @@ void dectail(symbol dec_type,string dec_name)//untest
       tvar.init(dec_type,dec_name);//初始化变量记录
       if(dec_type==rsv_string)
       {
-	tvar.strValId=-2;
+		tvar.strValId=-2;
       }
       table.addvar();//添加变量记录
       p("全局变量定义",1);
@@ -400,6 +403,7 @@ void varlist(symbol dec_type)//tested
   }
 }
 //<para>		->	<type>ident<paralist>|^
+//--
 void para()//untest
 {
   nextToken();
@@ -407,38 +411,38 @@ void para()//untest
   {
     case rparen://^匹配成功--follow
       break;
-    default:
+    default://<type>ident<paralist>
       symbol para_type;//记录临时参数类型
       para_type=type();
       string para_name="";//记录参数名字
       nextToken();
       if(!match(ident))//标识符不匹配，极有可能是没有参数名字,回退
       {
-	synterror(paralost,-1);
-	BACK
+		synterror(paralost,-1);
+		BACK
       }
       else
       {
-	sp("对形式参数的声明进行语义检查");
-	para_name+=id;
-	int msg_back=table.hasname(para_name);
-	if(msg_back==0)//忽略同名的参数和局部变量
-	{
-	  tvar.init(para_type,para_name);//初始化参数记录
-	  tfun.addarg();//添加一个参数
-	}
-	else if(msg_back==1)
-	{
-	  //参数名字相同错误
-	  semerror(para_redef);
-	}
-	//其他值比如-1是强制终止，就不处理了
+		sp("对形式参数的声明进行语义检查");
+		para_name+=id;
+		int msg_back=table.hasname(para_name);
+		if(msg_back==0)//忽略同名的参数和局部变量
+		{
+		  tvar.init(para_type,para_name);//初始化参数记录
+		  tfun.addarg();//添加一个参数
+		}
+		else if(msg_back==1)
+		{
+		  //参数名字相同错误
+		  semerror(para_redef);
+		}
+		//其他值比如-1是强制终止，就不处理了
       }
       paralist();
   }
 }
 //<paralist>	->	comma<type>ident<paralist>|^
-
+//--
 void paralist()//untest
 {
   nextToken();
@@ -493,10 +497,8 @@ void paralist()//untest
     }
     paralist();
   }
-
-
-
 }
+
 //<block>		->	lbrac<childprogram>rbrac
 void block(int initvar_num,int& level,int lopId,int blockAddr)
 {

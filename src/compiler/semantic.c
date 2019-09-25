@@ -11,6 +11,7 @@ var_record::var_record()//默认构造函数
   this->localAddr=0;
   this->externed=0;
 }
+//--
 void var_record::init(symbol dec_type,string dec_name)//初始化函数
 {
   if(synerr!=0)//有语法错误，不处理
@@ -115,6 +116,7 @@ void fun_record::pushlocalvar()//添加一个局部变量
   }
 }
 //--
+//局部变量属于函数内部
 int fun_record::hasname(string id_name)//防止参数的名字在写入之前重复
 {
   if(synerr!=0)//有语法错误，不处理
@@ -445,6 +447,7 @@ void Table::addvar()
   }
 }
 //添加变量声明记录,重载——为添加局部变量和参数变量提供的
+//--
 void Table::addvar(var_record*v_r)
 {
   if(synerr!=0)//有语法错误，不处理
