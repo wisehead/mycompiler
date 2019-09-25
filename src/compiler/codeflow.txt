@@ -1,0 +1,5 @@
+main
+--Compiler::genCommonFile//for  what
+--Compiler::compile
+----program
+------nextToken

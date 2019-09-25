@@ -31,15 +31,15 @@ int getChar()
     {
       if(fscanf(fin,"%c",&ch)==EOF)
       {
-	line[lineLen]=0;//文件结束
-	break;
+		line[lineLen]=0;//文件结束
+		break;
       }
       line[lineLen]=ch;//循环读取一行的字符
       lineLen++;
       if(lineLen==maxLen)//单行程序过长
       {
-	//不继续读就可以，不用报错
-	break;
+		//不继续读就可以，不用报错
+		break;
       }
     }
   }
@@ -129,213 +129,213 @@ int getSym()
     switch(ch)
     {
       case '+':
-	sym=addi;
-	GET_CHAR
-	break;
-      case '-':
-	sym=subs;
-	GET_CHAR
-	break;
-      case '*':
-	sym=mult;
-	GET_CHAR
-	break;
-      case '/':
-	sym=divi;
-	GET_CHAR
-	if(ch=='/')
-	{
-	  sym=null;//单行注释
-	  while(ch!='\n')//只要行不结束
-	  {
-	    GET_CHAR
-	  }
-	  GET_CHAR
-	}
-	else if(ch=='*')//多行注释
-	{
-	  sym=null;
-	  do
-	  {
-	    GET_CHAR
-	    if(ch=='*')
-	    {
-	      GET_CHAR
-	      if(ch=='/')
+		sym=addi;
+		GET_CHAR
 		break;
-	    }
-	  }
-	  while(1);
-	  GET_CHAR
-	}
-	break;
+      case '-':
+		sym=subs;
+		GET_CHAR
+		break;
+      case '*':
+		sym=mult;
+		GET_CHAR
+		break;
+      case '/':
+		sym=divi;
+		GET_CHAR
+		if(ch=='/')
+		{
+		  sym=null;//单行注释
+		  while(ch!='\n')//只要行不结束
+		  {
+			GET_CHAR
+		  }
+		  GET_CHAR
+		}
+		else if(ch=='*')//多行注释
+		{
+		  sym=null;
+		  do
+		  {
+			GET_CHAR
+			if(ch=='*')
+			{
+			  GET_CHAR
+			  if(ch=='/')
+			break;
+			}
+		  }
+		  while(1);
+		  GET_CHAR
+		}
+		break;
       case '>':
-	sym=gt;
-	GET_CHAR
-	if(ch=='=')
-	{
-	  sym=ge;
-	  GET_CHAR
-	}
-	else if(ch=='>')
-	{
-	  sym=input;
-	  GET_CHAR
-	}
-	break;
+		sym=gt;
+		GET_CHAR
+		if(ch=='=')
+		{
+		  sym=ge;
+		  GET_CHAR
+		}
+		else if(ch=='>')
+		{
+		  sym=input;
+		  GET_CHAR
+		}
+		break;
       case '<':
-	sym=lt;
-	GET_CHAR
-	if(ch=='=')
-	{
-	  sym=le;
-	  GET_CHAR
-	}
-	else if(ch=='<')
-	{
-	  sym=output;
-	  GET_CHAR
-	}
-	break;
+		sym=lt;
+		GET_CHAR
+		if(ch=='=')
+		{
+		  sym=le;
+		  GET_CHAR
+		}
+		else if(ch=='<')
+		{
+		  sym=output;
+		  GET_CHAR
+		}
+		break;
       case '=':
-	sym=assign;
-	GET_CHAR
-	if(ch=='=')
-	{
-	  sym=equ;
-	  GET_CHAR
-	}
-	break;
+		sym=assign;
+		GET_CHAR
+		if(ch=='=')
+		{
+		  sym=equ;
+		  GET_CHAR
+		}
+		break;
       case '!':
-	sym=null;
-	GET_CHAR
-	if(ch=='=')
-	{
-	  sym=nequ;
-	  GET_CHAR
-	}
-	break;
+		sym=null;
+		GET_CHAR
+		if(ch=='=')
+		{
+		  sym=nequ;
+		  GET_CHAR
+		}
+		break;
       case ';':
-	sym=semicon;
-	GET_CHAR
-	break;
+		sym=semicon;
+		GET_CHAR
+		break;
       case ',':
-	sym=comma;
-	GET_CHAR
-	break;
+		sym=comma;
+		GET_CHAR
+		break;
       case '\'':
-	sym=null;
-	//GET_CHAR
-	f=getChar();
-	if(f==-1)//文件结束
-	{
-	  lexerror(charwrong,0);
-	  return -1;
-	}
-	letter=ch;
-	//GET_CHAR
-	f=getChar();
-	if(f==-1)//文件结束
-	{
-	  lexerror(charwrong,0);
-	  return -1;
-	}
-	if(ch=='\'')
-	{
-	  sym=chara;
-	  //GET_CHAR
-	  f=getChar();
-	}
-	else
-	{
-	  lexerror(charwrong,0);
-	}
-	if(f=-1)
-	  return -1;
-	break;
+		sym=null;
+		//GET_CHAR
+		f=getChar();
+		if(f==-1)//文件结束
+		{
+		  lexerror(charwrong,0);
+		  return -1;
+		}
+		letter=ch;
+		//GET_CHAR
+		f=getChar();
+		if(f==-1)//文件结束
+		{
+		  lexerror(charwrong,0);
+		  return -1;
+		}
+		if(ch=='\'')
+		{
+		  sym=chara;
+		  //GET_CHAR
+		  f=getChar();
+		}
+		else
+		{
+		  lexerror(charwrong,0);
+		}
+		if(f=-1)
+		  return -1;
+		break;
       case '"':
-	sym=null;
-	//GET_CHAR
-	f=getChar();
-	if(f==-1)//文件结束
-	{
-	  lexerror(strwrong,0);
-	  return -1;
-	}
-	reallen=0;
-	while(ch!='"')//只要不是“结尾
-	{
-	  reallen++;
-	  if(strCount<stringLen)//字符串过长部分掠去
-	  {
-	    //转义部分
-	    if(ch=='\\')//转义符
-	    {
-	      //GET_CHAR
-	      f=getChar();
-	      if(f==-1)//文件结束
-	      {
-		lexerror(strwrong,0);
-		return -1;
-	      }
-	      switch(ch)
-	      {
-		case 'n':
-		  str[strCount]=10;
-		  break;
-		case 't':
-		  str[strCount]=9;
-		  break;
-		default:
-		  str[strCount]=ch;
-	      }
-	    }
-	    else
-	      str[strCount]=ch;
-	    strCount++;
-	  }
-	  //GET_CHAR
-	  f=getChar();
-	  if(f==-1)//文件结束
-	  {
-	    lexerror(strwrong,0);
-	    return -1;
-	  }
-	}
-	str[strCount]=0;//结尾
-	if(reallen>stringLen)//string太长
-	{
-	  lexerror(str2long,0);
-	}
-	sym=strings;
-	GET_CHAR
-	break;
+		sym=null;
+		//GET_CHAR
+		f=getChar();
+		if(f==-1)//文件结束
+		{
+		  lexerror(strwrong,0);
+		  return -1;
+		}
+		reallen=0;
+		while(ch!='"')//只要不是“结尾
+		{
+		  reallen++;
+		  if(strCount<stringLen)//字符串过长部分掠去
+		  {
+			//转义部分
+			if(ch=='\\')//转义符
+			{
+			  //GET_CHAR
+			  f=getChar();
+			  if(f==-1)//文件结束
+			  {
+			lexerror(strwrong,0);
+			return -1;
+			  }
+			  switch(ch)
+			  {
+			case 'n':
+			  str[strCount]=10;
+			  break;
+			case 't':
+			  str[strCount]=9;
+			  break;
+			default:
+			  str[strCount]=ch;
+			  }
+			}
+			else
+			  str[strCount]=ch;
+			strCount++;
+		  }
+		  //GET_CHAR
+		  f=getChar();
+		  if(f==-1)//文件结束
+		  {
+			lexerror(strwrong,0);
+			return -1;
+		  }
+		}
+		str[strCount]=0;//结尾
+		if(reallen>stringLen)//string太长
+		{
+		  lexerror(str2long,0);
+		}
+		sym=strings;
+		GET_CHAR
+		break;
       case '(':
-	sym=lparen;
-	GET_CHAR
-	break;
+		sym=lparen;
+		GET_CHAR
+		break;
       case ')':
-	sym=rparen;
-	GET_CHAR
-	break;
+		sym=rparen;
+		GET_CHAR
+		break;
       case '{':
-	sym=lbrac;
-	GET_CHAR
-	break;
+		sym=lbrac;
+		GET_CHAR
+		break;
       case '}':
-	sym=rbrac;
-	GET_CHAR
-	break;
+		sym=rbrac;
+		GET_CHAR
+		break;
       case 0://不在这个位置达到文件末尾，会暂时不处理，等到下一次调用时候在这里返回
-	sym=null;
-	return -1;
-	break;
+		sym=null;
+		return -1;
+		break;
       default:
-	sym=excep;
-	lexerror(excpchar,ch);
-	//虽然是词法错误，但是不影响语法语义的分析过程，暂且定位为警告
-	//warnNum++;
-	GET_CHAR
+		sym=excep;
+		lexerror(excpchar,ch);
+		//虽然是词法错误，但是不影响语法语义的分析过程，暂且定位为警告
+		//warnNum++;
+		GET_CHAR
     }
   }
   return 0;
