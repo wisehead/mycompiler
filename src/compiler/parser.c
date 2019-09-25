@@ -299,7 +299,7 @@ void dectail(symbol dec_type,string dec_name)//untest
       funtail(dec_type,dec_name);
       //block();
       break;
-    default:
+    default://<varlist>semicon
       tvar.init(dec_type,dec_name);//初始化变量记录
       if(dec_type==rsv_string)
       {
@@ -312,6 +312,7 @@ void dectail(symbol dec_type,string dec_name)//untest
   }
 }
 //<funtail>	->	<block>|semicon
+//--
 void funtail(symbol dec_type,string dec_name)
 {
   static int level=0;//复合语句的层次
@@ -326,6 +327,7 @@ void funtail(symbol dec_type,string dec_name)
   else if(token==lbrac)//函数定义
   {
     p("函数定义",2);
+	//注意！！！！！这里是主要的define的地方。
     tfun.defined=1;//标记函数定义属性
     table.addfun();
     BACK
@@ -446,7 +448,7 @@ void para()//untest
 void paralist()//untest
 {
   nextToken();
-  if(token==comma)
+  if(token==comma)//comma<type>ident<paralist>
   {
     nextToken();
     symbol para_type;//记录临时参数类型
@@ -460,20 +462,20 @@ void paralist()//untest
     }
     else
     {
-	sp("对形式参数的声明进行语义检查");
-	para_name+=id;
-	int msg_back=table.hasname(para_name);
-	if(msg_back==0)//忽略同名的参数和局部变量
-	{
-	  tvar.init(para_type,para_name);//初始化参数记录
-	  tfun.addarg();//添加一个参数
-	}
-	else if(msg_back==1)
-	{
-	  //参数名字相同错误
-	  semerror(para_redef);
-	}
-	//其他值比如-1是强制终止，就不处理了
+		sp("对形式参数的声明进行语义检查");
+		para_name+=id;
+		int msg_back=table.hasname(para_name);
+		if(msg_back==0)//忽略同名的参数和局部变量
+		{
+		  tvar.init(para_type,para_name);//初始化参数记录
+		  tfun.addarg();//添加一个参数
+		}
+		else if(msg_back==1)
+		{
+		  //参数名字相同错误
+		  semerror(para_redef);
+		}
+		//其他值比如-1是强制终止，就不处理了
     }
     paralist();
   }
@@ -500,6 +502,7 @@ void paralist()//untest
 }
 
 //<block>		->	lbrac<childprogram>rbrac
+//--
 void block(int initvar_num,int& level,int lopId,int blockAddr)
 {
   nextToken();
@@ -520,6 +523,7 @@ void block(int initvar_num,int& level,int lopId,int blockAddr)
 }
 //<childprogram>	->	<localdec><childprogram>|<statements><childprogram>|^
 int rbracislost=0;//}丢失异常，维护恢复,紧急恢复
+//--
 void childprogram(int& var_num,int& level,int lopId,int blockAddr)
 {
   nextToken();
@@ -652,6 +656,7 @@ void localdectail(int& var_num,symbol local_type,int&level)
   }
 }
 //<statement>	->	ident<idtail>semicon|<whilestat>|<ifstat>|<retstat>|semicon|rsv_break semicon|rsv_continue semicon
+//--
 void statement(int & var_num ,int& level,int lopId,int blockAddr)
 {
   string refname="";
@@ -672,48 +677,48 @@ void statement(int & var_num ,int& level,int lopId,int blockAddr)
       p("break语句",0);
       nextToken();
       if(token==ident||token==rsv_while||token==rsv_if||token==rsv_return||token==rsv_break||token==rsv_continue
-	||token==rsv_in||token==rsv_out||token==rbrac)
+		||token==rsv_in||token==rsv_out||token==rbrac)
       {
-	synterror(semiconlost,-1);
-	BACK
+		synterror(semiconlost,-1);
+		BACK
       }else if(token!=semicon)
       {
-	synterror(semiconwrong,0);
+		synterror(semiconwrong,0);
       }
       //生成break
       sp("对break语句的位置进行语义检查");
       if(lopId!=0)
       {
-	genBlock(blockAddr);
-	fprintf(fout,"\tjmp @while_%d_exit\n",lopId);
+		genBlock(blockAddr);
+		fprintf(fout,"\tjmp @while_%d_exit\n",lopId);
       }
       else
       {
-	semerror(break_nin_while);
+		semerror(break_nin_while);
       }
       break;
     case rsv_continue:
       p("continue语句",0);
       nextToken();
       if(token==ident||token==rsv_while||token==rsv_if||token==rsv_return||token==rsv_break||token==rsv_continue
-	||token==rsv_in||token==rsv_out||token==rbrac)
+		||token==rsv_in||token==rsv_out||token==rbrac)
       {
-	synterror(semiconlost,-1);
-	BACK
+		synterror(semiconlost,-1);
+		BACK
       }else if(token!=semicon)
       {
-	synterror(semiconwrong,0);
+		synterror(semiconwrong,0);
       }
       //生成continue
       sp("对continue语句的位置进行语义检查");
       if(lopId!=0)
       {
-	genBlock(blockAddr);
-	fprintf(fout,"\tjmp @while_%d_lop\n",lopId);
+		genBlock(blockAddr);
+		fprintf(fout,"\tjmp @while_%d_lop\n",lopId);
       }
       else
       {
-	semerror(continue_nin_while);
+		semerror(continue_nin_while);
       }
       break;
     case rsv_return:
@@ -725,24 +730,24 @@ void statement(int & var_num ,int& level,int lopId,int blockAddr)
       nextToken();
       if(!match(input))
       {
-	synterror(input_err,0);
+		synterror(input_err,0);
       }
       nextToken();
       if(!match(ident))
       {
-	synterror(na_input,0);
+		synterror(na_input,0);
       }
       else
       {
-	refname+=id;
-	///input
-	genInput(table.getVar(refname),var_num);
+		refname+=id;
+		///input
+		genInput(table.getVar(refname),var_num);
       }
       nextToken();
       if(!match(semicon))
       {
-	synterror(semiconlost,-1);
-	BACK
+		synterror(semiconlost,-1);
+		BACK
       }
       break;
     case rsv_out:
@@ -750,15 +755,15 @@ void statement(int & var_num ,int& level,int lopId,int blockAddr)
       nextToken();
       if(!match(output))
       {
-	synterror(output_err,0);
+		synterror(output_err,0);
       }
       ///output
       genOutput(expr(var_num),var_num);
       nextToken();
       if(!match(semicon))
       {
-	synterror(semiconlost,-1);
-	BACK
+		synterror(semiconlost,-1);
+		BACK
       }
       break;
     case ident:
@@ -768,17 +773,18 @@ void statement(int & var_num ,int& level,int lopId,int blockAddr)
       nextToken();
       if(!match(semicon))//赋值语句或者函数调用语句丢失分号，记得回退
       {
-	synterror(semiconlost,-1);
-	BACK
+		synterror(semiconlost,-1);
+		BACK
       }
       break;
   }
 }
 int lopID=0;
 //<whilestat>	->	rsv_while lparen<expr>rparen<block>
+//--
 void whilestat(int &var_num,int& level)
 {
-  lopID++;
+  lopID++;//lopID是什么????
   int id=lopID;
   nextToken();
   if(!match(lparen))
@@ -1074,10 +1080,11 @@ void arglist(int &var_num)
   }
 }
 //<exp>		->	<aloexp><exptail>
+//--
 var_record* expr(int & var_num)
 {
-  var_record*p_factor1=aloexp(var_num);
-  var_record*p_factor2=exptail(p_factor1,var_num);
+  var_record* p_factor1=aloexp(var_num);
+  var_record* p_factor2=exptail(p_factor1,var_num);
   if(p_factor2==NULL)
     return p_factor1;
   else
@@ -1154,6 +1161,7 @@ void cmps()
 }
 
 //<aloexp>	->	<item><itemtail>
+//--
 var_record* aloexp(int & var_num)
 {
   var_record*p_factor1=item(var_num);

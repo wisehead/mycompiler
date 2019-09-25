@@ -257,6 +257,7 @@ var_record*fun_record::create_tmpvar(symbol type,int hasVal,int &var_num)
 /**
  * 取得上一个进栈的变量的地址（esp相对于ebp偏移）
  */
+//--
 int fun_record::getCurAddr()
 {
   //计算地址

@@ -20,6 +20,19 @@ main
 ----------------Table::addvar(var_record*v_r)
 ----------------genLocvar
 ------------paralist
---------------
+----------funtail
+------------Table::addfun//
+--------------fun_record::flushargs
+--------------genFunhead//
+--------------fun_record::equal
+------------block
+--------------childprogram//<localdec><childprogram>|<statements><childprogram>|^
+----------------statement//ident<idtail>semicon|<whilestat>|<ifstat>|<retstat>|semicon|rsv_break semicon|rsv_continue semicon
+------------------whilestat//rsv_while lparen<expr>rparen<block>
+--------------------genBlock
+----------------------fun_record::getCurAddr
+--------------------expr// <aloexp><exptail>
+----------------------aloexp//<item><itemtail>
+------------------ifstat
 
 

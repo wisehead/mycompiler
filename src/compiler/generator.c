@@ -764,7 +764,7 @@ void genFunhead()
     return;
   if(showGen)
       cout<<"生成函数"<<tfun.name<<"()的首部"<<endl;
-//change the main function calling style,handle the main as normal function,call it by start 2012.4.24
+  //change the main function calling style,handle the main as normal function,call it by start 2012.4.24
   /*if(tfun.name=="main")
   {
     //主函数
@@ -774,6 +774,7 @@ void genFunhead()
   {
     fprintf(fout,"%s:\n",tfun.name.c_str());//函数头
   }
+  //没看懂!!!
   fprintf(fout,"\tpush ebp\n\tmov ebp,esp\n");//enter
   fprintf(fout,"\tmov ebx,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,ebx\n");//esp<=>[@s_esp]
   fprintf(fout,"\tmov ebx,[@s_ebp]\n\tpush ebx\n\tmov [@s_ebp],esp\n");//s_enter
@@ -856,6 +857,7 @@ void genCondition(var_record*cond)
  * 产生block的边界代码
  * 参数isIn：-1-进入block；0..n-退出block
  */
+//--
 int genBlock(int n)
 {
   if(errorNum!=0)//有语义错误，不生成
@@ -864,6 +866,7 @@ int genBlock(int n)
     return tfun.getCurAddr();
   else
   {
+	  //多个block，嵌套，进入指定的一层，的环境。
     if(n!=0)
       fprintf(fout,"\tlea esp,[ebp%d]\n",n);
     else
