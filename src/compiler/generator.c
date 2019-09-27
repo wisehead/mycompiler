@@ -11,6 +11,7 @@ int convert_buffer=0;//标志是不是对缓冲区的数据进行操作
  * name——名称
  */
 int ID=0;
+//--
 string genName(string head,symbol type,string name)
 {
   ID++;
@@ -45,6 +46,7 @@ void sp(const char* msg);
  * 	p_factor2——右操作数
  * 	var_num——复合语句里的变量个数
  */
+//--
 var_record* genExp(var_record*p_factor1,symbol opp,var_record*p_factor2,int &var_num)
 {
   if(errorNum!=0)//有错误，不生成
@@ -91,19 +93,19 @@ var_record* genExp(var_record*p_factor1,symbol opp,var_record*p_factor2,int &var
     {
       if(opp==addi)
       {
-	rsl_type=rsv_string;
+		rsl_type=rsv_string;
       }
       else
       {
-	semerror(str_nadd);
-	return NULL;
+		semerror(str_nadd);
+		return NULL;
       }
     }
     else
     {
       if(opp==gt||opp==ge||opp==lt||opp==le||opp==equ||opp==nequ)
       {
-	rsl_type=rsv_char;
+		rsl_type=rsv_char;
       }
     }
     if(showGen)
@@ -114,501 +116,501 @@ var_record* genExp(var_record*p_factor1,symbol opp,var_record*p_factor2,int &var
     {
       case rsv_string://字符串连接运算
       	//cout<<"字符串链接运算"<<endl;
-	if(p_factor2->type==rsv_string)
-	{
-	  labLop=genName("lab",null,"cpystr2");
-	  labExt=genName("lab",null,"cpystr2_exit");
-	  if(p_factor2->strValId==-1)//动态string
-	  {
-	    fprintf(fout,";----------生成动态string%s的代码----------\n",p_factor2->name.c_str());
-	    fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
-	    if(p_factor2->localAddr<0)
-	      fprintf(fout,"\tmov ebx,[ebp%d]\n\tmov eax,0\n\tmov al,[ebx]\n",p_factor2->localAddr);
-	    else
-	      fprintf(fout,"\tmov ebx,[ebp+%d]\n\tmov eax,0\n\tmov al,[ebx]\n",p_factor2->localAddr);
-	    fprintf(fout,"\tsub esp,1\n\tmov [esp],al;长度压入后再压入数据栈\n");
-	    fprintf(fout,"\tmov [ebp%d],esp\n",pRec->localAddr);//存入数据指针
+		if(p_factor2->type==rsv_string)
+		{
+		  labLop=genName("lab",null,"cpystr2");
+		  labExt=genName("lab",null,"cpystr2_exit");
+		  if(p_factor2->strValId==-1)//动态string, 动态和临时是一个概念吗？？？？
+		  {
+			fprintf(fout,";----------生成动态string%s的代码----------\n",p_factor2->name.c_str());
+			fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
+			if(p_factor2->localAddr<0)
+			  fprintf(fout,"\tmov ebx,[ebp%d]\n\tmov eax,0\n\tmov al,[ebx]\n",p_factor2->localAddr);
+			else
+			  fprintf(fout,"\tmov ebx,[ebp+%d]\n\tmov eax,0\n\tmov al,[ebx]\n",p_factor2->localAddr);
+			fprintf(fout,"\tsub esp,1\n\tmov [esp],al;长度压入后再压入数据栈\n");
+			fprintf(fout,"\tmov [ebp%d],esp\n",pRec->localAddr);//存入数据指针
 
-	    fprintf(fout,"\tcmp eax,0\n");
-	    fprintf(fout,"\tje %s\n",labExt.c_str());
-	    fprintf(fout,"\tmov ecx,0\n");
-	    fprintf(fout,"\tmov esi,ebx\n\tsub esi,1\n");
-	    fprintf(fout,"\tneg eax\n");
-	    fprintf(fout,"%s:\n",labLop.c_str());
-	    fprintf(fout,"\tcmp ecx,eax\n");
-	    fprintf(fout,"\tje %s\n",labExt.c_str());
-	    fprintf(fout,"\tmov dl,[esi+ecx]\n");
-	    fprintf(fout,"\tsub esp,1\n\tmov [esp],dl\n");
-	    fprintf(fout,"\tdec ecx\n");
-	    fprintf(fout,"\tjmp %s\n",labLop.c_str());
-	    fprintf(fout,"%s:\n",labExt.c_str());
-	    fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
-	  }
-	  else if(p_factor2->strValId>0)//常量string
-	  {
-	    fprintf(fout,";----------生成常量string%s的代码----------\n",p_factor2->name.c_str());
-	    fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
-	    fprintf(fout,"\tmov eax,@str_%d_len\n\tsub esp,1\n\tmov [esp],al;长度压入后再压入数据栈\n",p_factor2->strValId);
-	    fprintf(fout,"\tmov [ebp%d],esp\n",pRec->localAddr);//存入数据指针
+			fprintf(fout,"\tcmp eax,0\n");
+			fprintf(fout,"\tje %s\n",labExt.c_str());
+			fprintf(fout,"\tmov ecx,0\n");
+			fprintf(fout,"\tmov esi,ebx\n\tsub esi,1\n");
+			fprintf(fout,"\tneg eax\n");
+			fprintf(fout,"%s:\n",labLop.c_str());
+			fprintf(fout,"\tcmp ecx,eax\n");
+			fprintf(fout,"\tje %s\n",labExt.c_str());
+			fprintf(fout,"\tmov dl,[esi+ecx]\n");
+			fprintf(fout,"\tsub esp,1\n\tmov [esp],dl\n");
+			fprintf(fout,"\tdec ecx\n");
+			fprintf(fout,"\tjmp %s\n",labLop.c_str());
+			fprintf(fout,"%s:\n",labExt.c_str());
+			fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
+		  }
+		  else if(p_factor2->strValId>0)//常量string
+		  {
+			fprintf(fout,";----------生成常量string%s的代码----------\n",p_factor2->name.c_str());
+			fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
+			fprintf(fout,"\tmov eax,@str_%d_len\n\tsub esp,1\n\tmov [esp],al;长度压入后再压入数据栈\n",p_factor2->strValId);
+			fprintf(fout,"\tmov [ebp%d],esp\n",pRec->localAddr);//存入数据指针
 
-	    fprintf(fout,"\tcmp eax,0\n");//测试长度是否是0
-	    fprintf(fout,"\tje %s\n",labExt.c_str());
-	    fprintf(fout,"\tmov ecx,@str_%d_len\n\tdec ecx\n",p_factor2->strValId);//
-	    fprintf(fout,"\tmov esi,@str_%d\n",p_factor2->strValId);//取得首地址
-	    fprintf(fout,"%s:\n",labLop.c_str());
-	    fprintf(fout,"\tcmp ecx,-1\n");
-	    fprintf(fout,"\tje %s\n",labExt.c_str());
-	    fprintf(fout,"\tmov al,[esi+ecx]\n");
-	    fprintf(fout,"\tsub esp,1\n\tmov [esp],al\n");
-	    fprintf(fout,"\tdec ecx\n");
-	    fprintf(fout,"\tjmp %s\n",labLop.c_str());
-	    fprintf(fout,"%s:\n",labExt.c_str());
-	    fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
-	  }
-	  else if(p_factor2->strValId==-2)//全局string
-	  {
-	    fprintf(fout,";----------生成全局string%s的代码----------\n",p_factor2->name.c_str());
-	    fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
-	    if(convert_buffer==0)
-	      fprintf(fout,"\tmov eax,0\n\tmov al,[@str_%s_len]\n\tsub esp,1\n\tmov [esp],al;长度压入后再压入数据栈\n",p_factor2->name.c_str());
-	    else
-	      fprintf(fout,"\tmov eax,0\n\tmov al,[%s_len]\n\tsub esp,1\n\tmov [esp],al;长度压入后再压入数据栈\n",p_factor2->name.c_str());
-	    fprintf(fout,"\tmov [ebp%d],esp\n",pRec->localAddr);//存入数据指针
+			fprintf(fout,"\tcmp eax,0\n");//测试长度是否是0
+			fprintf(fout,"\tje %s\n",labExt.c_str());
+			fprintf(fout,"\tmov ecx,@str_%d_len\n\tdec ecx\n",p_factor2->strValId);//
+			fprintf(fout,"\tmov esi,@str_%d\n",p_factor2->strValId);//取得首地址
+			fprintf(fout,"%s:\n",labLop.c_str());
+			fprintf(fout,"\tcmp ecx,-1\n");
+			fprintf(fout,"\tje %s\n",labExt.c_str());
+			fprintf(fout,"\tmov al,[esi+ecx]\n");
+			fprintf(fout,"\tsub esp,1\n\tmov [esp],al\n");
+			fprintf(fout,"\tdec ecx\n");
+			fprintf(fout,"\tjmp %s\n",labLop.c_str());
+			fprintf(fout,"%s:\n",labExt.c_str());
+			fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
+		  }
+		  else if(p_factor2->strValId==-2)//全局string
+		  {
+			fprintf(fout,";----------生成全局string%s的代码----------\n",p_factor2->name.c_str());
+			fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
+			if(convert_buffer==0)
+			  fprintf(fout,"\tmov eax,0\n\tmov al,[@str_%s_len]\n\tsub esp,1\n\tmov [esp],al;长度压入后再压入数据栈\n",p_factor2->name.c_str());
+			else
+			  fprintf(fout,"\tmov eax,0\n\tmov al,[%s_len]\n\tsub esp,1\n\tmov [esp],al;长度压入后再压入数据栈\n",p_factor2->name.c_str());
+			fprintf(fout,"\tmov [ebp%d],esp\n",pRec->localAddr);//存入数据指针
 
-	    fprintf(fout,"\tcmp eax,0\n");//测试长度是否是0
-	    fprintf(fout,"\tje %s\n",labExt.c_str());
-	    fprintf(fout,"\tsub eax,1\n\tmov ecx,eax\n");
-	    if(convert_buffer==0)
-	      fprintf(fout,"\tmov esi,@str_%s\n",p_factor2->name.c_str());//取得首地址
-	    else
-	      fprintf(fout,"\tmov esi,%s\n",p_factor2->name.c_str());//取得首地址
-	    fprintf(fout,"%s:\n",labLop.c_str());
-	    fprintf(fout,"\tcmp ecx,-1\n");
-	    fprintf(fout,"\tje %s\n",labExt.c_str());
-	    fprintf(fout,"\tmov al,[esi+ecx]\n");
-	    fprintf(fout,"\tsub esp,1\n\tmov [esp],al\n");
-	    fprintf(fout,"\tdec ecx\n");
-	    fprintf(fout,"\tjmp %s\n",labLop.c_str());
-	    fprintf(fout,"%s:\n",labExt.c_str());
-	    fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
-	  }
-	  else if(p_factor2->strValId==0)
-	  {
-	    fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
-	    fprintf(fout,"\tmov eax,0\n\tsub esp,1\n\tmov [esp],al;长度压入后再压入数据栈\n");
-	    fprintf(fout,"\tmov [ebp%d],esp\n",pRec->localAddr);//存入数据指针
-	    fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
-	  }
-	}
-	else if(p_factor2->type==rsv_int) //数字
-	{
-	  labLop=genName("lab",null,"numtostr2");
-	  labExt=genName("lab",null,"numtostr2_exit");
-	  string labNumSign=genName("lab",null,"numsign2");
-	  string labNumSignExt=genName("lab",null,"numsign2_exit");
-	  fprintf(fout,";----------生成number%s的string代码----------\n",p_factor2->name.c_str());
-	  fprintf(fout,"\
-			    \tmov eax,[@s_esp]\n\
-			    \tmov [@s_esp],esp\n\
-			    \tmov esp,eax\n");
-	  if(p_factor2->localAddr==0)//全局的
-	  {
-	    fprintf(fout,"\tmov eax,[@var_%s]\n",p_factor2->name.c_str());
-	  }
-	  else//局部的
-	  {
-	    if(p_factor2->localAddr<0)
-	      fprintf(fout,"\tmov eax,[ebp%d]\n",p_factor2->localAddr);
-	    else
-	      fprintf(fout,"\tmov eax,[ebp+%d]\n",p_factor2->localAddr);
-	  }
-	  fprintf(fout,"\
-			    \tsub esp,1;先把数字的长度位置空出来\n\
-			    \tmov ecx,0\n\tmov [esp],cl\n\
-			    \tmov esi,esp\n");
-	  fprintf(fout,"\tmov [ebp%d],esp\n",pRec->localAddr);//存入数据指针
-	  //确定数字的正负
-	  fprintf(fout,"\tmov edi,0\n");//保存eax符号：0+ 1-
-	  fprintf(fout,"\tcmp eax,0\n");
-	  fprintf(fout,"\tjge %s\n",labNumSignExt.c_str());
-	  fprintf(fout,"%s:\n",labNumSign.c_str());
-	  fprintf(fout,"\tneg eax\n");
-	  fprintf(fout,"\tmov edi,1\n");
-	  fprintf(fout,"%s:\n",labNumSignExt.c_str());
+			fprintf(fout,"\tcmp eax,0\n");//测试长度是否是0
+			fprintf(fout,"\tje %s\n",labExt.c_str());
+			fprintf(fout,"\tsub eax,1\n\tmov ecx,eax\n");
+			if(convert_buffer==0)
+			  fprintf(fout,"\tmov esi,@str_%s\n",p_factor2->name.c_str());//取得首地址
+			else
+			  fprintf(fout,"\tmov esi,%s\n",p_factor2->name.c_str());//取得首地址
+			fprintf(fout,"%s:\n",labLop.c_str());
+			fprintf(fout,"\tcmp ecx,-1\n");
+			fprintf(fout,"\tje %s\n",labExt.c_str());
+			fprintf(fout,"\tmov al,[esi+ecx]\n");
+			fprintf(fout,"\tsub esp,1\n\tmov [esp],al\n");
+			fprintf(fout,"\tdec ecx\n");
+			fprintf(fout,"\tjmp %s\n",labLop.c_str());
+			fprintf(fout,"%s:\n",labExt.c_str());
+			fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
+		  }
+		  else if(p_factor2->strValId==0)
+		  {
+			fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
+			fprintf(fout,"\tmov eax,0\n\tsub esp,1\n\tmov [esp],al;长度压入后再压入数据栈\n");
+			fprintf(fout,"\tmov [ebp%d],esp\n",pRec->localAddr);//存入数据指针
+			fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
+		  }
+		}
+		else if(p_factor2->type==rsv_int) //数字
+		{
+		  labLop=genName("lab",null,"numtostr2");
+		  labExt=genName("lab",null,"numtostr2_exit");
+		  string labNumSign=genName("lab",null,"numsign2");
+		  string labNumSignExt=genName("lab",null,"numsign2_exit");
+		  fprintf(fout,";----------生成number%s的string代码----------\n",p_factor2->name.c_str());
+		  fprintf(fout,"\
+					\tmov eax,[@s_esp]\n\
+					\tmov [@s_esp],esp\n\
+					\tmov esp,eax\n");
+		  if(p_factor2->localAddr==0)//全局的
+		  {
+			fprintf(fout,"\tmov eax,[@var_%s]\n",p_factor2->name.c_str());
+		  }
+		  else//局部的
+		  {
+			if(p_factor2->localAddr<0)
+			  fprintf(fout,"\tmov eax,[ebp%d]\n",p_factor2->localAddr);
+			else
+			  fprintf(fout,"\tmov eax,[ebp+%d]\n",p_factor2->localAddr);
+		  }
+		  fprintf(fout,"\
+					\tsub esp,1;先把数字的长度位置空出来\n\
+					\tmov ecx,0\n\tmov [esp],cl\n\
+					\tmov esi,esp\n");
+		  fprintf(fout,"\tmov [ebp%d],esp\n",pRec->localAddr);//存入数据指针
+		  //确定数字的正负
+		  fprintf(fout,"\tmov edi,0\n");//保存eax符号：0+ 1-
+		  fprintf(fout,"\tcmp eax,0\n");
+		  fprintf(fout,"\tjge %s\n",labNumSignExt.c_str());
+		  fprintf(fout,"%s:\n",labNumSign.c_str());
+		  fprintf(fout,"\tneg eax\n");
+		  fprintf(fout,"\tmov edi,1\n");
+		  fprintf(fout,"%s:\n",labNumSignExt.c_str());
 
-	  fprintf(fout,"\tmov ebx,10\n");
-	  fprintf(fout,"%s:\n",labLop.c_str());
-	  fprintf(fout,"\
-			    \tmov edx,0\n\
-			    \tidiv ebx\n\
-			    \tmov cl,[esi]\n\
-			    \tinc cl\n\
-			    \tmov [esi],cl\n\
-			    \tsub esp,1\n\
-			    \tadd dl,48\n\
-			    \tmov [esp],dl\n\
-			    \tcmp eax,0\n");
-	  fprintf(fout,"\tjne %s\n",labLop.c_str());
+		  fprintf(fout,"\tmov ebx,10\n");
+		  fprintf(fout,"%s:\n",labLop.c_str());
+		  fprintf(fout,"\
+					\tmov edx,0\n\
+					\tidiv ebx\n\
+					\tmov cl,[esi]\n\
+					\tinc cl\n\
+					\tmov [esi],cl\n\
+					\tsub esp,1\n\
+					\tadd dl,48\n\
+					\tmov [esp],dl\n\
+					\tcmp eax,0\n");
+		  fprintf(fout,"\tjne %s\n",labLop.c_str());
 
-	  fprintf(fout,"\tcmp edi,0\n");
-	  fprintf(fout,"\tje %s\n",labExt.c_str());
-	  fprintf(fout,"\tsub esp,1\n\tmov ecx,%d\n\tmov [esp],cl\n",'-');
-	  fprintf(fout,"\tmov cl,[esi]\n\tinc cl\n\tmov [esi],cl\n");
-	  fprintf(fout,"%s:\n",labExt.c_str());
-	  fprintf(fout,"\
-			    \tmov eax,[@s_esp]\n\
-			    \tmov [@s_esp],esp\n\
-			    \tmov esp,eax\n");
-	}
-	else if(p_factor2->type==rsv_char)
-	{
-	  fprintf(fout,";----------生成char%s的string代码----------\n",p_factor2->name.c_str());
-	  fprintf(fout,"\
-			    \tmov eax,[@s_esp]\n\
-			    \tmov [@s_esp],esp\n\
-			    \tmov esp,eax\n");
-	  if(p_factor2->localAddr==0)//全局的
-	  {
-	    fprintf(fout,"\tmov eax,[@var_%s]\n",p_factor2->name.c_str());
-	  }
-	  else//局部的
-	  {
-	    if(p_factor2->localAddr<0)
-	      fprintf(fout,"\tmov eax,[ebp%d]\n",p_factor2->localAddr);
-	    else
-	      fprintf(fout,"\tmov eax,[ebp+%d]\n",p_factor2->localAddr);
-	  }
-	  fprintf(fout,"\tsub esp,1\n\tmov bl,1\n\tmov [esp],bl\n\tmov [ebp%d],esp\n",pRec->localAddr);//存入数据指针
-	  fprintf(fout,"\tsub esp,1\n\tmov [esp],al\n");
-	  fprintf(fout,"\
-			    \tmov eax,[@s_esp]\n\
-			    \tmov [@s_esp],esp\n\
-			    \tmov esp,eax\n");
-	}
-	fprintf(fout,";--------------------------------------------------\n");
+		  fprintf(fout,"\tcmp edi,0\n");
+		  fprintf(fout,"\tje %s\n",labExt.c_str());
+		  fprintf(fout,"\tsub esp,1\n\tmov ecx,%d\n\tmov [esp],cl\n",'-');
+		  fprintf(fout,"\tmov cl,[esi]\n\tinc cl\n\tmov [esi],cl\n");
+		  fprintf(fout,"%s:\n",labExt.c_str());
+		  fprintf(fout,"\
+					\tmov eax,[@s_esp]\n\
+					\tmov [@s_esp],esp\n\
+					\tmov esp,eax\n");
+		}
+		else if(p_factor2->type==rsv_char)
+		{
+		  fprintf(fout,";----------生成char%s的string代码----------\n",p_factor2->name.c_str());
+		  fprintf(fout,"\
+					\tmov eax,[@s_esp]\n\
+					\tmov [@s_esp],esp\n\
+					\tmov esp,eax\n");
+		  if(p_factor2->localAddr==0)//全局的
+		  {
+			fprintf(fout,"\tmov eax,[@var_%s]\n",p_factor2->name.c_str());
+		  }
+		  else//局部的
+		  {
+			if(p_factor2->localAddr<0)
+			  fprintf(fout,"\tmov eax,[ebp%d]\n",p_factor2->localAddr);
+			else
+			  fprintf(fout,"\tmov eax,[ebp+%d]\n",p_factor2->localAddr);
+		  }
+		  fprintf(fout,"\tsub esp,1\n\tmov bl,1\n\tmov [esp],bl\n\tmov [ebp%d],esp\n",pRec->localAddr);//存入数据指针
+		  fprintf(fout,"\tsub esp,1\n\tmov [esp],al\n");
+		  fprintf(fout,"\
+					\tmov eax,[@s_esp]\n\
+					\tmov [@s_esp],esp\n\
+					\tmov esp,eax\n");
+		}
+		fprintf(fout,";--------------------------------------------------\n");
 
-	if(p_factor1->type==rsv_string)
-	{
-	  labLop=genName("lab",null,"cpystr1");
-	  labExt=genName("lab",null,"cpystr1_exit");
-	  if(p_factor1->strValId==-1)//动态string
-	  {
-	    fprintf(fout,";----------生成动态string%s的代码----------\n",p_factor1->name.c_str());
-	    fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
-	    if(p_factor1->localAddr<0)
-		    fprintf(fout,"\tmov ebx,[ebp%d]\n\tmov eax,0\n\tmov al,[ebx]\n",p_factor1->localAddr);
-		  else
-		  	fprintf(fout,"\tmov ebx,[ebp+%d]\n\tmov eax,0\n\tmov al,[ebx]\n",p_factor1->localAddr);
-	    fprintf(fout,"\tcmp eax,0\n");
-	    fprintf(fout,"\tje %s\n",labExt.c_str());
+		if(p_factor1->type==rsv_string)
+		{
+		  labLop=genName("lab",null,"cpystr1");
+		  labExt=genName("lab",null,"cpystr1_exit");
+		  if(p_factor1->strValId==-1)//动态string
+		  {
+			fprintf(fout,";----------生成动态string%s的代码----------\n",p_factor1->name.c_str());
+			fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
+			if(p_factor1->localAddr<0)
+				fprintf(fout,"\tmov ebx,[ebp%d]\n\tmov eax,0\n\tmov al,[ebx]\n",p_factor1->localAddr);
+			  else
+				fprintf(fout,"\tmov ebx,[ebp+%d]\n\tmov eax,0\n\tmov al,[ebx]\n",p_factor1->localAddr);
+			fprintf(fout,"\tcmp eax,0\n");
+			fprintf(fout,"\tje %s\n",labExt.c_str());
 
-	    fprintf(fout,"\tmov ebx,[ebp%d];\n",pRec->localAddr);//将结果字符串的长度追加
+			fprintf(fout,"\tmov ebx,[ebp%d];\n",pRec->localAddr);//将结果字符串的长度追加
 
-	    fprintf(fout,"\tmov edx,0\n\tmov dl,[ebx]\n");
-	    fprintf(fout,"\tadd edx,eax\n");
-	    fprintf(fout,"\tmov [ebx],dl\n");
+			fprintf(fout,"\tmov edx,0\n\tmov dl,[ebx]\n");
+			fprintf(fout,"\tadd edx,eax\n");
+			fprintf(fout,"\tmov [ebx],dl\n");
 
-	    fprintf(fout,"\tmov ecx,0\n");
-	    if(p_factor1->localAddr<0)
-	      fprintf(fout,"\tmov esi,[ebp%d]\n\tsub esi,1\n",p_factor1->localAddr);//消除偏移
-	    else
-	      fprintf(fout,"\tmov esi,[ebp+%d]\n\tsub esi,1\n",p_factor1->localAddr);//消除偏移
-	    fprintf(fout,"\tneg eax\n");
-	    //仅仅是测试字符串总长是否超过255，超出部分忽略
-	    fprintf(fout,"\tcmp edx,255\n");
-	    fprintf(fout,"\tjna %s\n",labLop.c_str());
-	    fprintf(fout,"\tcall @str2long\n");
+			fprintf(fout,"\tmov ecx,0\n");
+			if(p_factor1->localAddr<0)
+			  fprintf(fout,"\tmov esi,[ebp%d]\n\tsub esi,1\n",p_factor1->localAddr);//消除偏移
+			else
+			  fprintf(fout,"\tmov esi,[ebp+%d]\n\tsub esi,1\n",p_factor1->localAddr);//消除偏移
+			fprintf(fout,"\tneg eax\n");
+			//仅仅是测试字符串总长是否超过255，超出部分忽略
+			fprintf(fout,"\tcmp edx,255\n");
+			fprintf(fout,"\tjna %s\n",labLop.c_str());
+			fprintf(fout,"\tcall @str2long\n");
 
-	    fprintf(fout,"%s:\n",labLop.c_str());
-	    fprintf(fout,"\tcmp ecx,eax\n");
-	    fprintf(fout,"\tje %s\n",labExt.c_str());
-	    fprintf(fout,"\tmov dl,[esi+ecx]\n");
-	    fprintf(fout,"\tsub esp,1\n\tmov [esp],dl\n");
-	    fprintf(fout,"\tdec ecx\n");
-	    fprintf(fout,"\tjmp %s\n",labLop.c_str());
-	    fprintf(fout,"%s:\n",labExt.c_str());
-	    fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
-	  }
-	  else if(p_factor1->strValId>0)//常量string
-	  {
-	    fprintf(fout,";----------生成常量string%s的代码----------\n",p_factor1->name.c_str());
-	    fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
-	    fprintf(fout,"\tmov eax,@str_%d_len\n",p_factor1->strValId);
-	    fprintf(fout,"\tcmp eax,0\n");
+			fprintf(fout,"%s:\n",labLop.c_str());
+			fprintf(fout,"\tcmp ecx,eax\n");
+			fprintf(fout,"\tje %s\n",labExt.c_str());
+			fprintf(fout,"\tmov dl,[esi+ecx]\n");
+			fprintf(fout,"\tsub esp,1\n\tmov [esp],dl\n");
+			fprintf(fout,"\tdec ecx\n");
+			fprintf(fout,"\tjmp %s\n",labLop.c_str());
+			fprintf(fout,"%s:\n",labExt.c_str());
+			fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
+		  }
+		  else if(p_factor1->strValId>0)//常量string
+		  {
+			fprintf(fout,";----------生成常量string%s的代码----------\n",p_factor1->name.c_str());
+			fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
+			fprintf(fout,"\tmov eax,@str_%d_len\n",p_factor1->strValId);
+			fprintf(fout,"\tcmp eax,0\n");
 
-	    fprintf(fout,"\tje %s\n",labExt.c_str());
-	    fprintf(fout,"\tmov ebx,[ebp%d];\n",pRec->localAddr);//将结果字符串的长度追加
-	    fprintf(fout,"\tmov edx,0\n\tmov dl,[ebx]\n");
-	    fprintf(fout,"\tadd edx,eax\n");
-	    fprintf(fout,"\tmov [ebx],dl\n");
+			fprintf(fout,"\tje %s\n",labExt.c_str());
+			fprintf(fout,"\tmov ebx,[ebp%d];\n",pRec->localAddr);//将结果字符串的长度追加
+			fprintf(fout,"\tmov edx,0\n\tmov dl,[ebx]\n");
+			fprintf(fout,"\tadd edx,eax\n");
+			fprintf(fout,"\tmov [ebx],dl\n");
 
-	    fprintf(fout,"\tmov ecx,@str_%d_len\n\tdec ecx\n",p_factor1->strValId);
-	    fprintf(fout,"\tmov esi,@str_%d\n",p_factor1->strValId);
-	    //仅仅是测试字符串总长是否超过255，超出报错
-	    fprintf(fout,"\tcmp edx,255\n");
-	    fprintf(fout,"\tjna %s\n",labLop.c_str());
-	    fprintf(fout,"\tcall @str2long\n");
+			fprintf(fout,"\tmov ecx,@str_%d_len\n\tdec ecx\n",p_factor1->strValId);
+			fprintf(fout,"\tmov esi,@str_%d\n",p_factor1->strValId);
+			//仅仅是测试字符串总长是否超过255，超出报错
+			fprintf(fout,"\tcmp edx,255\n");
+			fprintf(fout,"\tjna %s\n",labLop.c_str());
+			fprintf(fout,"\tcall @str2long\n");
 
-	    fprintf(fout,"%s:\n",labLop.c_str());
-	    fprintf(fout,"\tcmp ecx,-1\n");
-	    fprintf(fout,"\tje %s\n",labExt.c_str());
-	    fprintf(fout,"\tmov al,[esi+ecx]\n");
-	    fprintf(fout,"\tsub esp,1\n\tmov [esp],al\n");
-	    fprintf(fout,"\tdec ecx\n");
-	    fprintf(fout,"\tjmp %s\n",labLop.c_str());
-	    fprintf(fout,"%s:\n",labExt.c_str());
-	    fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
-	  }
-	  else if(p_factor1->strValId==-2)//全局string
-	  {
-	    fprintf(fout,";----------生成全局string%s的代码----------\n",p_factor1->name.c_str());
-	    fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
-	    if(convert_buffer==0)
-	      fprintf(fout,"\tmov eax,0\n\tmov al,[@str_%s_len]\n",p_factor1->name.c_str());
-	    else
-	      fprintf(fout,"\tmov eax,0\n\tmov al,[%s_len]\n",p_factor1->name.c_str());
-	    fprintf(fout,"\tcmp eax,0\n");
+			fprintf(fout,"%s:\n",labLop.c_str());
+			fprintf(fout,"\tcmp ecx,-1\n");
+			fprintf(fout,"\tje %s\n",labExt.c_str());
+			fprintf(fout,"\tmov al,[esi+ecx]\n");
+			fprintf(fout,"\tsub esp,1\n\tmov [esp],al\n");
+			fprintf(fout,"\tdec ecx\n");
+			fprintf(fout,"\tjmp %s\n",labLop.c_str());
+			fprintf(fout,"%s:\n",labExt.c_str());
+			fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
+		  }
+		  else if(p_factor1->strValId==-2)//全局string
+		  {
+			fprintf(fout,";----------生成全局string%s的代码----------\n",p_factor1->name.c_str());
+			fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
+			if(convert_buffer==0)
+			  fprintf(fout,"\tmov eax,0\n\tmov al,[@str_%s_len]\n",p_factor1->name.c_str());
+			else
+			  fprintf(fout,"\tmov eax,0\n\tmov al,[%s_len]\n",p_factor1->name.c_str());
+			fprintf(fout,"\tcmp eax,0\n");
 
-	    fprintf(fout,"\tje %s\n",labExt.c_str());
-	    fprintf(fout,"\tmov ebx,[ebp%d];\n",pRec->localAddr);//将结果字符串的长度追加
-	    fprintf(fout,"\tmov edx,0\n\tmov dl,[ebx]\n");
-	    fprintf(fout,"\tadd edx,eax\n");
-	    fprintf(fout,"\tmov [ebx],dl\n");
+			fprintf(fout,"\tje %s\n",labExt.c_str());
+			fprintf(fout,"\tmov ebx,[ebp%d];\n",pRec->localAddr);//将结果字符串的长度追加
+			fprintf(fout,"\tmov edx,0\n\tmov dl,[ebx]\n");
+			fprintf(fout,"\tadd edx,eax\n");
+			fprintf(fout,"\tmov [ebx],dl\n");
 
-	    fprintf(fout,"\tsub eax,1\n\tmov ecx,eax\n");
-	    if(convert_buffer==0)
-	      fprintf(fout,"\tmov esi,@str_%s\n",p_factor1->name.c_str());
-	    else
-	      fprintf(fout,"\tmov esi,%s\n",p_factor1->name.c_str());
-	    //仅仅是测试字符串总长是否超过255，超出报错
-	    fprintf(fout,"\tcmp edx,255\n");
-	    fprintf(fout,"\tjna %s\n",labLop.c_str());
-	    fprintf(fout,"\tcall @str2long\n");
+			fprintf(fout,"\tsub eax,1\n\tmov ecx,eax\n");
+			if(convert_buffer==0)
+			  fprintf(fout,"\tmov esi,@str_%s\n",p_factor1->name.c_str());
+			else
+			  fprintf(fout,"\tmov esi,%s\n",p_factor1->name.c_str());
+			//仅仅是测试字符串总长是否超过255，超出报错
+			fprintf(fout,"\tcmp edx,255\n");
+			fprintf(fout,"\tjna %s\n",labLop.c_str());
+			fprintf(fout,"\tcall @str2long\n");
 
-	    fprintf(fout,"%s:\n",labLop.c_str());
-	    fprintf(fout,"\tcmp ecx,-1\n");
-	    fprintf(fout,"\tje %s\n",labExt.c_str());
-	    fprintf(fout,"\tmov al,[esi+ecx]\n");
-	    fprintf(fout,"\tsub esp,1\n\tmov [esp],al\n");
-	    fprintf(fout,"\tdec ecx\n");
-	    fprintf(fout,"\tjmp %s\n",labLop.c_str());
-	    fprintf(fout,"%s:\n",labExt.c_str());
-	    fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
-	  }
-	}
-	else if(p_factor1->type==rsv_int) //数字
-	{
-	  labLop=genName("lab",null,"numtostr1");
-	  labExt=genName("lab",null,"numtostr1_exit");
-	  string labNumSign=genName("lab",null,"numsign1");
-	  string labNumSignExt=genName("lab",null,"numsign1_exit");
-	  string lab2long=genName("lab",null,"numsign1_add");
-	  fprintf(fout,";----------生成number%s的string代码----------\n",p_factor1->name.c_str());
-	  fprintf(fout,"\
-			    \tmov eax,[@s_esp]\n\
-			    \tmov [@s_esp],esp\n\
-			    \tmov esp,eax\n");
-	  if(p_factor1->localAddr==0)//全局的
-	  {
-	    fprintf(fout,"\tmov eax,[@var_%s]\n",p_factor1->name.c_str());
-	  }
-	  else//局部的
-	  {
-	    if(p_factor1->localAddr<0)
-	      fprintf(fout,"\tmov eax,[ebp%d]\n",p_factor1->localAddr);
-	    else
-	      fprintf(fout,"\tmov eax,[ebp+%d]\n",p_factor1->localAddr);
-	  }
-	  fprintf(fout,"\tmov esi,[ebp%d];\n",pRec->localAddr);//将临时字符串的长度地址记录下来
+			fprintf(fout,"%s:\n",labLop.c_str());
+			fprintf(fout,"\tcmp ecx,-1\n");
+			fprintf(fout,"\tje %s\n",labExt.c_str());
+			fprintf(fout,"\tmov al,[esi+ecx]\n");
+			fprintf(fout,"\tsub esp,1\n\tmov [esp],al\n");
+			fprintf(fout,"\tdec ecx\n");
+			fprintf(fout,"\tjmp %s\n",labLop.c_str());
+			fprintf(fout,"%s:\n",labExt.c_str());
+			fprintf(fout,"\tmov eax,[@s_esp]\n\tmov [@s_esp],esp\n\tmov esp,eax\n");//esp<=>[@s_esp]
+		  }
+		}
+		else if(p_factor1->type==rsv_int) //数字
+		{
+		  labLop=genName("lab",null,"numtostr1");
+		  labExt=genName("lab",null,"numtostr1_exit");
+		  string labNumSign=genName("lab",null,"numsign1");
+		  string labNumSignExt=genName("lab",null,"numsign1_exit");
+		  string lab2long=genName("lab",null,"numsign1_add");
+		  fprintf(fout,";----------生成number%s的string代码----------\n",p_factor1->name.c_str());
+		  fprintf(fout,"\
+					\tmov eax,[@s_esp]\n\
+					\tmov [@s_esp],esp\n\
+					\tmov esp,eax\n");
+		  if(p_factor1->localAddr==0)//全局的
+		  {
+			fprintf(fout,"\tmov eax,[@var_%s]\n",p_factor1->name.c_str());
+		  }
+		  else//局部的
+		  {
+			if(p_factor1->localAddr<0)
+			  fprintf(fout,"\tmov eax,[ebp%d]\n",p_factor1->localAddr);
+			else
+			  fprintf(fout,"\tmov eax,[ebp+%d]\n",p_factor1->localAddr);
+		  }
+		  fprintf(fout,"\tmov esi,[ebp%d];\n",pRec->localAddr);//将临时字符串的长度地址记录下来
 
-	  //确定数字的正负
-	  fprintf(fout,"\tmov edi,0\n");//保存eax符号：0+ 1-
-	  fprintf(fout,"\tcmp eax,0\n");
-	  fprintf(fout,"\tjge %s\n",labNumSignExt.c_str());
-	  fprintf(fout,"%s:\n",labNumSign.c_str());
-	  fprintf(fout,"\tneg eax\n");
-	  fprintf(fout,"\tmov edi,1\n");
-	  fprintf(fout,"%s:\n",labNumSignExt.c_str());
+		  //确定数字的正负
+		  fprintf(fout,"\tmov edi,0\n");//保存eax符号：0+ 1-
+		  fprintf(fout,"\tcmp eax,0\n");
+		  fprintf(fout,"\tjge %s\n",labNumSignExt.c_str());
+		  fprintf(fout,"%s:\n",labNumSign.c_str());
+		  fprintf(fout,"\tneg eax\n");
+		  fprintf(fout,"\tmov edi,1\n");
+		  fprintf(fout,"%s:\n",labNumSignExt.c_str());
 
-	  //累加长度，压入数据
-	  fprintf(fout,"\tmov ebx,10\n");
-	  fprintf(fout,"%s:\n",labLop.c_str());
-	  fprintf(fout,"\
-			    \tmov edx,0\n\
-			    \tidiv ebx\n\
-			    \tmov cl,[esi]\n\
-			    \tinc cl\n\
-			    \tmov [esi],cl\n\
-			    \tsub esp,1\n\
-			    \tadd dl,48\n\
-			    \tmov [esp],dl\n\
-			    \tcmp eax,0\n");
-	  fprintf(fout,"\tjne %s\n",labLop.c_str());
+		  //累加长度，压入数据
+		  fprintf(fout,"\tmov ebx,10\n");
+		  fprintf(fout,"%s:\n",labLop.c_str());
+		  fprintf(fout,"\
+					\tmov edx,0\n\
+					\tidiv ebx\n\
+					\tmov cl,[esi]\n\
+					\tinc cl\n\
+					\tmov [esi],cl\n\
+					\tsub esp,1\n\
+					\tadd dl,48\n\
+					\tmov [esp],dl\n\
+					\tcmp eax,0\n");
+		  fprintf(fout,"\tjne %s\n",labLop.c_str());
 
-	  //添加符号
-	  fprintf(fout,"\tcmp edi,0\n");
-	  fprintf(fout,"\tje %s\n",lab2long.c_str());
-	  fprintf(fout,"\tsub esp,1\n\tmov ecx,%d\n\tmov [esp],cl\n",'-');
-	  fprintf(fout,"\tmov cl,[esi]\n\tinc cl\n\tmov [esi],cl\n");
+		  //添加符号
+		  fprintf(fout,"\tcmp edi,0\n");
+		  fprintf(fout,"\tje %s\n",lab2long.c_str());
+		  fprintf(fout,"\tsub esp,1\n\tmov ecx,%d\n\tmov [esp],cl\n",'-');
+		  fprintf(fout,"\tmov cl,[esi]\n\tinc cl\n\tmov [esi],cl\n");
 
-	  fprintf(fout,"%s:\n",lab2long.c_str());
-	  //仅仅是测试字符串总长是否超过255，超出报错
-	  fprintf(fout,"\tcmp cl,255\n");
-	  fprintf(fout,"\tjna %s\n",labExt.c_str());
-	  fprintf(fout,"\tcall @str2long\n");
-	  fprintf(fout,"%s:\n",labExt.c_str());
-	  fprintf(fout,"\
-			    \tmov eax,[@s_esp]\n\
-			    \tmov [@s_esp],esp\n\
-			    \tmov esp,eax\n");
-	}
-	else if(p_factor1->type==rsv_char)
-	{
-	  labExt=genName("lab",null,"chtostr2_exit");
-	  fprintf(fout,";----------生成char%s的string代码----------\n",p_factor1->name.c_str());
-	  fprintf(fout,"\
-			    \tmov eax,[@s_esp]\n\
-			    \tmov [@s_esp],esp\n\
-			    \tmov esp,eax\n");
-	  if(p_factor1->localAddr==0)//全局的
-	  {
-	    fprintf(fout,"\tmov eax,[@var_%s]\n",p_factor1->name.c_str());
-	  }
-	  else//局部的
-	  {
-	    if(p_factor1->localAddr<0)
-	      fprintf(fout,"\tmov eax,[ebp%d]\n",p_factor1->localAddr);
-	    else
-	      fprintf(fout,"\tmov eax,[ebp+%d]\n",p_factor1->localAddr);
-	  }
-	  fprintf(fout,"\tmov esi,[ebp%d];\n",pRec->localAddr);//将临时字符串的长度地址记录下来
+		  fprintf(fout,"%s:\n",lab2long.c_str());
+		  //仅仅是测试字符串总长是否超过255，超出报错
+		  fprintf(fout,"\tcmp cl,255\n");
+		  fprintf(fout,"\tjna %s\n",labExt.c_str());
+		  fprintf(fout,"\tcall @str2long\n");
+		  fprintf(fout,"%s:\n",labExt.c_str());
+		  fprintf(fout,"\
+					\tmov eax,[@s_esp]\n\
+					\tmov [@s_esp],esp\n\
+					\tmov esp,eax\n");
+		}
+		else if(p_factor1->type==rsv_char)
+		{
+		  labExt=genName("lab",null,"chtostr2_exit");
+		  fprintf(fout,";----------生成char%s的string代码----------\n",p_factor1->name.c_str());
+		  fprintf(fout,"\
+					\tmov eax,[@s_esp]\n\
+					\tmov [@s_esp],esp\n\
+					\tmov esp,eax\n");
+		  if(p_factor1->localAddr==0)//全局的
+		  {
+			fprintf(fout,"\tmov eax,[@var_%s]\n",p_factor1->name.c_str());
+		  }
+		  else//局部的
+		  {
+			if(p_factor1->localAddr<0)
+			  fprintf(fout,"\tmov eax,[ebp%d]\n",p_factor1->localAddr);
+			else
+			  fprintf(fout,"\tmov eax,[ebp+%d]\n",p_factor1->localAddr);
+		  }
+		  fprintf(fout,"\tmov esi,[ebp%d];\n",pRec->localAddr);//将临时字符串的长度地址记录下来
 
-	  //累加长度，压入数据
-	  fprintf(fout,"\
-			    \tmov cl,[esi]\n\
-			    \tinc cl\n\
-			    \tmov [esi],cl\n\
-			    \tsub esp,1\n\
-			    \tmov [esp],al\n");
+		  //累加长度，压入数据
+		  fprintf(fout,"\
+					\tmov cl,[esi]\n\
+					\tinc cl\n\
+					\tmov [esi],cl\n\
+					\tsub esp,1\n\
+					\tmov [esp],al\n");
 
-	  //仅仅是测试字符串总长是否超过255，超出报错
-	  fprintf(fout,"\tcmp cl,255\n");
-	  fprintf(fout,"\tjna %s\n",labExt.c_str());
-	  fprintf(fout,"\tcall @str2long\n");
-	  fprintf(fout,"%s:\n",labExt.c_str());
-	  fprintf(fout,"\
-			    \tmov eax,[@s_esp]\n\
-			    \tmov [@s_esp],esp\n\
-			    \tmov esp,eax\n");
-	}
-	fprintf(fout,";--------------------------------------------------\n");
+		  //仅仅是测试字符串总长是否超过255，超出报错
+		  fprintf(fout,"\tcmp cl,255\n");
+		  fprintf(fout,"\tjna %s\n",labExt.c_str());
+		  fprintf(fout,"\tcall @str2long\n");
+		  fprintf(fout,"%s:\n",labExt.c_str());
+		  fprintf(fout,"\
+					\tmov eax,[@s_esp]\n\
+					\tmov [@s_esp],esp\n\
+					\tmov esp,eax\n");
+		}
+		fprintf(fout,";--------------------------------------------------\n");
 
 
-	break;
+		break;
       case rsv_int://需要考虑+ - * / 类型：int 算术运算
             	//cout<<"算术运算"<<endl;
-	if(p_factor1->localAddr==0)//全局的
-	  fprintf(fout,"\tmov eax,[@var_%s]\n",p_factor1->name.c_str());
-	else//局部的
-	{
-	    if(p_factor1->localAddr<0)
-	      fprintf(fout,"\tmov eax,[ebp%d]\n",p_factor1->localAddr);
-	    else
-	      fprintf(fout,"\tmov eax,[ebp+%d]\n",p_factor1->localAddr);
-	}
-	if(p_factor2->localAddr==0)//全局的
-	  fprintf(fout,"\tmov ebx,[@var_%s]\n",p_factor2->name.c_str());
-	else//局部的
-	{
-	  if(p_factor2->localAddr<0)
-	    fprintf(fout,"\tmov ebx,[ebp%d]\n",p_factor2->localAddr);
-	  else
-	    fprintf(fout,"\tmov ebx,[ebp+%d]\n",p_factor2->localAddr);
-	}
-	switch(opp)
-	{
-	  case addi:
-	    fprintf(fout,"\tadd eax,ebx\n");
-	    break;
-	  case subs:
-	    fprintf(fout,"\tsub eax,ebx\n");
-	    break;
-	  case mult:
-	    fprintf(fout,"\timul ebx\n");
-	    break;
-	  case divi:
-	    fprintf(fout,"\tmov edx,0\n");
-	    fprintf(fout,"\tidiv ebx\n");
-	    break;
-	}
-	fprintf(fout,"\tmov [ebp%d],eax\n",pRec->localAddr);
-	break;
+		if(p_factor1->localAddr==0)//全局的
+		  fprintf(fout,"\tmov eax,[@var_%s]\n",p_factor1->name.c_str());
+		else//局部的
+		{
+			if(p_factor1->localAddr<0)
+			  fprintf(fout,"\tmov eax,[ebp%d]\n",p_factor1->localAddr);
+			else
+			  fprintf(fout,"\tmov eax,[ebp+%d]\n",p_factor1->localAddr);
+		}
+		if(p_factor2->localAddr==0)//全局的
+		  fprintf(fout,"\tmov ebx,[@var_%s]\n",p_factor2->name.c_str());
+		else//局部的
+		{
+		  if(p_factor2->localAddr<0)
+			fprintf(fout,"\tmov ebx,[ebp%d]\n",p_factor2->localAddr);
+		  else
+			fprintf(fout,"\tmov ebx,[ebp+%d]\n",p_factor2->localAddr);
+		}
+		switch(opp)
+		{
+		  case addi:
+			fprintf(fout,"\tadd eax,ebx\n");
+			break;
+		  case subs:
+			fprintf(fout,"\tsub eax,ebx\n");
+			break;
+		  case mult:
+			fprintf(fout,"\timul ebx\n");
+			break;
+		  case divi:
+			fprintf(fout,"\tmov edx,0\n");
+			fprintf(fout,"\tidiv ebx\n");
+			break;
+		}
+		fprintf(fout,"\tmov [ebp%d],eax\n",pRec->localAddr);
+		break;
      case rsv_char://比较运算
      	if(p_factor1->type==rsv_string)
      	{
-	  //cout<<"字符串比较运算"<<endl;
-
+		  //cout<<"字符串比较运算"<<endl;
      	}
      	else
      	{
-	  //cout<<"基本比较运算"<<endl;
-	  labLop=genName("lab",null,"base_cmp");
-	  labExt=genName("lab",null,"base_cmp_exit");
-	  if(p_factor1->localAddr==0)//全局的
-	    fprintf(fout,"\tmov eax,[@var_%s]\n",p_factor1->name.c_str());
-	  else//局部的
-	  {
-	    if(p_factor1->localAddr<0)
-	      fprintf(fout,"\tmov eax,[ebp%d]\n",p_factor1->localAddr);
-	    else
-	      fprintf(fout,"\tmov eax,[ebp+%d]\n",p_factor1->localAddr);
-	  }
-	  if(p_factor2->localAddr==0)//全局的
-	    fprintf(fout,"\tmov ebx,[@var_%s]\n",p_factor2->name.c_str());
-	  else//局部的
-	  {
-	    if(p_factor2->localAddr<0)
-	      fprintf(fout,"\tmov ebx,[ebp%d]\n",p_factor2->localAddr);
-	    else
-	      fprintf(fout,"\tmov ebx,[ebp+%d]\n",p_factor2->localAddr);
-	  }
-	  fprintf(fout,"\tcmp eax,ebx\n");
-	  switch(opp)
-	  {
-	    case gt:
-	      fprintf(fout,"\tjg %s\n",labLop.c_str());
-	      break;
-	    case ge:
-	      fprintf(fout,"\tjge %s\n",labLop.c_str());
-	      break;
-	    case lt:
-	      fprintf(fout,"\tjl %s\n",labLop.c_str());
-	      break;
-	    case le:
-	      fprintf(fout,"\tjle %s\n",labLop.c_str());
-	      break;
-	    case equ:
-	      fprintf(fout,"\tje %s\n",labLop.c_str());
-	      break;
-	    case nequ:
-	      fprintf(fout,"\tjne %s\n",labLop.c_str());
-	      break;
-	  }
+		  //cout<<"基本比较运算"<<endl;
+		  labLop=genName("lab",null,"base_cmp");
+		  labExt=genName("lab",null,"base_cmp_exit");
+		  if(p_factor1->localAddr==0)//全局的
+			fprintf(fout,"\tmov eax,[@var_%s]\n",p_factor1->name.c_str());
+		  else//局部的
+		  {
+			if(p_factor1->localAddr<0)
+			  fprintf(fout,"\tmov eax,[ebp%d]\n",p_factor1->localAddr);
+			else
+			  fprintf(fout,"\tmov eax,[ebp+%d]\n",p_factor1->localAddr);
+		  }
+		  if(p_factor2->localAddr==0)//全局的
+			fprintf(fout,"\tmov ebx,[@var_%s]\n",p_factor2->name.c_str());
+		  else//局部的
+		  {
+			if(p_factor2->localAddr<0)
+			  fprintf(fout,"\tmov ebx,[ebp%d]\n",p_factor2->localAddr);
+			else
+			  fprintf(fout,"\tmov ebx,[ebp+%d]\n",p_factor2->localAddr);
+		  }
+		  fprintf(fout,"\tcmp eax,ebx\n");
+		  switch(opp)
+		  {
+			case gt:
+			  fprintf(fout,"\tjg %s\n",labLop.c_str());
+			  break;
+			case ge:
+			  fprintf(fout,"\tjge %s\n",labLop.c_str());
+			  break;
+			case lt:
+			  fprintf(fout,"\tjl %s\n",labLop.c_str());
+			  break;
+			case le:
+			  fprintf(fout,"\tjle %s\n",labLop.c_str());
+			  break;
+			case equ:
+			  fprintf(fout,"\tje %s\n",labLop.c_str());
+			  break;
+			case nequ:
+			  fprintf(fout,"\tjne %s\n",labLop.c_str());
+			  break;
+		  }
 
-	  fprintf(fout,"\tmov eax,0\n");
-	  fprintf(fout,"\tjmp %s\n",labExt.c_str());
-	  fprintf(fout,"%s:\n",labLop.c_str());
-	  fprintf(fout,"\tmov eax,1\n");
-	  fprintf(fout,"%s:\n",labExt.c_str());
-	  fprintf(fout,"\tmov [ebp%d],eax\n",pRec->localAddr);
-     	}
-	break;
+		  fprintf(fout,"\tmov eax,0\n");
+		  fprintf(fout,"\tjmp %s\n",labExt.c_str());
+		  fprintf(fout,"%s:\n",labLop.c_str());
+		  fprintf(fout,"\tmov eax,1\n");
+		  fprintf(fout,"%s:\n",labExt.c_str());
+		  fprintf(fout,"\tmov [ebp%d],eax\n",pRec->localAddr);
+		}
+		break;
     }
     return pRec;
 }
 /**
  * 产生赋值表达式的代码
  */
+//--
 var_record* genAssign(var_record*des,var_record*src,int &var_num)
 {
   if(errorNum!=0)//有错误，不生成
@@ -636,6 +638,7 @@ var_record* genAssign(var_record*des,var_record*src,int &var_num)
 
   if(des->type==rsv_string)//字符串赋值特殊处理
   {
+	  //不是临时变量
     if(src->strValId!=-1)
     {
       var_record empstr;

@@ -33,6 +33,16 @@ main
 ----------------------fun_record::getCurAddr
 --------------------expr// <aloexp><exptail>
 ----------------------aloexp//<item><itemtail>
+------------------------item//<factor><factortail>
+--------------------------factor//ident<idtail>|number|chara|lparen<expr>rparen|strings
+----------------------------idtail//assign<expr>|lparen<realarg>rparen
+------------------------------Table::getVar
+------------------------------genAssign
+--------------------------------genExp
+----------------------------------fun_record::create_tmpvar
+------------------------------------genName
+------------------------------------this->localvars->push_back(p_tmpvar);
+------------------------------------table.addvar(p_tmpvar)
 ------------------ifstat
 
 

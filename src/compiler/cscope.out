@@ -1,4 +1,4 @@
-cscope 15 $HOME/github/mycompiler/src/compiler -q 0000002782 0002540898
+cscope 15 $HOME/github/mycompiler/src/compiler -q 0000002782 0002540905
 	@common.h
 
 1 #i‚de‡
@@ -1751,7 +1751,7 @@ c
 	gID
 =0;
 
-14 
+15 
 °rög
  
 	$gíName
@@ -1767,11 +1767,11 @@ ty≥
 «me
 )
 
-16 
+17 
 ID
 ++;
 
-17 
+18 
 °rög
  
 ªtSå
@@ -1779,17 +1779,17 @@ ID
 hód
 ;
 
-18 if(
+19 if(
 ty≥
 !=
 nuŒ
 )
 
-20 
+21 
 ªtSå
 +="_";
 
-21 
+22 
 ªtSå
 +=
 symName
@@ -1797,33 +1797,33 @@ symName
 ty≥
 ];
 
-23 if(
+24 if(
 «me
 !="")
 
-25 
+26 
 ªtSå
 +="_";
 
-26 
+27 
 ªtSå
 +=
 «me
 ;
 
-28 if(
+29 if(
 hód
 !="str"&&head!="fun"&&head!="var")
 
-30 
+31 
 ªtSå
 +="_";
 
-31 
+32 
 °rID
 [10];
 
-32 
+33 
 	`•rötf
 (
 °rID
@@ -1831,27 +1831,27 @@ hód
 ID
 );
 
-33 
+34 
 ªtSå
 +=
 °rID
 ;
 
-35  
+36  
 ªtSå
 ;
 
-36 
+37 
 	}
 }
 
-37 
+38 
 •
 (c⁄° * 
 msg
 );
 
-48 
+50 
 v¨_ªc‹d
 * 
 	$gíExp
@@ -1869,15 +1869,15 @@ p_Á˘‹2
 v¨_num
 )
 
-50 if(
+52 if(
 îr‹Num
 !=0)
 
-51  
+53  
 NULL
 ;
 
-52 if(
+54 if(
 p_Á˘‹1
 ==
 NULL
@@ -1885,15 +1885,15 @@ NULL
 p_Á˘‹2
 ==NULL)
 
-53  
+55  
 NULL
 ;
 
-54 
+56 
 	`•
 ("ÂØπË°®ËææÂºèÊìç‰ΩúÊï∞Á±ªÂûãËøõË°åËØ≠‰πâÊ£ÄÊü•");
 
-56 if(
+58 if(
 p_Á˘‹1
 ->
 ty≥
@@ -1903,23 +1903,23 @@ rsv_void
 p_Á˘‹2
 ->type==rsv_void)
 
-59 
+61 
 	`£mîr‹
 (
 void_nˇl
 );
 
-60  
+62  
 NULL
 ;
 
-62 
+64 
 r¶_ty≥
 =
 rsv_öt
 ;
 
-90 if(
+92 if(
 p_Á˘‹1
 ->
 ty≥
@@ -1929,29 +1929,29 @@ rsv_°rög
 p_Á˘‹2
 ->type==rsv_string)
 
-92 if(
+94 if(
 ›p
 ==
 addi
 )
 
-94 
+96 
 r¶_ty≥
 =
 rsv_°rög
 ;
 
-98 
+100 
 	`£mîr‹
 (
 °r_«dd
 );
 
-99  
+101  
 NULL
 ;
 
-104 if(
+106 if(
 ›p
 ==
 gt
@@ -1967,17 +1967,17 @@ equ
 √qu
 )
 
-106 
+108 
 r¶_ty≥
 =
 rsv_ch¨
 ;
 
-109 if(
+111 if(
 showGí
 )
 
-110 
+112 
 cout
 <<"ÁîüÊàêË°®ËææÂºè<"<<
 symName
@@ -1995,7 +1995,7 @@ r¶_ty≥
 ídl
 ;
 
-111 
+113 
 v¨_ªc‹d
  * 
 pRec
@@ -2011,7 +2011,7 @@ r¶_ty≥
 v¨_num
 );
 
-112 
+114 
 °rög
  
 œbL›
@@ -2019,15 +2019,15 @@ v¨_num
 œbExt
 ;
 
-113 
+115 
 r¶_ty≥
 )
 
-115 
+117 
 rsv_°rög
 :
 
-117 if(
+119 if(
 p_Á˘‹2
 ->
 ty≥
@@ -2035,7 +2035,7 @@ ty≥
 rsv_°rög
 )
 
-119 
+121 
 œbL›
 =
 	`gíName
@@ -2043,7 +2043,7 @@ rsv_°rög
 nuŒ
 ,"cpystr2");
 
-120 
+122 
 œbExt
 =
 	`gíName
@@ -2051,13 +2051,13 @@ nuŒ
 nuŒ
 ,"cpystr2_exit");
 
-121 if(
+123 if(
 p_Á˘‹2
 ->
 °rVÆId
 ==-1)
 
-123 
+125 
 	`Ârötf
 (
 fout
@@ -2069,19 +2069,19 @@ p_Á˘‹2
 	`c_°r
 ());
 
-124 
+126 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,eax\n");
 
-125 if(
+127 if(
 p_Á˘‹2
 ->
 loˇlAddr
 <0)
 
-126 
+128 
 	`Ârötf
 (
 fout
@@ -2091,7 +2091,7 @@ p_Á˘‹2
 loˇlAddr
 );
 
-128 
+130 
 	`Ârötf
 (
 fout
@@ -2101,13 +2101,13 @@ p_Á˘‹2
 loˇlAddr
 );
 
-129 
+131 
 	`Ârötf
 (
 fout
 ,"\tsubÉsp,1\n\tmov [esp],al;ÈïøÂ∫¶ÂéãÂÖ•ÂêéÂÜçÂéãÂÖ•Êï∞ÊçÆÊ†à\n");
 
-130 
+132 
 	`Ârötf
 (
 fout
@@ -2117,13 +2117,13 @@ pRec
 loˇlAddr
 );
 
-132 
+134 
 	`Ârötf
 (
 fout
 ,"\tcmpÉax,0\n");
 
-133 
+135 
 	`Ârötf
 (
 fout
@@ -2133,25 +2133,25 @@ fout
 	`c_°r
 ());
 
-134 
+136 
 	`Ârötf
 (
 fout
 ,"\tmovÉcx,0\n");
 
-135 
+137 
 	`Ârötf
 (
 fout
 ,"\tmovÉsi,ebx\n\tsubÉsi,1\n");
 
-136 
+138 
 	`Ârötf
 (
 fout
 ,"\tnegÉax\n");
 
-137 
+139 
 	`Ârötf
 (
 fout
@@ -2161,13 +2161,13 @@ fout
 	`c_°r
 ());
 
-138 
+140 
 	`Ârötf
 (
 fout
 ,"\tcmpÉcx,eax\n");
 
-139 
+141 
 	`Ârötf
 (
 fout
@@ -2177,25 +2177,25 @@ fout
 	`c_°r
 ());
 
-140 
+142 
 	`Ârötf
 (
 fout
 ,"\tmov dl,[esi+ecx]\n");
 
-141 
+143 
 	`Ârötf
 (
 fout
 ,"\tsubÉsp,1\n\tmov [esp],dl\n");
 
-142 
+144 
 	`Ârötf
 (
 fout
 ,"\tdecÉcx\n");
 
-143 
+145 
 	`Ârötf
 (
 fout
@@ -2205,7 +2205,7 @@ fout
 	`c_°r
 ());
 
-144 
+146 
 	`Ârötf
 (
 fout
@@ -2215,19 +2215,19 @@ fout
 	`c_°r
 ());
 
-145 
+147 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,eax\n");
 
-147 if(
+149 if(
 p_Á˘‹2
 ->
 °rVÆId
 >0)
 
-149 
+151 
 	`Ârötf
 (
 fout
@@ -2239,13 +2239,13 @@ p_Á˘‹2
 	`c_°r
 ());
 
-150 
+152 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,eax\n");
 
-151 
+153 
 	`Ârötf
 (
 fout
@@ -2255,7 +2255,7 @@ p_Á˘‹2
 °rVÆId
 );
 
-152 
+154 
 	`Ârötf
 (
 fout
@@ -2265,13 +2265,13 @@ pRec
 loˇlAddr
 );
 
-154 
+156 
 	`Ârötf
 (
 fout
 ,"\tcmpÉax,0\n");
 
-155 
+157 
 	`Ârötf
 (
 fout
@@ -2281,7 +2281,7 @@ fout
 	`c_°r
 ());
 
-156 
+158 
 	`Ârötf
 (
 fout
@@ -2291,7 +2291,7 @@ p_Á˘‹2
 °rVÆId
 );
 
-157 
+159 
 	`Ârötf
 (
 fout
@@ -2301,7 +2301,7 @@ p_Á˘‹2
 °rVÆId
 );
 
-158 
+160 
 	`Ârötf
 (
 fout
@@ -2311,13 +2311,13 @@ fout
 	`c_°r
 ());
 
-159 
+161 
 	`Ârötf
 (
 fout
 ,"\tcmpÉcx,-1\n");
 
-160 
+162 
 	`Ârötf
 (
 fout
@@ -2327,25 +2327,25 @@ fout
 	`c_°r
 ());
 
-161 
+163 
 	`Ârötf
 (
 fout
 ,"\tmovál,[esi+ecx]\n");
 
-162 
+164 
 	`Ârötf
 (
 fout
 ,"\tsubÉsp,1\n\tmov [esp],al\n");
 
-163 
+165 
 	`Ârötf
 (
 fout
 ,"\tdecÉcx\n");
 
-164 
+166 
 	`Ârötf
 (
 fout
@@ -2355,7 +2355,7 @@ fout
 	`c_°r
 ());
 
-165 
+167 
 	`Ârötf
 (
 fout
@@ -2365,19 +2365,19 @@ fout
 	`c_°r
 ());
 
-166 
+168 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,eax\n");
 
-168 if(
+170 if(
 p_Á˘‹2
 ->
 °rVÆId
 ==-2)
 
-170 
+172 
 	`Ârötf
 (
 fout
@@ -2389,17 +2389,17 @@ p_Á˘‹2
 	`c_°r
 ());
 
-171 
+173 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,eax\n");
 
-172 if(
+174 if(
 c⁄vît_buf„r
 ==0)
 
-173 
+175 
 	`Ârötf
 (
 fout
@@ -2411,7 +2411,7 @@ p_Á˘‹2
 	`c_°r
 ());
 
-175 
+177 
 	`Ârötf
 (
 fout
@@ -2423,7 +2423,7 @@ p_Á˘‹2
 	`c_°r
 ());
 
-176 
+178 
 	`Ârötf
 (
 fout
@@ -2433,13 +2433,13 @@ pRec
 loˇlAddr
 );
 
-178 
+180 
 	`Ârötf
 (
 fout
 ,"\tcmpÉax,0\n");
 
-179 
+181 
 	`Ârötf
 (
 fout
@@ -2449,17 +2449,17 @@ fout
 	`c_°r
 ());
 
-180 
+182 
 	`Ârötf
 (
 fout
 ,"\tsubÉax,1\n\tmovÉcx,eax\n");
 
-181 if(
+183 if(
 c⁄vît_buf„r
 ==0)
 
-182 
+184 
 	`Ârötf
 (
 fout
@@ -2471,7 +2471,7 @@ p_Á˘‹2
 	`c_°r
 ());
 
-184 
+186 
 	`Ârötf
 (
 fout
@@ -2483,7 +2483,7 @@ p_Á˘‹2
 	`c_°r
 ());
 
-185 
+187 
 	`Ârötf
 (
 fout
@@ -2493,13 +2493,13 @@ fout
 	`c_°r
 ());
 
-186 
+188 
 	`Ârötf
 (
 fout
 ,"\tcmpÉcx,-1\n");
 
-187 
+189 
 	`Ârötf
 (
 fout
@@ -2509,25 +2509,25 @@ fout
 	`c_°r
 ());
 
-188 
+190 
 	`Ârötf
 (
 fout
 ,"\tmovál,[esi+ecx]\n");
 
-189 
+191 
 	`Ârötf
 (
 fout
 ,"\tsubÉsp,1\n\tmov [esp],al\n");
 
-190 
+192 
 	`Ârötf
 (
 fout
 ,"\tdecÉcx\n");
 
-191 
+193 
 	`Ârötf
 (
 fout
@@ -2537,7 +2537,7 @@ fout
 	`c_°r
 ());
 
-192 
+194 
 	`Ârötf
 (
 fout
@@ -2547,31 +2547,31 @@ fout
 	`c_°r
 ());
 
-193 
+195 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,eax\n");
 
-195 if(
+197 if(
 p_Á˘‹2
 ->
 °rVÆId
 ==0)
 
-197 
+199 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,eax\n");
 
-198 
+200 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,0\n\tsubÉsp,1\n\tmov [esp],al;ÈïøÂ∫¶ÂéãÂÖ•ÂêéÂÜçÂéãÂÖ•Êï∞ÊçÆÊ†à\n");
 
-199 
+201 
 	`Ârötf
 (
 fout
@@ -2581,13 +2581,13 @@ pRec
 loˇlAddr
 );
 
-200 
+202 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,eax\n");
 
-203 if(
+205 if(
 p_Á˘‹2
 ->
 ty≥
@@ -2595,7 +2595,7 @@ ty≥
 rsv_öt
 )
 
-205 
+207 
 œbL›
 =
 	`gíName
@@ -2603,7 +2603,7 @@ rsv_öt
 nuŒ
 ,"numtostr2");
 
-206 
+208 
 œbExt
 =
 	`gíName
@@ -2611,7 +2611,7 @@ nuŒ
 nuŒ
 ,"numtostr2_exit");
 
-207 
+209 
 °rög
  
 œbNumSign
@@ -2621,7 +2621,7 @@ nuŒ
 nuŒ
 ,"numsign2");
 
-208 
+210 
 °rög
  
 œbNumSignExt
@@ -2631,7 +2631,7 @@ nuŒ
 nuŒ
 ,"numsign2_exit");
 
-209 
+211 
 	`Ârötf
 (
 fout
@@ -2643,7 +2643,7 @@ p_Á˘‹2
 	`c_°r
 ());
 
-210 
+212 
 	`Ârötf
 (
 fout
@@ -2652,13 +2652,13 @@ fout
 \tmov [@s_esp],esp\n\
 \tmovÉsp,eax\n");
 
-214 if(
+216 if(
 p_Á˘‹2
 ->
 loˇlAddr
 ==0)
 
-216 
+218 
 	`Ârötf
 (
 fout
@@ -2670,13 +2670,13 @@ p_Á˘‹2
 	`c_°r
 ());
 
-220 if(
+222 if(
 p_Á˘‹2
 ->
 loˇlAddr
 <0)
 
-221 
+223 
 	`Ârötf
 (
 fout
@@ -2686,7 +2686,7 @@ p_Á˘‹2
 loˇlAddr
 );
 
-223 
+225 
 	`Ârötf
 (
 fout
@@ -2696,7 +2696,7 @@ p_Á˘‹2
 loˇlAddr
 );
 
-225 
+227 
 	`Ârötf
 (
 fout
@@ -2705,7 +2705,7 @@ fout
 \tmovÉcx,0\n\tmov [esp],cl\n\
 \tmovÉsi,esp\n");
 
-229 
+231 
 	`Ârötf
 (
 fout
@@ -2715,19 +2715,19 @@ pRec
 loˇlAddr
 );
 
-231 
+233 
 	`Ârötf
 (
 fout
 ,"\tmovÉdi,0\n");
 
-232 
+234 
 	`Ârötf
 (
 fout
 ,"\tcmpÉax,0\n");
 
-233 
+235 
 	`Ârötf
 (
 fout
@@ -2737,7 +2737,7 @@ fout
 	`c_°r
 ());
 
-234 
+236 
 	`Ârötf
 (
 fout
@@ -2747,19 +2747,19 @@ fout
 	`c_°r
 ());
 
-235 
+237 
 	`Ârötf
 (
 fout
 ,"\tnegÉax\n");
 
-236 
+238 
 	`Ârötf
 (
 fout
 ,"\tmovÉdi,1\n");
 
-237 
+239 
 	`Ârötf
 (
 fout
@@ -2769,13 +2769,13 @@ fout
 	`c_°r
 ());
 
-239 
+241 
 	`Ârötf
 (
 fout
 ,"\tmovÉbx,10\n");
 
-240 
+242 
 	`Ârötf
 (
 fout
@@ -2785,7 +2785,7 @@ fout
 	`c_°r
 ());
 
-241 
+243 
 	`Ârötf
 (
 fout
@@ -2800,7 +2800,7 @@ fout
 \tmov [esp],dl\n\
 \tcmpÉax,0\n");
 
-251 
+253 
 	`Ârötf
 (
 fout
@@ -2810,13 +2810,13 @@ fout
 	`c_°r
 ());
 
-253 
+255 
 	`Ârötf
 (
 fout
 ,"\tcmpÉdi,0\n");
 
-254 
+256 
 	`Ârötf
 (
 fout
@@ -2826,19 +2826,19 @@ fout
 	`c_°r
 ());
 
-255 
+257 
 	`Ârötf
 (
 fout
 ,"\tsubÉsp,1\n\tmovÉcx,%d\n\tmov [esp],cl\n",'-');
 
-256 
+258 
 	`Ârötf
 (
 fout
 ,"\tmov cl,[esi]\n\tinc cl\n\tmov [esi],cl\n");
 
-257 
+259 
 	`Ârötf
 (
 fout
@@ -2848,7 +2848,7 @@ fout
 	`c_°r
 ());
 
-258 
+260 
 	`Ârötf
 (
 fout
@@ -2857,7 +2857,7 @@ fout
 \tmov [@s_esp],esp\n\
 \tmovÉsp,eax\n");
 
-263 if(
+265 if(
 p_Á˘‹2
 ->
 ty≥
@@ -2865,7 +2865,7 @@ ty≥
 rsv_ch¨
 )
 
-265 
+267 
 	`Ârötf
 (
 fout
@@ -2877,7 +2877,7 @@ p_Á˘‹2
 	`c_°r
 ());
 
-266 
+268 
 	`Ârötf
 (
 fout
@@ -2886,13 +2886,13 @@ fout
 \tmov [@s_esp],esp\n\
 \tmovÉsp,eax\n");
 
-270 if(
+272 if(
 p_Á˘‹2
 ->
 loˇlAddr
 ==0)
 
-272 
+274 
 	`Ârötf
 (
 fout
@@ -2904,13 +2904,13 @@ p_Á˘‹2
 	`c_°r
 ());
 
-276 if(
+278 if(
 p_Á˘‹2
 ->
 loˇlAddr
 <0)
 
-277 
+279 
 	`Ârötf
 (
 fout
@@ -2920,7 +2920,7 @@ p_Á˘‹2
 loˇlAddr
 );
 
-279 
+281 
 	`Ârötf
 (
 fout
@@ -2930,7 +2930,7 @@ p_Á˘‹2
 loˇlAddr
 );
 
-281 
+283 
 	`Ârötf
 (
 fout
@@ -2940,13 +2940,13 @@ pRec
 loˇlAddr
 );
 
-282 
+284 
 	`Ârötf
 (
 fout
 ,"\tsubÉsp,1\n\tmov [esp],al\n");
 
-283 
+285 
 	`Ârötf
 (
 fout
@@ -2955,13 +2955,13 @@ fout
 \tmov [@s_esp],esp\n\
 \tmovÉsp,eax\n");
 
-288 
+290 
 	`Ârötf
 (
 fout
 ,";--------------------------------------------------\n");
 
-290 if(
+292 if(
 p_Á˘‹1
 ->
 ty≥
@@ -2969,7 +2969,7 @@ ty≥
 rsv_°rög
 )
 
-292 
+294 
 œbL›
 =
 	`gíName
@@ -2977,7 +2977,7 @@ rsv_°rög
 nuŒ
 ,"cpystr1");
 
-293 
+295 
 œbExt
 =
 	`gíName
@@ -2985,13 +2985,13 @@ nuŒ
 nuŒ
 ,"cpystr1_exit");
 
-294 if(
+296 if(
 p_Á˘‹1
 ->
 °rVÆId
 ==-1)
 
-296 
+298 
 	`Ârötf
 (
 fout
@@ -3003,19 +3003,19 @@ p_Á˘‹1
 	`c_°r
 ());
 
-297 
+299 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,eax\n");
 
-298 if(
+300 if(
 p_Á˘‹1
 ->
 loˇlAddr
 <0)
 
-299 
+301 
 	`Ârötf
 (
 fout
@@ -3025,7 +3025,7 @@ p_Á˘‹1
 loˇlAddr
 );
 
-301 
+303 
 	`Ârötf
 (
 fout
@@ -3035,13 +3035,13 @@ p_Á˘‹1
 loˇlAddr
 );
 
-302 
+304 
 	`Ârötf
 (
 fout
 ,"\tcmpÉax,0\n");
 
-303 
+305 
 	`Ârötf
 (
 fout
@@ -3051,7 +3051,7 @@ fout
 	`c_°r
 ());
 
-305 
+307 
 	`Ârötf
 (
 fout
@@ -3061,37 +3061,37 @@ pRec
 loˇlAddr
 );
 
-307 
+309 
 	`Ârötf
 (
 fout
 ,"\tmovÉdx,0\n\tmov dl,[ebx]\n");
 
-308 
+310 
 	`Ârötf
 (
 fout
 ,"\taddÉdx,eax\n");
 
-309 
+311 
 	`Ârötf
 (
 fout
 ,"\tmov [ebx],dl\n");
 
-311 
+313 
 	`Ârötf
 (
 fout
 ,"\tmovÉcx,0\n");
 
-312 if(
+314 if(
 p_Á˘‹1
 ->
 loˇlAddr
 <0)
 
-313 
+315 
 	`Ârötf
 (
 fout
@@ -3101,7 +3101,7 @@ p_Á˘‹1
 loˇlAddr
 );
 
-315 
+317 
 	`Ârötf
 (
 fout
@@ -3111,19 +3111,19 @@ p_Á˘‹1
 loˇlAddr
 );
 
-316 
+318 
 	`Ârötf
 (
 fout
 ,"\tnegÉax\n");
 
-318 
+320 
 	`Ârötf
 (
 fout
 ,"\tcmpÉdx,255\n");
 
-319 
+321 
 	`Ârötf
 (
 fout
@@ -3133,13 +3133,13 @@ fout
 	`c_°r
 ());
 
-320 
+322 
 	`Ârötf
 (
 fout
 ,"\tcall @str2long\n");
 
-322 
+324 
 	`Ârötf
 (
 fout
@@ -3149,13 +3149,13 @@ fout
 	`c_°r
 ());
 
-323 
+325 
 	`Ârötf
 (
 fout
 ,"\tcmpÉcx,eax\n");
 
-324 
+326 
 	`Ârötf
 (
 fout
@@ -3165,25 +3165,25 @@ fout
 	`c_°r
 ());
 
-325 
+327 
 	`Ârötf
 (
 fout
 ,"\tmov dl,[esi+ecx]\n");
 
-326 
+328 
 	`Ârötf
 (
 fout
 ,"\tsubÉsp,1\n\tmov [esp],dl\n");
 
-327 
+329 
 	`Ârötf
 (
 fout
 ,"\tdecÉcx\n");
 
-328 
+330 
 	`Ârötf
 (
 fout
@@ -3193,7 +3193,7 @@ fout
 	`c_°r
 ());
 
-329 
+331 
 	`Ârötf
 (
 fout
@@ -3203,19 +3203,19 @@ fout
 	`c_°r
 ());
 
-330 
+332 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,eax\n");
 
-332 if(
+334 if(
 p_Á˘‹1
 ->
 °rVÆId
 >0)
 
-334 
+336 
 	`Ârötf
 (
 fout
@@ -3227,13 +3227,13 @@ p_Á˘‹1
 	`c_°r
 ());
 
-335 
+337 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,eax\n");
 
-336 
+338 
 	`Ârötf
 (
 fout
@@ -3243,13 +3243,13 @@ p_Á˘‹1
 °rVÆId
 );
 
-337 
+339 
 	`Ârötf
 (
 fout
 ,"\tcmpÉax,0\n");
 
-339 
+341 
 	`Ârötf
 (
 fout
@@ -3259,7 +3259,7 @@ fout
 	`c_°r
 ());
 
-340 
+342 
 	`Ârötf
 (
 fout
@@ -3269,25 +3269,25 @@ pRec
 loˇlAddr
 );
 
-341 
+343 
 	`Ârötf
 (
 fout
 ,"\tmovÉdx,0\n\tmov dl,[ebx]\n");
 
-342 
+344 
 	`Ârötf
 (
 fout
 ,"\taddÉdx,eax\n");
 
-343 
+345 
 	`Ârötf
 (
 fout
 ,"\tmov [ebx],dl\n");
 
-345 
+347 
 	`Ârötf
 (
 fout
@@ -3297,7 +3297,7 @@ p_Á˘‹1
 °rVÆId
 );
 
-346 
+348 
 	`Ârötf
 (
 fout
@@ -3307,13 +3307,13 @@ p_Á˘‹1
 °rVÆId
 );
 
-348 
+350 
 	`Ârötf
 (
 fout
 ,"\tcmpÉdx,255\n");
 
-349 
+351 
 	`Ârötf
 (
 fout
@@ -3323,13 +3323,13 @@ fout
 	`c_°r
 ());
 
-350 
+352 
 	`Ârötf
 (
 fout
 ,"\tcall @str2long\n");
 
-352 
+354 
 	`Ârötf
 (
 fout
@@ -3339,13 +3339,13 @@ fout
 	`c_°r
 ());
 
-353 
+355 
 	`Ârötf
 (
 fout
 ,"\tcmpÉcx,-1\n");
 
-354 
+356 
 	`Ârötf
 (
 fout
@@ -3355,25 +3355,25 @@ fout
 	`c_°r
 ());
 
-355 
+357 
 	`Ârötf
 (
 fout
 ,"\tmovál,[esi+ecx]\n");
 
-356 
+358 
 	`Ârötf
 (
 fout
 ,"\tsubÉsp,1\n\tmov [esp],al\n");
 
-357 
+359 
 	`Ârötf
 (
 fout
 ,"\tdecÉcx\n");
 
-358 
+360 
 	`Ârötf
 (
 fout
@@ -3383,7 +3383,7 @@ fout
 	`c_°r
 ());
 
-359 
+361 
 	`Ârötf
 (
 fout
@@ -3393,19 +3393,19 @@ fout
 	`c_°r
 ());
 
-360 
+362 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,eax\n");
 
-362 if(
+364 if(
 p_Á˘‹1
 ->
 °rVÆId
 ==-2)
 
-364 
+366 
 	`Ârötf
 (
 fout
@@ -3417,17 +3417,17 @@ p_Á˘‹1
 	`c_°r
 ());
 
-365 
+367 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,eax\n");
 
-366 if(
+368 if(
 c⁄vît_buf„r
 ==0)
 
-367 
+369 
 	`Ârötf
 (
 fout
@@ -3439,7 +3439,7 @@ p_Á˘‹1
 	`c_°r
 ());
 
-369 
+371 
 	`Ârötf
 (
 fout
@@ -3451,13 +3451,13 @@ p_Á˘‹1
 	`c_°r
 ());
 
-370 
+372 
 	`Ârötf
 (
 fout
 ,"\tcmpÉax,0\n");
 
-372 
+374 
 	`Ârötf
 (
 fout
@@ -3467,7 +3467,7 @@ fout
 	`c_°r
 ());
 
-373 
+375 
 	`Ârötf
 (
 fout
@@ -3477,35 +3477,35 @@ pRec
 loˇlAddr
 );
 
-374 
+376 
 	`Ârötf
 (
 fout
 ,"\tmovÉdx,0\n\tmov dl,[ebx]\n");
 
-375 
+377 
 	`Ârötf
 (
 fout
 ,"\taddÉdx,eax\n");
 
-376 
+378 
 	`Ârötf
 (
 fout
 ,"\tmov [ebx],dl\n");
 
-378 
+380 
 	`Ârötf
 (
 fout
 ,"\tsubÉax,1\n\tmovÉcx,eax\n");
 
-379 if(
+381 if(
 c⁄vît_buf„r
 ==0)
 
-380 
+382 
 	`Ârötf
 (
 fout
@@ -3517,7 +3517,7 @@ p_Á˘‹1
 	`c_°r
 ());
 
-382 
+384 
 	`Ârötf
 (
 fout
@@ -3529,13 +3529,13 @@ p_Á˘‹1
 	`c_°r
 ());
 
-384 
+386 
 	`Ârötf
 (
 fout
 ,"\tcmpÉdx,255\n");
 
-385 
+387 
 	`Ârötf
 (
 fout
@@ -3545,13 +3545,13 @@ fout
 	`c_°r
 ());
 
-386 
+388 
 	`Ârötf
 (
 fout
 ,"\tcall @str2long\n");
 
-388 
+390 
 	`Ârötf
 (
 fout
@@ -3561,13 +3561,13 @@ fout
 	`c_°r
 ());
 
-389 
+391 
 	`Ârötf
 (
 fout
 ,"\tcmpÉcx,-1\n");
 
-390 
+392 
 	`Ârötf
 (
 fout
@@ -3577,25 +3577,25 @@ fout
 	`c_°r
 ());
 
-391 
+393 
 	`Ârötf
 (
 fout
 ,"\tmovál,[esi+ecx]\n");
 
-392 
+394 
 	`Ârötf
 (
 fout
 ,"\tsubÉsp,1\n\tmov [esp],al\n");
 
-393 
+395 
 	`Ârötf
 (
 fout
 ,"\tdecÉcx\n");
 
-394 
+396 
 	`Ârötf
 (
 fout
@@ -3605,7 +3605,7 @@ fout
 	`c_°r
 ());
 
-395 
+397 
 	`Ârötf
 (
 fout
@@ -3615,13 +3615,13 @@ fout
 	`c_°r
 ());
 
-396 
+398 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,eax\n");
 
-399 if(
+401 if(
 p_Á˘‹1
 ->
 ty≥
@@ -3629,7 +3629,7 @@ ty≥
 rsv_öt
 )
 
-401 
+403 
 œbL›
 =
 	`gíName
@@ -3637,7 +3637,7 @@ rsv_öt
 nuŒ
 ,"numtostr1");
 
-402 
+404 
 œbExt
 =
 	`gíName
@@ -3645,7 +3645,7 @@ nuŒ
 nuŒ
 ,"numtostr1_exit");
 
-403 
+405 
 °rög
  
 œbNumSign
@@ -3655,7 +3655,7 @@ nuŒ
 nuŒ
 ,"numsign1");
 
-404 
+406 
 °rög
  
 œbNumSignExt
@@ -3665,7 +3665,7 @@ nuŒ
 nuŒ
 ,"numsign1_exit");
 
-405 
+407 
 °rög
  
 œb2l⁄g
@@ -3675,7 +3675,7 @@ nuŒ
 nuŒ
 ,"numsign1_add");
 
-406 
+408 
 	`Ârötf
 (
 fout
@@ -3687,7 +3687,7 @@ p_Á˘‹1
 	`c_°r
 ());
 
-407 
+409 
 	`Ârötf
 (
 fout
@@ -3696,13 +3696,13 @@ fout
 \tmov [@s_esp],esp\n\
 \tmovÉsp,eax\n");
 
-411 if(
+413 if(
 p_Á˘‹1
 ->
 loˇlAddr
 ==0)
 
-413 
+415 
 	`Ârötf
 (
 fout
@@ -3714,13 +3714,13 @@ p_Á˘‹1
 	`c_°r
 ());
 
-417 if(
+419 if(
 p_Á˘‹1
 ->
 loˇlAddr
 <0)
 
-418 
+420 
 	`Ârötf
 (
 fout
@@ -3730,7 +3730,7 @@ p_Á˘‹1
 loˇlAddr
 );
 
-420 
+422 
 	`Ârötf
 (
 fout
@@ -3740,7 +3740,7 @@ p_Á˘‹1
 loˇlAddr
 );
 
-422 
+424 
 	`Ârötf
 (
 fout
@@ -3750,19 +3750,19 @@ pRec
 loˇlAddr
 );
 
-425 
+427 
 	`Ârötf
 (
 fout
 ,"\tmovÉdi,0\n");
 
-426 
+428 
 	`Ârötf
 (
 fout
 ,"\tcmpÉax,0\n");
 
-427 
+429 
 	`Ârötf
 (
 fout
@@ -3772,7 +3772,7 @@ fout
 	`c_°r
 ());
 
-428 
+430 
 	`Ârötf
 (
 fout
@@ -3782,19 +3782,19 @@ fout
 	`c_°r
 ());
 
-429 
+431 
 	`Ârötf
 (
 fout
 ,"\tnegÉax\n");
 
-430 
+432 
 	`Ârötf
 (
 fout
 ,"\tmovÉdi,1\n");
 
-431 
+433 
 	`Ârötf
 (
 fout
@@ -3804,13 +3804,13 @@ fout
 	`c_°r
 ());
 
-434 
+436 
 	`Ârötf
 (
 fout
 ,"\tmovÉbx,10\n");
 
-435 
+437 
 	`Ârötf
 (
 fout
@@ -3820,7 +3820,7 @@ fout
 	`c_°r
 ());
 
-436 
+438 
 	`Ârötf
 (
 fout
@@ -3835,7 +3835,7 @@ fout
 \tmov [esp],dl\n\
 \tcmpÉax,0\n");
 
-446 
+448 
 	`Ârötf
 (
 fout
@@ -3845,13 +3845,13 @@ fout
 	`c_°r
 ());
 
-449 
+451 
 	`Ârötf
 (
 fout
 ,"\tcmpÉdi,0\n");
 
-450 
+452 
 	`Ârötf
 (
 fout
@@ -3861,19 +3861,19 @@ fout
 	`c_°r
 ());
 
-451 
+453 
 	`Ârötf
 (
 fout
 ,"\tsubÉsp,1\n\tmovÉcx,%d\n\tmov [esp],cl\n",'-');
 
-452 
+454 
 	`Ârötf
 (
 fout
 ,"\tmov cl,[esi]\n\tinc cl\n\tmov [esi],cl\n");
 
-454 
+456 
 	`Ârötf
 (
 fout
@@ -3883,13 +3883,13 @@ fout
 	`c_°r
 ());
 
-456 
+458 
 	`Ârötf
 (
 fout
 ,"\tcmp cl,255\n");
 
-457 
+459 
 	`Ârötf
 (
 fout
@@ -3899,13 +3899,13 @@ fout
 	`c_°r
 ());
 
-458 
+460 
 	`Ârötf
 (
 fout
 ,"\tcall @str2long\n");
 
-459 
+461 
 	`Ârötf
 (
 fout
@@ -3915,7 +3915,7 @@ fout
 	`c_°r
 ());
 
-460 
+462 
 	`Ârötf
 (
 fout
@@ -3924,7 +3924,7 @@ fout
 \tmov [@s_esp],esp\n\
 \tmovÉsp,eax\n");
 
-465 if(
+467 if(
 p_Á˘‹1
 ->
 ty≥
@@ -3932,7 +3932,7 @@ ty≥
 rsv_ch¨
 )
 
-467 
+469 
 œbExt
 =
 	`gíName
@@ -3940,7 +3940,7 @@ rsv_ch¨
 nuŒ
 ,"chtostr2_exit");
 
-468 
+470 
 	`Ârötf
 (
 fout
@@ -3952,7 +3952,7 @@ p_Á˘‹1
 	`c_°r
 ());
 
-469 
+471 
 	`Ârötf
 (
 fout
@@ -3961,13 +3961,13 @@ fout
 \tmov [@s_esp],esp\n\
 \tmovÉsp,eax\n");
 
-473 if(
+475 if(
 p_Á˘‹1
 ->
 loˇlAddr
 ==0)
 
-475 
+477 
 	`Ârötf
 (
 fout
@@ -3979,13 +3979,13 @@ p_Á˘‹1
 	`c_°r
 ());
 
-479 if(
+481 if(
 p_Á˘‹1
 ->
 loˇlAddr
 <0)
 
-480 
+482 
 	`Ârötf
 (
 fout
@@ -3995,7 +3995,7 @@ p_Á˘‹1
 loˇlAddr
 );
 
-482 
+484 
 	`Ârötf
 (
 fout
@@ -4005,7 +4005,7 @@ p_Á˘‹1
 loˇlAddr
 );
 
-484 
+486 
 	`Ârötf
 (
 fout
@@ -4015,7 +4015,7 @@ pRec
 loˇlAddr
 );
 
-487 
+489 
 	`Ârötf
 (
 fout
@@ -4026,13 +4026,13 @@ fout
 \tsubÉsp,1\n\
 \tmov [esp],al\n");
 
-495 
+497 
 	`Ârötf
 (
 fout
 ,"\tcmp cl,255\n");
 
-496 
+498 
 	`Ârötf
 (
 fout
@@ -4042,13 +4042,13 @@ fout
 	`c_°r
 ());
 
-497 
+499 
 	`Ârötf
 (
 fout
 ,"\tcall @str2long\n");
 
-498 
+500 
 	`Ârötf
 (
 fout
@@ -4058,7 +4058,7 @@ fout
 	`c_°r
 ());
 
-499 
+501 
 	`Ârötf
 (
 fout
@@ -4067,23 +4067,23 @@ fout
 \tmov [@s_esp],esp\n\
 \tmovÉsp,eax\n");
 
-504 
+506 
 	`Ârötf
 (
 fout
 ,";--------------------------------------------------\n");
 
-508 
+510 
 rsv_öt
 :
 
-510 if(
+512 if(
 p_Á˘‹1
 ->
 loˇlAddr
 ==0)
 
-511 
+513 
 	`Ârötf
 (
 fout
@@ -4095,13 +4095,13 @@ p_Á˘‹1
 	`c_°r
 ());
 
-514 if(
+516 if(
 p_Á˘‹1
 ->
 loˇlAddr
 <0)
 
-515 
+517 
 	`Ârötf
 (
 fout
@@ -4111,7 +4111,7 @@ p_Á˘‹1
 loˇlAddr
 );
 
-517 
+519 
 	`Ârötf
 (
 fout
@@ -4121,13 +4121,13 @@ p_Á˘‹1
 loˇlAddr
 );
 
-519 if(
+521 if(
 p_Á˘‹2
 ->
 loˇlAddr
 ==0)
 
-520 
+522 
 	`Ârötf
 (
 fout
@@ -4139,13 +4139,13 @@ p_Á˘‹2
 	`c_°r
 ());
 
-523 if(
+525 if(
 p_Á˘‹2
 ->
 loˇlAddr
 <0)
 
-524 
+526 
 	`Ârötf
 (
 fout
@@ -4155,7 +4155,7 @@ p_Á˘‹2
 loˇlAddr
 );
 
-526 
+528 
 	`Ârötf
 (
 fout
@@ -4165,57 +4165,57 @@ p_Á˘‹2
 loˇlAddr
 );
 
-528 
+530 
 ›p
 )
 
-530 
+532 
 addi
 :
 
-531 
+533 
 	`Ârötf
 (
 fout
 ,"\taddÉax,ebx\n");
 
-533 
+535 
 subs
 :
 
-534 
+536 
 	`Ârötf
 (
 fout
 ,"\tsubÉax,ebx\n");
 
-536 
+538 
 mu…
 :
 
-537 
+539 
 	`Ârötf
 (
 fout
 ,"\timulÉbx\n");
 
-539 
+541 
 divi
 :
 
-540 
+542 
 	`Ârötf
 (
 fout
 ,"\tmovÉdx,0\n");
 
-541 
+543 
 	`Ârötf
 (
 fout
 ,"\tidivÉbx\n");
 
-544 
+546 
 	`Ârötf
 (
 fout
@@ -4225,11 +4225,11 @@ pRec
 loˇlAddr
 );
 
-546 
+548 
 rsv_ch¨
 :
 
-547 if(
+549 if(
 p_Á˘‹1
 ->
 ty≥
@@ -4237,7 +4237,7 @@ ty≥
 rsv_°rög
 )
 
-555 
+556 
 œbL›
 =
 	`gíName
@@ -4245,7 +4245,7 @@ rsv_°rög
 nuŒ
 ,"base_cmp");
 
-556 
+557 
 œbExt
 =
 	`gíName
@@ -4253,13 +4253,13 @@ nuŒ
 nuŒ
 ,"base_cmp_exit");
 
-557 if(
+558 if(
 p_Á˘‹1
 ->
 loˇlAddr
 ==0)
 
-558 
+559 
 	`Ârötf
 (
 fout
@@ -4271,13 +4271,13 @@ p_Á˘‹1
 	`c_°r
 ());
 
-561 if(
+562 if(
 p_Á˘‹1
 ->
 loˇlAddr
 <0)
 
-562 
+563 
 	`Ârötf
 (
 fout
@@ -4287,7 +4287,7 @@ p_Á˘‹1
 loˇlAddr
 );
 
-564 
+565 
 	`Ârötf
 (
 fout
@@ -4297,13 +4297,13 @@ p_Á˘‹1
 loˇlAddr
 );
 
-566 if(
+567 if(
 p_Á˘‹2
 ->
 loˇlAddr
 ==0)
 
-567 
+568 
 	`Ârötf
 (
 fout
@@ -4315,13 +4315,13 @@ p_Á˘‹2
 	`c_°r
 ());
 
-570 if(
+571 if(
 p_Á˘‹2
 ->
 loˇlAddr
 <0)
 
-571 
+572 
 	`Ârötf
 (
 fout
@@ -4331,7 +4331,7 @@ p_Á˘‹2
 loˇlAddr
 );
 
-573 
+574 
 	`Ârötf
 (
 fout
@@ -4341,21 +4341,21 @@ p_Á˘‹2
 loˇlAddr
 );
 
-575 
+576 
 	`Ârötf
 (
 fout
 ,"\tcmpÉax,ebx\n");
 
-576 
+577 
 ›p
 )
 
-578 
+579 
 gt
 :
 
-579 
+580 
 	`Ârötf
 (
 fout
@@ -4365,11 +4365,11 @@ fout
 	`c_°r
 ());
 
-581 
+582 
 ge
 :
 
-582 
+583 
 	`Ârötf
 (
 fout
@@ -4379,11 +4379,11 @@ fout
 	`c_°r
 ());
 
-584 
+585 
 …
 :
 
-585 
+586 
 	`Ârötf
 (
 fout
@@ -4393,11 +4393,11 @@ fout
 	`c_°r
 ());
 
-587 
+588 
 À
 :
 
-588 
+589 
 	`Ârötf
 (
 fout
@@ -4407,11 +4407,11 @@ fout
 	`c_°r
 ());
 
-590 
+591 
 equ
 :
 
-591 
+592 
 	`Ârötf
 (
 fout
@@ -4421,11 +4421,11 @@ fout
 	`c_°r
 ());
 
-593 
+594 
 √qu
 :
 
-594 
+595 
 	`Ârötf
 (
 fout
@@ -4435,13 +4435,13 @@ fout
 	`c_°r
 ());
 
-598 
+599 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,0\n");
 
-599 
+600 
 	`Ârötf
 (
 fout
@@ -4451,7 +4451,7 @@ fout
 	`c_°r
 ());
 
-600 
+601 
 	`Ârötf
 (
 fout
@@ -4461,13 +4461,13 @@ fout
 	`c_°r
 ());
 
-601 
+602 
 	`Ârötf
 (
 fout
 ,"\tmovÉax,1\n");
 
-602 
+603 
 	`Ârötf
 (
 fout
@@ -4477,7 +4477,7 @@ fout
 	`c_°r
 ());
 
-603 
+604 
 	`Ârötf
 (
 fout
@@ -4487,15 +4487,15 @@ pRec
 loˇlAddr
 );
 
-607  
+608  
 pRec
 ;
 
-608 
+609 
 	}
 }
 
-612 
+614 
 v¨_ªc‹d
 * 
 	$gíAssign
@@ -4509,19 +4509,19 @@ des
 v¨_num
 )
 
-614 if(
+616 if(
 îr‹Num
 !=0)
 
-615  
+617  
 NULL
 ;
 
-616 
+618 
 	`•
 ("ÂØπËµãÂÄºËøêÁÆóÁöÑÂØπË±°Á±ªÂûãËøõË°åËØ≠‰πâÊ£ÄÊü•");
 
-617 if(
+619 if(
 des
 ->
 ty≥
@@ -4529,17 +4529,17 @@ ty≥
 rsv_void
 )
 
-619 
+621 
 	`£mîr‹
 (
 void_«ssi
 );
 
-620  
+622  
 NULL
 ;
 
-622 if(
+624 if(
 des
 ->
 ty≥
@@ -4547,7 +4547,7 @@ ty≥
 rsv_°rög
 )
 
-624 if(
+626 if(
 des
 ->
 ty≥
@@ -4557,21 +4557,21 @@ rsv_ch¨
 §c
 ->ty≥==
 rsv_öt
-)
-
-629 if(
-des
-->
-ty≥
-==
-rsv_öt
-&&
-§c
-->ty≥==
-rsv_ch¨
 )
 
 631 if(
+des
+->
+ty≥
+==
+rsv_öt
+&&
+§c
+->ty≥==
+rsv_ch¨
+)
+
+633 if(
 des
 ->
 ty≥
@@ -4579,17 +4579,17 @@ ty≥
 §c
 ->type)
 
-633 
+635 
 	`£mîr‹
 (
 assi_ncomty≥
 );
 
-634  
+636  
 NULL
 ;
 
-637 if(
+639 if(
 des
 ->
 ty≥
@@ -4597,25 +4597,25 @@ ty≥
 rsv_°rög
 )
 
-639 if(
+642 if(
 §c
 ->
 °rVÆId
 !=-1)
 
-641 
+644 
 v¨_ªc‹d
  
 emp°r
 ;
 
-642 
+645 
 °rög
  
 em≤ame
 ="";
 
-643 
+646 
 emp°r
 .
 	`öô
@@ -4625,7 +4625,7 @@ rsv_°rög
 em≤ame
 );
 
-645 
+648 
 §c
 =
 	`gíExp
@@ -4637,11 +4637,11 @@ addi
 v¨_num
 );
 
-647 if(
+650 if(
 showGí
 )
 
-648 
+651 
 cout
 <<"ÁîüÊàêËµãÂÄºËØ≠Âè•<"<<
 symName
@@ -4655,13 +4655,13 @@ ty≥
 ídl
 ;
 
-649 if(
+652 if(
 des
 ->
 °rVÆId
 ==-2)
 
-651 
+654 
 °rög
  
 œbL›
@@ -4671,7 +4671,7 @@ des
 nuŒ
 ,"cpy2gstr");
 
-652 
+655 
 °rög
  
 œbExt
@@ -4681,13 +4681,13 @@ nuŒ
 nuŒ
 ,"cpy2gstr_exit");
 
-654 if(
+657 if(
 §c
 ->
 loˇlAddr
 <0)
 
-655 
+658 
 	`Ârötf
 (
 fout
@@ -4697,7 +4697,7 @@ fout
 loˇlAddr
 );
 
-657 
+660 
 	`Ârötf
 (
 fout
@@ -4707,7 +4707,7 @@ fout
 loˇlAddr
 );
 
-658 
+661 
 	`Ârötf
 (
 fout
@@ -4717,7 +4717,7 @@ fout
 	`c_°r
 ());
 
-659 
+662 
 	`Ârötf
 (
 fout
@@ -4729,13 +4729,13 @@ des
 	`c_°r
 ());
 
-660 
+663 
 	`Ârötf
 (
 fout
 ,"\tsubÉsi,ecx\n");
 
-661 
+664 
 	`Ârötf
 (
 fout
@@ -4747,13 +4747,13 @@ des
 	`c_°r
 ());
 
-662 
+665 
 	`Ârötf
 (
 fout
 ,"\tmovÉdx,0\n");
 
-663 
+666 
 	`Ârötf
 (
 fout
@@ -4763,13 +4763,13 @@ fout
 	`c_°r
 ());
 
-664 
+667 
 	`Ârötf
 (
 fout
 ,"\tmovál,[esi+edx]\n\tmov [edi+edx],al\n");
 
-665 
+668 
 	`Ârötf
 (
 fout
@@ -4781,7 +4781,7 @@ fout
 œbL›
 .c_str());
 
-666 
+669 
 	`Ârötf
 (
 fout
@@ -4791,19 +4791,19 @@ fout
 	`c_°r
 ());
 
-670 
+673 
 des
 ->
 °rVÆId
 =-1;
 
-672 if(
+675 if(
 §c
 ->
 loˇlAddr
 <0)
 
-673 
+676 
 	`Ârötf
 (
 fout
@@ -4813,7 +4813,7 @@ fout
 loˇlAddr
 );
 
-675 
+678 
 	`Ârötf
 (
 fout
@@ -4823,13 +4823,13 @@ fout
 loˇlAddr
 );
 
-676 if(
+679 if(
 des
 ->
 loˇlAddr
 <0)
 
-677 
+680 
 	`Ârötf
 (
 fout
@@ -4839,7 +4839,7 @@ des
 loˇlAddr
 );
 
-679 
+682 
 	`Ârötf
 (
 fout
@@ -4849,11 +4849,11 @@ des
 loˇlAddr
 );
 
-684 if(
+687 if(
 showGí
 )
 
-685 
+688 
 cout
 <<"ÁîüÊàêËµãÂÄºËØ≠Âè•<"<<
 symName
@@ -4867,13 +4867,13 @@ ty≥
 ídl
 ;
 
-686 if(
+689 if(
 des
 ->
 loˇlAddr
 ==0)
 
-687 
+690 
 	`Ârötf
 (
 fout
@@ -4885,13 +4885,13 @@ des
 	`c_°r
 ());
 
-690 if(
+693 if(
 des
 ->
 loˇlAddr
 <0)
 
-691 
+694 
 	`Ârötf
 (
 fout
@@ -4901,7 +4901,7 @@ des
 loˇlAddr
 );
 
-693 
+696 
 	`Ârötf
 (
 fout
@@ -4911,13 +4911,13 @@ des
 loˇlAddr
 );
 
-695 if(
+698 if(
 §c
 ->
 loˇlAddr
 ==0)
 
-696 
+699 
 	`Ârötf
 (
 fout
@@ -4929,13 +4929,13 @@ fout
 	`c_°r
 ());
 
-699 if(
+702 if(
 §c
 ->
 loˇlAddr
 <0)
 
-700 
+703 
 	`Ârötf
 (
 fout
@@ -4945,7 +4945,7 @@ fout
 loˇlAddr
 );
 
-702 
+705 
 	`Ârötf
 (
 fout
@@ -4955,21 +4955,21 @@ fout
 loˇlAddr
 );
 
-704 
+707 
 	`Ârötf
 (
 fout
 ,"\tmov [eax],ebx\n");
 
-706  
+709  
 des
 ;
 
-707 
+710 
 	}
 }
 
-712 
+715 
 	$gíRëu∫
 (
 v¨_ªc‹d
@@ -4979,17 +4979,17 @@ v¨_ªc‹d
 v¨_num
 )
 
-714 if(
+717 if(
 îr‹Num
 !=0)
 
-716 if(
+719 if(
 ªt
 !=
 NULL
 )
 
-718 if(
+721 if(
 ªt
 ->
 ty≥
@@ -4997,19 +4997,19 @@ ty≥
 rsv_°rög
 )
 
-722 
+725 
 v¨_ªc‹d
  
 emp°r
 ;
 
-723 
+726 
 °rög
  
 em≤ame
 ="";
 
-724 
+727 
 emp°r
 .
 	`öô
@@ -5019,7 +5019,7 @@ rsv_°rög
 em≤ame
 );
 
-725 
+728 
 ªt
 =
 	`gíExp
@@ -5031,11 +5031,11 @@ addi
 v¨_num
 );
 
-727 if(
+730 if(
 showGí
 )
 
-728 
+731 
 cout
 <<"ÁîüÊàêªtu∫ <"<<
 symName
@@ -5047,13 +5047,13 @@ ty≥
 ídl
 ;
 
-729 if(
+732 if(
 ªt
 ->
 loˇlAddr
 <0)
 
-730 
+733 
 	`Ârötf
 (
 fout
@@ -5063,7 +5063,7 @@ fout
 loˇlAddr
 );
 
-732 
+735 
 	`Ârötf
 (
 fout
@@ -5073,11 +5073,11 @@ fout
 loˇlAddr
 );
 
-736 if(
+739 if(
 showGí
 )
 
-737 
+740 
 cout
 <<"ÁîüÊàêªtu∫ <"<<
 symName
@@ -5089,13 +5089,13 @@ ty≥
 ídl
 ;
 
-738 if(
+741 if(
 ªt
 ->
 loˇlAddr
 ==0)
 
-739 
+742 
 	`Ârötf
 (
 fout
@@ -5107,13 +5107,13 @@ fout
 	`c_°r
 ());
 
-742 if(
+745 if(
 ªt
 ->
 loˇlAddr
 <0)
 
-743 
+746 
 	`Ârötf
 (
 fout
@@ -5123,7 +5123,7 @@ fout
 loˇlAddr
 );
 
-745 
+748 
 	`Ârötf
 (
 fout
@@ -5133,53 +5133,53 @@ fout
 loˇlAddr
 );
 
-751 
+754 
 	`Ârötf
 (
 fout
 ,"\tmovÉbx,[@s_ebp]\n\tmov [@s_esp],ebx\n");
 
-752 
+755 
 	`Ârötf
 (
 fout
 ,"\tmovÉbx,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,ebx\n");
 
-753 
+756 
 	`Ârötf
 (
 fout
 ,"\tpopÉbx\n\tmov [@s_ebp],ebx\n");
 
-754 
+757 
 	`Ârötf
 (
 fout
 ,"\tmovÉbx,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,ebx\n");
 
-755 
+758 
 	`Ârötf
 (
 fout
 ,"\tmovÉsp,ebp\n\tpopÉbp\n\tret\n");
 
-756 
+759 
 	}
 }
 
-761 
+764 
 	$gíFunhód
 ()
 
-763 if(
+766 if(
 îr‹Num
 !=0)
 
-765 if(
+768 if(
 showGí
 )
 
-766 
+769 
 cout
 <<"ÁîüÊàêÂáΩÊï∞"<<
 tfun
@@ -5189,7 +5189,7 @@ tfun
 ídl
 ;
 
-775 
+778 
 	`Ârötf
 (
 fout
@@ -5201,59 +5201,59 @@ tfun
 	`c_°r
 ());
 
-777 
+781 
 	`Ârötf
 (
 fout
 ,"\tpushÉbp\n\tmovÉbp,esp\n");
 
-778 
+782 
 	`Ârötf
 (
 fout
 ,"\tmovÉbx,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,ebx\n");
 
-779 
+783 
 	`Ârötf
 (
 fout
 ,"\tmovÉbx,[@s_ebp]\n\tpushÉbx\n\tmov [@s_ebp],esp\n");
 
-780 
+784 
 	`Ârötf
 (
 fout
 ,"\tmovÉbx,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,ebx\n");
 
-781 
+785 
 	`Ârötf
 (
 fout
 ,"\t;ÂáΩÊï∞Â§¥\n");
 
-782 
+786 
 	}
 }
 
-783 
+787 
 	$gíFu¡aû
 ()
 
-785 if(
+789 if(
 îr‹Num
 !=0)
 
-787 if(
+791 if(
 tfun
 .
 hadªt
 )
 
-789 if(
+793 if(
 showGí
 )
 
-790 
+794 
 cout
 <<"ÁîüÊàêÂáΩÊï∞"<<
 tfun
@@ -5263,57 +5263,57 @@ tfun
 ídl
 ;
 
-791 
+795 
 	`Ârötf
 (
 fout
 ,"\t;ÂáΩÊï∞Â∞æ\n");
 
-800 
+804 
 	`Ârötf
 (
 fout
 ,"\tmovÉbx,[@s_ebp]\n\tmov [@s_esp],ebx\n");
 
-801 
+805 
 	`Ârötf
 (
 fout
 ,"\tmovÉbx,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,ebx\n");
 
-802 
+806 
 	`Ârötf
 (
 fout
 ,"\tpopÉbx\n\tmov [@s_ebp],ebx\n");
 
-803 
+807 
 	`Ârötf
 (
 fout
 ,"\tmovÉbx,[@s_esp]\n\tmov [@s_esp],esp\n\tmovÉsp,ebx\n");
 
-804 
+808 
 	`Ârötf
 (
 fout
 ,"\tmovÉsp,ebp\n\tpopÉbp\n\tret\n");
 
-806 
+810 
 	}
 }
 
-811 
+815 
 	$gíLocv¨
 (
 vÆ
 )
 
-813 if(
+817 if(
 îr‹Num
 !=0)
 
-815 
+819 
 	`Ârötf
 (
 fout
@@ -5321,11 +5321,11 @@ fout
 vÆ
 );
 
-816 
+820 
 	}
 }
 
-821 
+825 
 	$gíC⁄dôi⁄
 (
 v¨_ªc‹d
@@ -5333,21 +5333,21 @@ v¨_ªc‹d
 c⁄d
 )
 
-823 if(
+827 if(
 îr‹Num
 !=0)
 
-825 if(
+829 if(
 c⁄d
 ==
 NULL
 )
 
-827 
+831 
 	`•
 ("ÂØπÊù°‰ª∂Ë°®ËææÂºèÁ±ªÂûãËøõË°åËØ≠‰πâÊ£ÄÊü•");
 
-828 if(
+832 if(
 c⁄d
 ->
 ty≥
@@ -5355,13 +5355,13 @@ ty≥
 rsv_°rög
 )
 
-830 
+834 
 	`£mîr‹
 (
 °r_nb_c⁄d
 );
 
-833 if(
+837 if(
 c⁄d
 ->
 ty≥
@@ -5369,29 +5369,29 @@ ty≥
 rsv_void
 )
 
-835 
+839 
 	`£mîr‹
 (
 void_nb_c⁄d
 );
 
-840 if(
+844 if(
 showGí
 )
 
-841 
+845 
 cout
 <<"ÁîüÊàêÂ§çÂêàËØ≠Âè•Êù°‰ª∂"<<
 ídl
 ;
 
-842 if(
+846 if(
 c⁄d
 ->
 loˇlAddr
 ==0)
 
-843 
+847 
 	`Ârötf
 (
 fout
@@ -5403,13 +5403,13 @@ c⁄d
 	`c_°r
 ());
 
-846 if(
+850 if(
 c⁄d
 ->
 loˇlAddr
 <0)
 
-847 
+851 
 	`Ârötf
 (
 fout
@@ -5419,7 +5419,7 @@ c⁄d
 loˇlAddr
 );
 
-849 
+853 
 	`Ârötf
 (
 fout
@@ -5429,41 +5429,41 @@ c⁄d
 loˇlAddr
 );
 
-851 
+855 
 	`Ârötf
 (
 fout
 ,"\tcmpÉax,0\n");
 
-853 
+857 
 	}
 }
 
-859 
+864 
 	$gíBlock
 (
 n
 )
 
-861 if(
+866 if(
 îr‹Num
 !=0)
 
-863 if(
+868 if(
 n
 ==-1)
 
-864  
+869  
 tfun
 .
 	`gëCurAddr
 ();
 
-867 if(
+873 if(
 n
 !=0)
 
-868 
+874 
 	`Ârötf
 (
 fout
@@ -5471,17 +5471,17 @@ fout
 n
 );
 
-870 
+876 
 	`Ârötf
 (
 fout
 ,"\tmovÉsp,ebp\n");
 
-873 
+879 
 	}
 }
 
-875 
+881 
 	$gíI≈ut
 (
 v¨_ªc‹d
@@ -5491,21 +5491,21 @@ p_i
 v¨_num
 )
 
-877 if(
+883 if(
 îr‹Num
 !=0)
 
-879 if(
+885 if(
 p_i
 ==
 NULL
 )
 
-881 
+887 
 	`•
 ("ÂØπËæìÂÖ•ÂØπË±°Á±ªÂûãËøõË°åËØ≠‰πâÊ£ÄÊü•");
 
-882 if(
+888 if(
 p_i
 ->
 ty≥
@@ -5513,17 +5513,17 @@ ty≥
 rsv_void
 )
 
-884 
+890 
 	`£mîr‹
 (
 void_nö
 );
 
-887 if(
+893 if(
 showGí
 )
 
-888 
+894 
 cout
 <<"ÁîüÊàêÂØπË±°<"<<
 symName
@@ -5537,7 +5537,7 @@ ty≥
 ídl
 ;
 
-889 
+895 
 	`Ârötf
 (
 fout
@@ -5549,19 +5549,19 @@ p_i
 	`c_°r
 ());
 
-890 
+896 
 	`Ârötf
 (
 fout
 ,"\tmovÉcx,@buffer\n\tmovÉdx,255\n\tmovÉbx,0\n\tmovÉax,3\n\tint 128\n");
 
-893 
+899 
 	`Ârötf
 (
 fout
 ,"\tcall @procBuf\n");
 
-895 if(
+901 if(
 p_i
 ->
 ty≥
@@ -5569,23 +5569,23 @@ ty≥
 rsv_°rög
 )
 
-898 
+904 
 v¨_ªc‹d
  
 gBuf
 ;
 
-899 
+905 
 °rög
  
 b«me
 ="";
 
-900 
+906 
 b«me
 +="@buffer";
 
-901 
+907 
 gBuf
 .
 	`öô
@@ -5595,17 +5595,17 @@ rsv_°rög
 b«me
 );
 
-902 
+908 
 gBuf
 .
 °rVÆId
 =-2;
 
-903 
+909 
 c⁄vît_buf„r
 =1;
 
-904 
+910 
 	`gíAssign
 (
 p_i
@@ -5615,11 +5615,11 @@ gBuf
 v¨_num
 );
 
-905 
+911 
 c⁄vît_buf„r
 =0;
 
-907 if(
+913 if(
 p_i
 ->
 ty≥
@@ -5627,13 +5627,13 @@ ty≥
 rsv_öt
 )
 
-909 if(
+915 if(
 p_i
 ->
 loˇlAddr
 ==0)
 
-910 
+916 
 	`Ârötf
 (
 fout
@@ -5645,13 +5645,13 @@ p_i
 	`c_°r
 ());
 
-913 if(
+919 if(
 p_i
 ->
 loˇlAddr
 <0)
 
-914 
+920 
 	`Ârötf
 (
 fout
@@ -5661,7 +5661,7 @@ p_i
 loˇlAddr
 );
 
-916 
+922 
 	`Ârötf
 (
 fout
@@ -5671,13 +5671,13 @@ p_i
 loˇlAddr
 );
 
-921 if(
+927 if(
 p_i
 ->
 loˇlAddr
 ==0)
 
-922 
+928 
 	`Ârötf
 (
 fout
@@ -5689,13 +5689,13 @@ p_i
 	`c_°r
 ());
 
-925 if(
+931 if(
 p_i
 ->
 loˇlAddr
 <0)
 
-926 
+932 
 	`Ârötf
 (
 fout
@@ -5705,7 +5705,7 @@ p_i
 loˇlAddr
 );
 
-928 
+934 
 	`Ârötf
 (
 fout
@@ -5715,11 +5715,11 @@ p_i
 loˇlAddr
 );
 
-931 
+937 
 	}
 }
 
-933 
+939 
 	$gíOuçut
 (
 v¨_ªc‹d
@@ -5729,17 +5729,17 @@ p_o
 v¨_num
 )
 
-935 if(
+941 if(
 îr‹Num
 !=0)
 
-937 if(
+943 if(
 p_o
 ==
 NULL
 )
 
-939 
+945 
 	`Ârötf
 (
 fout
@@ -5751,19 +5751,19 @@ p_o
 	`c_°r
 ());
 
-941 
+947 
 v¨_ªc‹d
  
 emp°r
 ;
 
-942 
+948 
 °rög
  
 em≤ame
 ="";
 
-943 
+949 
 emp°r
 .
 	`öô
@@ -5773,7 +5773,7 @@ rsv_°rög
 em≤ame
 );
 
-944 
+950 
 p_o
 =
 	`gíExp
@@ -5785,11 +5785,11 @@ addi
 v¨_num
 );
 
-945 if(
+951 if(
 showGí
 )
 
-946 
+952 
 cout
 <<"ÁîüÊàêÂØπË±°<"<<
 symName
@@ -5801,7 +5801,7 @@ ty≥
 ídl
 ;
 
-947 
+953 
 	`Ârötf
 (
 fout
@@ -5811,7 +5811,7 @@ p_o
 loˇlAddr
 );
 
-948 
+954 
 	}
 }
 
@@ -7885,7 +7885,7 @@ dec_ty≥
 	}
 }
 
-315 
+316 
 	$fu¡aû
 (
 symbﬁ
@@ -7897,77 +7897,77 @@ dec_ty≥
 dec_«me
 )
 
-317 
+318 
 Àvñ
 =0;
 
-318 
+319 
 	`√xtTokí
 ();
 
-319 if(
+320 if(
 tokí
 ==
 £mic⁄
 )
 
-321 
+322 
 	`p
 ("ÂáΩÊï∞Â£∞Êòé",2);
 
-323 
+324 
 èbÀ
 .
 	`addfun
 ();
 
-326 if(
+327 if(
 tokí
 ==
 lbøc
 )
 
-328 
+329 
 	`p
 ("ÂáΩÊï∞ÂÆö‰πâ",2);
 
-329 
+331 
 tfun
 .
 deföed
 =1;
 
-330 
+332 
 èbÀ
 .
 	`addfun
 ();
 
-331 
+333 
 BACK
 
 
-332 
+334 
 	`block
 (0,
 Àvñ
 ,0,0);
 
-333 
+335 
 Àvñ
 =0;
 
-334 
+336 
 tfun
 .
 	`p›loˇlv¨s
 (-1);
 
-335 
+337 
 	`gíFu¡aû
 ();
 
-338 if(
+340 if(
 tokí
 ==
 idít
@@ -7983,7 +7983,7 @@ rsv_bªak
 rsv_c⁄töue
 
 
-339 ||
+341 ||
 tokí
 ==
 rsv_ö
@@ -7993,21 +7993,21 @@ rsv_out
 rbøc
 )
 
-341 
+343 
 BACK
 
 
-342 
+344 
 	`block
 (0,
 Àvñ
 ,0,0);
 
-343 
+345 
 Àvñ
 =0;
 
-346 if(
+348 if(
 tokí
 ==
 rsv_void
@@ -8019,27 +8019,27 @@ rsv_ch¨
 rsv_°rög
 )
 
-348 
+350 
 	`sy¡îr‹
 (
 £mic⁄lo°
 ,-1);
 
-349 
+351 
 BACK
 
 
-354 
+356 
 	`sy¡îr‹
 (
 £mic⁄wr⁄g
 ,0);
 
-357 
+359 
 	}
 }
 
-359 
+361 
 	$v¨li°
 (
 symbﬁ
@@ -8047,45 +8047,45 @@ symbﬁ
 dec_ty≥
 )
 
-361 if(
+363 if(
 tokí
 ==
 comma
 )
 
-363 
+365 
 	`√xtTokí
 ();
 
-364 if(!
+366 if(!
 	`m©ch
 (
 idít
 ))
 
-366 
+368 
 BACK
 
 
-367 
+369 
 	`sy¡îr‹
 (
 idíéo°
 ,-1);
 
-371 
+373 
 °rög
  
 dec_«me
 ="";
 
-372 
+374 
 dec_«me
 +=
 id
 ;
 
-373 
+375 
 tv¨
 .
 	`öô
@@ -8095,67 +8095,67 @@ dec_ty≥
 dec_«me
 );
 
-374 if(
+376 if(
 dec_ty≥
 ==
 rsv_°rög
 )
 
-376 
+378 
 tv¨
 .
 °rVÆId
 =-2;
 
-378 
+380 
 èbÀ
 .
 	`addv¨
 ();
 
-379 
+381 
 	`p
 ("ÂÖ®Â±ÄÂèòÈáèÂ£∞Êòé",1);
 
-381 
+383 
 	`√xtTokí
 ();
 
-382 
+384 
 	`v¨li°
 (
 dec_ty≥
 );
 
-385 if(
+387 if(
 tokí
 ==
 £mic⁄
 )
 
-389 if(
+391 if(
 tokí
 ==
 idít
 )
 
-391 
+393 
 	`sy¡îr‹
 (
 commÆo°
 ,-1);
 
-392 
+394 
 	`√xtTokí
 ();
 
-393 
+395 
 	`v¨li°
 (
 dec_ty≥
 );
 
-395 if(
+397 if(
 tokí
 ==
 rsv_öt
@@ -8167,91 +8167,91 @@ rsv_ch¨
 rsv_°rög
 )
 
-397 
+399 
 	`sy¡îr‹
 (
 £mic⁄lo°
 ,-1);
 
-398 
+400 
 BACK
 
 
-402 
+404 
 	`sy¡îr‹
 (
 £mic⁄wr⁄g
 ,0);
 
-404 
+406 
 	}
 }
 
-407 
+409 
 	$∑ø
 ()
 
-409 
+411 
 	`√xtTokí
 ();
 
-410 
+412 
 tokí
 )
 
-412 
+414 
 Ω¨í
 :
 
-415 
+417 
 symbﬁ
  
 ∑ø_ty≥
 ;
 
-416 
+418 
 ∑ø_ty≥
 =
 	`ty≥
 ();
 
-417 
+419 
 °rög
  
 ∑ø_«me
 ="";
 
-418 
+420 
 	`√xtTokí
 ();
 
-419 if(!
+421 if(!
 	`m©ch
 (
 idít
 ))
 
-421 
+423 
 	`sy¡îr‹
 (
 ∑ølo°
 ,-1);
 
-422 
+424 
 BACK
 
 
-426 
+428 
 	`•
 ("ÂØπÂΩ¢ÂºèÂèÇÊï∞ÁöÑÂ£∞ÊòéËøõË°åËØ≠‰πâÊ£ÄÊü•");
 
-427 
+429 
 ∑ø_«me
 +=
 id
 ;
 
-428 
+430 
 msg_back
 =
 èbÀ
@@ -8261,11 +8261,11 @@ msg_back
 ∑ø_«me
 );
 
-429 if(
+431 if(
 msg_back
 ==0)
 
-431 
+433 
 tv¨
 .
 	`öô
@@ -8275,97 +8275,97 @@ tv¨
 ∑ø_«me
 );
 
-432 
+434 
 tfun
 .
 	`add¨g
 ();
 
-434 if(
+436 if(
 msg_back
 ==1)
 
-437 
+439 
 	`£mîr‹
 (
 ∑ø_ªdef
 );
 
-441 
+443 
 	`∑øli°
 ();
 
-443 
+445 
 	}
 }
 
-446 
+448 
 	$∑øli°
 ()
 
-448 
+450 
 	`√xtTokí
 ();
 
-449 if(
+451 if(
 tokí
 ==
 comma
 )
 
-451 
+453 
 	`√xtTokí
 ();
 
-452 
+454 
 symbﬁ
  
 ∑ø_ty≥
 ;
 
-453 
+455 
 ∑ø_ty≥
 =
 	`ty≥
 ();
 
-454 
+456 
 °rög
  
 ∑ø_«me
 ="";
 
-455 
+457 
 	`√xtTokí
 ();
 
-456 if(!
+458 if(!
 	`m©ch
 (
 idít
 ))
 
-458 
+460 
 	`sy¡îr‹
 (
 ∑ølo°
 ,-1);
 
-459 
+461 
 BACK
 
 
-463 
+465 
 	`•
 ("ÂØπÂΩ¢ÂºèÂèÇÊï∞ÁöÑÂ£∞ÊòéËøõË°åËØ≠‰πâÊ£ÄÊü•");
 
-464 
+466 
 ∑ø_«me
 +=
 id
 ;
 
-465 
+467 
 msg_back
 =
 èbÀ
@@ -8375,11 +8375,11 @@ msg_back
 ∑ø_«me
 );
 
-466 if(
+468 if(
 msg_back
 ==0)
 
-468 
+470 
 tv¨
 .
 	`öô
@@ -8389,27 +8389,27 @@ tv¨
 ∑ø_«me
 );
 
-469 
+471 
 tfun
 .
 	`add¨g
 ();
 
-471 if(
+473 if(
 msg_back
 ==1)
 
-474 
+476 
 	`£mîr‹
 (
 ∑ø_ªdef
 );
 
-478 
+480 
 	`∑øli°
 ();
 
-480 if(
+482 if(
 tokí
 ==
 lbøc
@@ -8417,23 +8417,23 @@ lbøc
 £mic⁄
 )
 
-482 
+484 
 	`sy¡îr‹
 (
 Ω¨ílo°
 ,0);
 
-483 
+485 
 BACK
 
 
-485 if(
+487 if(
 tokí
 ==
 Ω¨í
 )
 
-489 if(
+491 if(
 tokí
 ==
 rsv_öt
@@ -8445,41 +8445,41 @@ rsv_ch¨
 rsv_°rög
 )
 
-491 
+493 
 	`sy¡îr‹
 (
 commÆo°
 ,-1);
 
-492 
+494 
 	`√xtTokí
 ();
 
-493 if(!
+495 if(!
 	`m©ch
 (
 idít
 ))
 
-495 
+497 
 	`sy¡îr‹
 (
 ∑ølo°
 ,-1);
 
-496 
+498 
 BACK
 
 
-498 
+500 
 	`∑øli°
 ();
 
-500 
+502 
 	}
 }
 
-503 
+506 
 	$block
 (
 öôv¨_num
@@ -8491,37 +8491,37 @@ l›Id
 blockAddr
 )
 
-505 
+508 
 	`√xtTokí
 ();
 
-506 if(!
+509 if(!
 	`m©ch
 (
 lbøc
 ))
 
-508 
+511 
 	`sy¡îr‹
 (
 lbø˛o°
 ,-1);
 
-509 
+512 
 BACK
 
 
-511 
+514 
 v¨_num
 =
 öôv¨_num
 ;
 
-512 
+515 
 Àvñ
 ++;
 
-514 
+517 
 	`chûd¥ogøm
 (
 v¨_num
@@ -8533,11 +8533,11 @@ l›Id
 blockAddr
 );
 
-516 
+519 
 Àvñ
 --;
 
-519 
+522 
 tfun
 .
 	`p›loˇlv¨s
@@ -8545,15 +8545,15 @@ tfun
 v¨_num
 );
 
-520 
+523 
 	}
 }
 
-522 
+525 
 	grbøci¶o°
 =0;
 
-523 
+527 
 	$chûd¥ogøm
 (& 
 v¨_num
@@ -8565,11 +8565,11 @@ l›Id
 blockAddr
 )
 
-525 
+529 
 	`√xtTokí
 ();
 
-526 if(
+530 if(
 tokí
 ==
 £mic⁄
@@ -8583,7 +8583,7 @@ rsv_ªtu∫
 idít
 
 
-527 ||
+531 ||
 tokí
 ==
 rsv_bªak
@@ -8595,7 +8595,7 @@ rsv_ö
 rsv_out
 )
 
-529 
+533 
 	`°©emít
 (
 v¨_num
@@ -8607,7 +8607,7 @@ l›Id
 blockAddr
 );
 
-530 
+534 
 	`chûd¥ogøm
 (
 v¨_num
@@ -8619,7 +8619,7 @@ l›Id
 blockAddr
 );
 
-532 if(
+536 if(
 tokí
 ==
 rsv_void
@@ -8631,7 +8631,7 @@ rsv_ch¨
 rsv_°rög
 )
 
-534 
+538 
 	`loˇldec
 (
 v¨_num
@@ -8639,15 +8639,15 @@ v¨_num
 Àvñ
 );
 
-535 if(
+539 if(
 rbøci¶o°
 ==1)
 
-537 
+541 
 rbøci¶o°
 =0;
 
-541 
+545 
 	`chûd¥ogøm
 (
 v¨_num
@@ -8659,35 +8659,35 @@ l›Id
 blockAddr
 );
 
-544 if(
+548 if(
 tokí
 ==
 rbøc
 )
 
-548 if(
+552 if(
 tokí
 ==
 nuŒ
 )
 
-550 
+554 
 	`sy¡îr‹
 (
 rbø˛o°
 ,-1);
 
-554 
+558 
 	`sy¡îr‹
 (
 °©emíãx˝
 ,0);
 
-556 
+560 
 	}
 }
 
-558 
+562 
 	$loˇldec
 (& 
 v¨_num
@@ -8695,55 +8695,55 @@ v¨_num
 Àvñ
 )
 
-560 
+564 
 symbﬁ
  
 loˇl_ty≥
 ;
 
-561 
+565 
 °rög
  
 loˇl_«me
 ="";
 
-562 
+566 
 loˇl_ty≥
 =
 	`ty≥
 ();
 
-563 
+567 
 	`√xtTokí
 ();
 
-564 if(!
+568 if(!
 	`m©ch
 (
 idít
 ))
 
-566 
+570 
 	`sy¡îr‹
 (
 idíéo°
 ,-1);
 
-567 
+571 
 BACK
 
 
-571 
+575 
 	`•
 ("ÂØπÂ±ÄÈÉ®ÂèòÈáèÁöÑÂ£∞ÊòéËøõË°åËØ≠‰πâÊ£ÄÊü•");
 
-572 
+576 
 loˇl_«me
 +=
 id
 ;
 
-573 
+577 
 msg_back
 =
 èbÀ
@@ -8753,11 +8753,11 @@ msg_back
 loˇl_«me
 );
 
-574 if(
+578 if(
 msg_back
 ==0)
 
-576 
+580 
 tv¨
 .
 	`öô
@@ -8767,35 +8767,35 @@ loˇl_ty≥
 loˇl_«me
 );
 
-577 
+581 
 tfun
 .
 	`pushloˇlv¨
 ();
 
-578 
+582 
 	`p
 ("Â±ÄÈÉ®ÂèòÈáèÂ£∞Êòé",1);
 
-579 
+583 
 v¨_num
 ++;
 
-581 if(
+585 if(
 msg_back
 ==1)
 
-584 
+588 
 	`£mîr‹
 (
 loˇlv¨_ªdef
 );
 
-589 
+593 
 	`√xtTokí
 ();
 
-590 
+594 
 	`loˇlde˘aû
 (
 v¨_num
@@ -8805,11 +8805,11 @@ loˇl_ty≥
 Àvñ
 );
 
-592 
+596 
 	}
 }
 
-594 
+598 
 	$loˇlde˘aû
 (& 
 v¨_num
@@ -8821,49 +8821,49 @@ loˇl_ty≥
 Àvñ
 )
 
-596 if(
+600 if(
 tokí
 ==
 comma
 )
 
-598 
+602 
 	`√xtTokí
 ();
 
-599 if(!
+603 if(!
 	`m©ch
 (
 idít
 ))
 
-601 
+605 
 BACK
 
 
-602 
+606 
 	`sy¡îr‹
 (
 loˇlidíéo°
 ,-1);
 
-606 
+610 
 	`•
 ("ÂØπÂ±ÄÈÉ®ÂèòÈáèÁöÑÂ£∞ÊòéËøõË°åËØ≠‰πâÊ£ÄÊü•");
 
-607 
+611 
 °rög
  
 loˇl_«me
 ="";
 
-608 
+612 
 loˇl_«me
 +=
 id
 ;
 
-609 
+613 
 msg_back
 =
 èbÀ
@@ -8873,11 +8873,11 @@ msg_back
 loˇl_«me
 );
 
-610 if(
+614 if(
 msg_back
 ==0)
 
-612 
+616 
 tv¨
 .
 	`öô
@@ -8887,35 +8887,35 @@ loˇl_ty≥
 loˇl_«me
 );
 
-613 
+617 
 tfun
 .
 	`pushloˇlv¨
 ();
 
-614 
+618 
 	`p
 ("Â±ÄÈÉ®ÂèòÈáèÂ£∞Êòé",1);
 
-615 
+619 
 v¨_num
 ++;
 
-617 if(
+621 if(
 msg_back
 ==1)
 
-620 
+624 
 	`£mîr‹
 (
 loˇlv¨_ªdef
 );
 
-623 
+627 
 	`√xtTokí
 ();
 
-624 
+628 
 	`loˇlde˘aû
 (
 v¨_num
@@ -8925,29 +8925,29 @@ loˇl_ty≥
 Àvñ
 );
 
-627 if(
+631 if(
 tokí
 ==
 £mic⁄
 )
 
-631 if(
+635 if(
 tokí
 ==
 idít
 )
 
-633 
+637 
 	`sy¡îr‹
 (
 commÆo°
 ,-1);
 
-634 
+638 
 	`√xtTokí
 ();
 
-635 
+639 
 	`loˇlde˘aû
 (
 v¨_num
@@ -8957,7 +8957,7 @@ loˇl_ty≥
 Àvñ
 );
 
-637 if(
+641 if(
 tokí
 ==
 rsv_öt
@@ -8971,53 +8971,53 @@ rsv_°rög
 rbøc
 )
 
-639 
+643 
 	`sy¡îr‹
 (
 £mic⁄lo°
 ,-1);
 
-640 
+644 
 BACK
 
 
-642 if(
+646 if(
 tokí
 ==
 Õ¨í
 )
 
-644 
+648 
 rbøci¶o°
 =1;
 
-645 
+649 
 	`sy¡îr‹
 (
 rbø˛o°
 ,-1);
 
-646 
+650 
 	`∑ø
 ();
 
-647 
+651 
 	`block
 (0,
 Àvñ
 ,0,0);
 
-651 
+655 
 	`sy¡îr‹
 (
 £mic⁄wr⁄g
 ,0);
 
-653 
+657 
 	}
 }
 
-655 
+660 
 	$°©emít
 (& 
 v¨_num
@@ -9029,29 +9029,29 @@ l›Id
 blockAddr
 )
 
-657 
+662 
 °rög
  
 ª‚ame
 ="";
 
-659 
+664 
 tokí
 )
 
-661 
+666 
 £mic⁄
 :
 
-663 
+668 
 rsv_whûe
 :
 
-664 
+669 
 	`p
 ("whileÂ§çÂêàËØ≠Âè•",0);
 
-665 
+670 
 	`whûe°©
 (
 v¨_num
@@ -9059,15 +9059,15 @@ v¨_num
 Àvñ
 );
 
-667 
+672 
 rsv_if
 :
 
-668 
+673 
 	`p
 ("if-elseÂ§çÂêàËØ≠Âè•",0);
 
-669 
+674 
 	`if°©
 (
 v¨_num
@@ -9079,19 +9079,19 @@ l›Id
 blockAddr
 );
 
-671 
+676 
 rsv_bªak
 :
 
-672 
+677 
 	`p
 ("breakËØ≠Âè•",0);
 
-673 
+678 
 	`√xtTokí
 ();
 
-674 if(
+679 if(
 tokí
 ==
 idít
@@ -9107,7 +9107,7 @@ rsv_bªak
 rsv_c⁄töue
 
 
-675 ||
+680 ||
 tokí
 ==
 rsv_ö
@@ -9117,43 +9117,43 @@ rsv_out
 rbøc
 )
 
-677 
+682 
 	`sy¡îr‹
 (
 £mic⁄lo°
 ,-1);
 
-678 
+683 
 BACK
 
 
-679 }if(
+684 }if(
 tokí
 !=
 £mic⁄
 )
 
-681 
+686 
 	`sy¡îr‹
 (
 £mic⁄wr⁄g
 ,0);
 
-684 
+689 
 	`•
 ("ÂØπbreakËØ≠Âè•ÁöÑ‰ΩçÁΩÆËøõË°åËØ≠‰πâÊ£ÄÊü•");
 
-685 if(
+690 if(
 l›Id
 !=0)
 
-687 
+692 
 	`gíBlock
 (
 blockAddr
 );
 
-688 
+693 
 	`Ârötf
 (
 fout
@@ -9161,25 +9161,25 @@ fout
 l›Id
 );
 
-692 
+697 
 	`£mîr‹
 (
 bªak_nö_whûe
 );
 
-695 
+700 
 rsv_c⁄töue
 :
 
-696 
+701 
 	`p
 ("continueËØ≠Âè•",0);
 
-697 
+702 
 	`√xtTokí
 ();
 
-698 if(
+703 if(
 tokí
 ==
 idít
@@ -9195,7 +9195,7 @@ rsv_bªak
 rsv_c⁄töue
 
 
-699 ||
+704 ||
 tokí
 ==
 rsv_ö
@@ -9205,43 +9205,43 @@ rsv_out
 rbøc
 )
 
-701 
+706 
 	`sy¡îr‹
 (
 £mic⁄lo°
 ,-1);
 
-702 
+707 
 BACK
 
 
-703 }if(
+708 }if(
 tokí
 !=
 £mic⁄
 )
 
-705 
+710 
 	`sy¡îr‹
 (
 £mic⁄wr⁄g
 ,0);
 
-708 
+713 
 	`•
 ("ÂØπcontinueËØ≠Âè•ÁöÑ‰ΩçÁΩÆËøõË°åËØ≠‰πâÊ£ÄÊü•");
 
-709 if(
+714 if(
 l›Id
 !=0)
 
-711 
+716 
 	`gíBlock
 (
 blockAddr
 );
 
-712 
+717 
 	`Ârötf
 (
 fout
@@ -9249,21 +9249,21 @@ fout
 l›Id
 );
 
-716 
+721 
 	`£mîr‹
 (
 c⁄töue_nö_whûe
 );
 
-719 
+724 
 rsv_ªtu∫
 :
 
-720 
+725 
 	`p
 ("returnËØ≠Âè•",0);
 
-721 
+726 
 	`ªt°©
 (
 v¨_num
@@ -9271,29 +9271,13 @@ v¨_num
 Àvñ
 );
 
-723 
+728 
 rsv_ö
 :
 
-724 
+729 
 	`p
 ("inËØ≠Âè•",0);
-
-725 
-	`√xtTokí
-();
-
-726 if(!
-	`m©ch
-(
-öput
-))
-
-728 
-	`sy¡îr‹
-(
-öput_îr
-,0);
 
 730 
 	`√xtTokí
@@ -9302,22 +9286,38 @@ rsv_ö
 731 if(!
 	`m©ch
 (
-idít
+öput
 ))
 
 733 
 	`sy¡îr‹
 (
+öput_îr
+,0);
+
+735 
+	`√xtTokí
+();
+
+736 if(!
+	`m©ch
+(
+idít
+))
+
+738 
+	`sy¡îr‹
+(
 «_öput
 ,0);
 
-737 
+742 
 ª‚ame
 +=
 id
 ;
 
-739 
+744 
 	`gíI≈ut
 (
 èbÀ
@@ -9329,51 +9329,51 @@ id
 v¨_num
 );
 
-741 
+746 
 	`√xtTokí
 ();
 
-742 if(!
+747 if(!
 	`m©ch
 (
 £mic⁄
 ))
 
-744 
+749 
 	`sy¡îr‹
 (
 £mic⁄lo°
 ,-1);
 
-745 
+750 
 BACK
 
 
-748 
+753 
 rsv_out
 :
 
-749 
+754 
 	`p
 ("outËØ≠Âè•",0);
 
-750 
+755 
 	`√xtTokí
 ();
 
-751 if(!
+756 if(!
 	`m©ch
 (
 ouçut
 ))
 
-753 
+758 
 	`sy¡îr‹
 (
 ouçut_îr
 ,0);
 
-756 
+761 
 	`gíOuçut
 (
 	`ex¥
@@ -9381,37 +9381,37 @@ ouçut_îr
 v¨_num
 ),var_num);
 
-757 
+762 
 	`√xtTokí
 ();
 
-758 if(!
+763 if(!
 	`m©ch
 (
 £mic⁄
 ))
 
-760 
+765 
 	`sy¡îr‹
 (
 £mic⁄lo°
 ,-1);
 
-761 
+766 
 BACK
 
 
-764 
+769 
 idít
 :
 
-766 
+771 
 ª‚ame
 +=
 id
 ;
 
-767 
+772 
 	`idèû
 (
 ª‚ame
@@ -9419,35 +9419,35 @@ id
 v¨_num
 );
 
-768 
+773 
 	`√xtTokí
 ();
 
-769 if(!
+774 if(!
 	`m©ch
 (
 £mic⁄
 ))
 
-771 
+776 
 	`sy¡îr‹
 (
 £mic⁄lo°
 ,-1);
 
-772 
+777 
 BACK
 
 
-776 
+781 
 	}
 }
 
-777 
+782 
 	gl›ID
 =0;
 
-779 
+785 
 	$whûe°©
 (&
 v¨_num
@@ -9455,27 +9455,27 @@ v¨_num
 Àvñ
 )
 
-781 
+787 
 l›ID
 ++;
 
-782 
+788 
 id
 =
 l›ID
 ;
 
-783 
+789 
 	`√xtTokí
 ();
 
-784 if(!
+790 if(!
 	`m©ch
 (
 Õ¨í
 ))
 
-786 if(
+792 if(
 tokí
 ==
 idít
@@ -9489,33 +9489,33 @@ ch¨a
 Õ¨í
 )
 
-788 
+794 
 	`sy¡îr‹
 (
 Õ¨ílo°
 ,-1);
 
-789 
+795 
 BACK
 
 
-793 
+799 
 	`sy¡îr‹
 (
 Õ¨íwr⁄g
 ,0);
 
-796 if(
+802 if(
 showGí
 )
 
-797 
+803 
 cout
 <<"ÁîüÊàêwhûeÂæ™ÁéØÊ°ÜÊû∂"<<
 ídl
 ;
 
-798 
+804 
 	`Ârötf
 (
 fout
@@ -9523,17 +9523,17 @@ fout
 id
 );
 
-799 
+805 
 blockAddr
 =
 	`gíBlock
 (-1);
 
-800 
+806 
 öôv¨_num_whûe
 =0;
 
-801 
+807 
 v¨_ªc‹d
 *
 c⁄d
@@ -9543,13 +9543,13 @@ c⁄d
 öôv¨_num_whûe
 );
 
-802 
+808 
 	`gíC⁄dôi⁄
 (
 c⁄d
 );
 
-803 
+809 
 	`Ârötf
 (
 fout
@@ -9557,23 +9557,23 @@ fout
 id
 );
 
-805 
+811 
 	`√xtTokí
 ();
 
-806 if(!
+812 if(!
 	`m©ch
 (
 Ω¨í
 ))
 
-808 if(
+814 if(
 tokí
 ==
 lbøc
 ||
 
-809 
+815 
 tokí
 ==
 £mic⁄
@@ -9593,7 +9593,7 @@ rsv_ö
 rsv_out
 ||
 
-810 
+816 
 tokí
 ==
 idít
@@ -9607,23 +9607,23 @@ rsv_ch¨
 rsv_°rög
 )
 
-812 
+818 
 	`sy¡îr‹
 (
 °©î∑ª∆o°
 ,-1);
 
-813 
+819 
 BACK
 
 
-817 
+823 
 	`sy¡îr‹
 (
 Ω¨íwr⁄g
 ,0);
 
-821 
+827 
 	`block
 (
 öôv¨_num_whûe
@@ -9635,13 +9635,13 @@ l›ID
 blockAddr
 );
 
-822 
+828 
 	`gíBlock
 (
 blockAddr
 );
 
-823 
+829 
 	`Ârötf
 (
 fout
@@ -9649,7 +9649,7 @@ fout
 id
 );
 
-824 
+830 
 	`Ârötf
 (
 fout
@@ -9657,15 +9657,15 @@ fout
 id
 );
 
-825 
+831 
 	}
 }
 
-826 
+832 
 	gifID
 =0;
 
-828 
+834 
 	$if°©
 (&
 v¨_num
@@ -9677,27 +9677,27 @@ l›Id
 blockAddr
 )
 
-830 
+836 
 ifID
 ++;
 
-831 
+837 
 id
 =
 ifID
 ;
 
-832 
+838 
 	`√xtTokí
 ();
 
-833 if(!
+839 if(!
 	`m©ch
 (
 Õ¨í
 ))
 
-835 if(
+841 if(
 tokí
 ==
 idít
@@ -9711,43 +9711,43 @@ ch¨a
 Õ¨í
 )
 
-837 
+843 
 	`sy¡îr‹
 (
 Õ¨ílo°
 ,-1);
 
-838 
+844 
 BACK
 
 
-842 
+848 
 	`sy¡îr‹
 (
 Õ¨íwr⁄g
 ,0);
 
-845 if(
+851 if(
 showGí
 )
 
-846 
+852 
 cout
 <<"ÁîüÊàêif-ñ£Êù°‰ª∂Ê°ÜÊû∂"<<
 ídl
 ;
 
-847 
+853 
 blockAddr1
 =
 	`gíBlock
 (-1);
 
-848 
+854 
 öôv¨_num_if
 =0;
 
-849 
+855 
 v¨_ªc‹d
 *
 c⁄d
@@ -9757,13 +9757,13 @@ c⁄d
 öôv¨_num_if
 );
 
-850 
+856 
 	`gíC⁄dôi⁄
 (
 c⁄d
 );
 
-851 
+857 
 	`Ârötf
 (
 fout
@@ -9771,23 +9771,23 @@ fout
 id
 );
 
-852 
+858 
 	`√xtTokí
 ();
 
-853 if(!
+859 if(!
 	`m©ch
 (
 Ω¨í
 ))
 
-855 if(
+861 if(
 tokí
 ==
 lbøc
 ||
 
-856 
+862 
 tokí
 ==
 £mic⁄
@@ -9803,7 +9803,7 @@ rsv_bªak
 rsv_c⁄töue
 
 
-857 ||
+863 ||
 tokí
 ==
 rsv_ö
@@ -9811,7 +9811,7 @@ rsv_ö
 rsv_out
 ||
 
-858 
+864 
 tokí
 ==
 idít
@@ -9825,23 +9825,23 @@ rsv_ch¨
 rsv_°rög
 )
 
-860 
+866 
 	`sy¡îr‹
 (
 °©î∑ª∆o°
 ,-1);
 
-861 
+867 
 BACK
 
 
-865 
+871 
 	`sy¡îr‹
 (
 Ω¨íwr⁄g
 ,0);
 
-869 
+875 
 	`block
 (
 öôv¨_num_if
@@ -9853,13 +9853,13 @@ l›Id
 blockAddr
 );
 
-870 
+876 
 	`gíBlock
 (
 blockAddr1
 );
 
-871 
+877 
 	`Ârötf
 (
 fout
@@ -9867,7 +9867,7 @@ fout
 id
 );
 
-872 
+878 
 	`Ârötf
 (
 fout
@@ -9875,29 +9875,29 @@ fout
 id
 );
 
-873 
+879 
 	`gíBlock
 (
 blockAddr1
 );
 
-875 
+881 
 	`√xtTokí
 ();
 
-876 if(!
+882 if(!
 	`m©ch
 (
 rsv_ñ£
 ))
 
-878 if(
+884 if(
 tokí
 ==
 lbøc
 ||
 
-879 
+885 
 tokí
 ==
 £mic⁄
@@ -9917,7 +9917,7 @@ rsv_ö
 rsv_out
 
 
-880 ||
+886 ||
 tokí
 ==
 rsv_void
@@ -9929,35 +9929,35 @@ rsv_ch¨
 rsv_°rög
 )
 
-882 
+888 
 	`sy¡îr‹
 (
 ñ£lo°
 ,-1);
 
-883 
+889 
 BACK
 
 
-885 if(
+891 if(
 tokí
 ==
 idít
 )
 
-887 
+893 
 	`sy¡îr‹
 (
 ñ£•ñãº
 ,0);
 
-891 
+897 
 	`sy¡îr‹
 (
 ñ£wr⁄g
 ,0);
 
-898 
+904 
 	`block
 (0,
 Àvñ
@@ -9967,13 +9967,13 @@ l›Id
 blockAddr
 );
 
-899 
+905 
 	`gíBlock
 (
 blockAddr1
 );
 
-900 
+906 
 	`Ârötf
 (
 fout
@@ -9981,11 +9981,11 @@ fout
 id
 );
 
-903 
+909 
 	}
 }
 
-905 
+911 
 	$ªt°©
 (&
 v¨_num
@@ -9993,7 +9993,7 @@ v¨_num
 Àvñ
 )
 
-907 
+913 
 	`ªtu∫èû
 (
 v¨_num
@@ -10001,37 +10001,37 @@ v¨_num
 Àvñ
 );
 
-908 
+914 
 	`√xtTokí
 ();
 
-909 if(!
+915 if(!
 	`m©ch
 (
 £mic⁄
 ))
 
-911 if(
+917 if(
 tokí
 ==
 rbøc
 )
 
-913 
+919 
 	`sy¡îr‹
 (
 £mic⁄lo°
 ,-1);
 
-914 
+920 
 BACK
 
 
-917 
+923 
 	}
 }
 
-919 
+925 
 	$ªtu∫èû
 (& 
 v¨_num
@@ -10039,21 +10039,21 @@ v¨_num
 Àvñ
 )
 
-921 if(
+927 if(
 Àvñ
 ==1)
 
-922 
+928 
 tfun
 .
 hadªt
 =1;
 
-925 
+931 
 	`√xtTokí
 ();
 
-926 if(
+932 if(
 tokí
 ==
 idít
@@ -10067,11 +10067,11 @@ ch¨a
 Õ¨í
 )
 
-928 
+934 
 BACK
 
 
-929 
+935 
 v¨_ªc‹d
  * 
 ªt
@@ -10081,11 +10081,11 @@ v¨_ªc‹d
 v¨_num
 );
 
-930 
+936 
 	`•
 ("ÂØπreturnËØ≠Âè•ËøîÂõûÂÄºÁöÑÁ±ªÂûãËøõË°åËØ≠‰πâÊ£ÄÊü•");
 
-931 if(
+937 if(
 ªt
 !=
 NULL
@@ -10095,13 +10095,13 @@ ty≥
 tfun
 .type))
 
-934 
+940 
 	`£mîr‹
 (
 ªt_ty≥_îr
 );
 
-936 
+942 
 	`gíRëu∫
 (
 ªt
@@ -10109,21 +10109,21 @@ tfun
 v¨_num
 );
 
-939 if(
+945 if(
 tokí
 ==
 £mic⁄
 )
 
-941 
+947 
 BACK
 
 
-942 
+948 
 	`•
 ("ÂØπreturnËØ≠Âè•ËøîÂõûÂÄºÁöÑÁ±ªÂûãËøõË°åËØ≠‰πâÊ£ÄÊü•");
 
-943 if(
+949 if(
 rsv_void
 !=
 tfun
@@ -10131,13 +10131,13 @@ tfun
 ty≥
 )
 
-946 
+952 
 	`£mîr‹
 (
 ªt_ty≥_îr
 );
 
-948 
+954 
 	`gíRëu∫
 (
 NULL
@@ -10145,27 +10145,27 @@ NULL
 v¨_num
 );
 
-951 if(
+957 if(
 tokí
 ==
 rbøc
 )
 
-953 
+959 
 BACK
 
 
-958 
+964 
 	`sy¡îr‹
 (
 ªtu∫wr⁄g
 ,0);
 
-960 
+966 
 	}
 }
 
-963 
+969 
 v¨_ªc‹d
 * 
 	$idèû
@@ -10177,21 +10177,21 @@ v¨_ªc‹d
 v¨_num
 )
 
-965 
+971 
 	`√xtTokí
 ();
 
-967 if(
+973 if(
 tokí
 ==
 assign
 )
 
-969 
+975 
 	`p
 ("ËµãÂÄºËØ≠Âè•",0);
 
-970 
+976 
 v¨_ªc‹d
  *
 §c
@@ -10201,7 +10201,7 @@ v¨_ªc‹d
 v¨_num
 );
 
-971 
+977 
 v¨_ªc‹d
  *
 des
@@ -10213,7 +10213,7 @@ des
 ª‚ame
 );
 
-972  
+978  
 	`gíAssign
 (
 des
@@ -10223,13 +10223,13 @@ des
 v¨_num
 );
 
-974 if(
+980 if(
 tokí
 ==
 Õ¨í
 )
 
-976 
+982 
 	`ªÆ¨g
 (
 ª‚ame
@@ -10237,11 +10237,11 @@ tokí
 v¨_num
 );
 
-977 
+983 
 	`p
 ("ÂáΩÊï∞Ë∞ÉÁî®ËØ≠Âè•",0);
 
-979 
+985 
 v¨_ªc‹d
 *
 v¨_ªt
@@ -10255,43 +10255,43 @@ v¨_ªt
 v¨_num
 );
 
-980 
+986 
 	`√xtTokí
 ();
 
-981 if(!
+987 if(!
 	`m©ch
 (
 Ω¨í
 ))
 
-983 
+989 
 	`sy¡îr‹
 (
 Ω¨ílo°
 ,-1);
 
-984 
-BACK
-
-
-986  
-v¨_ªt
-;
-
-988 if(
-idítöex¥
-==1)
-
 990 
-idítöex¥
-=0;
-
-991 
 BACK
 
 
 992  
+v¨_ªt
+;
+
+994 if(
+idítöex¥
+==1)
+
+996 
+idítöex¥
+=0;
+
+997 
+BACK
+
+
+998  
 èbÀ
 .
 	`gëV¨
@@ -10299,25 +10299,25 @@ BACK
 ª‚ame
 );
 
-996 
+1002 
 	`sy¡îr‹
 (
 idèûlo°
 ,-1);
 
-997 
+1003 
 BACK
 
 
-999  
+1005  
 NULL
 ;
 
-1000 
+1006 
 	}
 }
 
-1002 
+1008 
 	$ªÆ¨g
 (
 °rög
@@ -10327,11 +10327,11 @@ NULL
 v¨_num
 )
 
-1004 
+1010 
 	`√xtTokí
 ();
 
-1005 if(
+1011 if(
 tokí
 ==
 idít
@@ -10345,11 +10345,11 @@ ch¨a
 Õ¨í
 )
 
-1007 
+1013 
 BACK
 
 
-1009 
+1015 
 èbÀ
 .
 	`addªÆ¨g
@@ -10359,13 +10359,13 @@ BACK
 v¨_num
 ),var_num);
 
-1010 
+1016 
 	`¨gli°
 (
 v¨_num
 );
 
-1012 if(
+1018 if(
 tokí
 ==
 Ω¨í
@@ -10373,63 +10373,63 @@ tokí
 £mic⁄
 )
 
-1014 
+1020 
 BACK
 
 
-1017 if(
+1023 if(
 tokí
 ==
 comma
 )
 
-1019 
+1025 
 	`sy¡îr‹
 (
 ¨glo°
 ,-1);
 
-1020 
+1026 
 BACK
 
 
-1021 
+1027 
 	`¨gli°
 (
 v¨_num
 );
 
-1025 
+1031 
 	`sy¡îr‹
 (
 ¨gwr⁄g
 ,0);
 
-1027 
+1033 
 	}
 }
 
-1029 
+1035 
 	$¨gli°
 (&
 v¨_num
 )
 
-1031 
+1037 
 	`√xtTokí
 ();
 
-1032 if(
+1038 if(
 tokí
 ==
 comma
 )
 
-1034 
+1040 
 	`√xtTokí
 ();
 
-1035 if(
+1041 if(
 tokí
 ==
 idít
@@ -10443,11 +10443,11 @@ ch¨a
 Õ¨í
 )
 
-1037 
+1043 
 BACK
 
 
-1038 
+1044 
 èbÀ
 .
 	`addªÆ¨g
@@ -10456,28 +10456,6 @@ BACK
 (
 v¨_num
 ),var_num);
-
-1039 
-	`¨gli°
-(
-v¨_num
-);
-
-1041 if(
-tokí
-==
-comma
-)
-
-1043 
-	`sy¡îr‹
-(
-¨glo°
-,-1);
-
-1044 
-BACK
-
 
 1045 
 	`¨gli°
@@ -10488,9 +10466,7 @@ v¨_num
 1047 if(
 tokí
 ==
-£mic⁄
-||tokí==
-Ω¨í
+comma
 )
 
 1049 
@@ -10503,13 +10479,37 @@ tokí
 BACK
 
 
+1051 
+	`¨gli°
+(
+v¨_num
+);
+
+1053 if(
+tokí
+==
+£mic⁄
+||tokí==
+Ω¨í
+)
+
 1055 
+	`sy¡îr‹
+(
+¨glo°
+,-1);
+
+1056 
+BACK
+
+
+1061 
 	`sy¡îr‹
 (
 ¨gwr⁄g
 ,0);
 
-1059 if(
+1065 if(
 tokí
 ==
 Ω¨í
@@ -10517,11 +10517,11 @@ tokí
 £mic⁄
 )
 
-1061 
+1067 
 BACK
 
 
-1064 if(
+1070 if(
 tokí
 ==
 idít
@@ -10535,39 +10535,39 @@ ch¨a
 Õ¨í
 )
 
-1066 
+1072 
 	`sy¡îr‹
 (
 commÆo°
 ,-1);
 
-1067 
+1073 
 BACK
 
 
-1068 
+1074 
 	`ex¥
 (
 v¨_num
 );
 
-1069 
+1075 
 	`¨gli°
 (
 v¨_num
 );
 
-1073 
+1079 
 	`sy¡îr‹
 (
 ¨gli°wr⁄g
 ,0);
 
-1075 
+1081 
 	}
 }
 
-1077 
+1084 
 v¨_ªc‹d
 * 
 	$ex¥
@@ -10575,9 +10575,9 @@ v¨_ªc‹d
 v¨_num
 )
 
-1079 
+1086 
 v¨_ªc‹d
-*
+* 
 p_Á˘‹1
 =
 	`Æ€xp
@@ -10585,9 +10585,9 @@ p_Á˘‹1
 v¨_num
 );
 
-1080 
+1087 
 v¨_ªc‹d
-*
+* 
 p_Á˘‹2
 =
 	`ex±aû
@@ -10597,25 +10597,25 @@ p_Á˘‹1
 v¨_num
 );
 
-1081 if(
+1088 if(
 p_Á˘‹2
 ==
 NULL
 )
 
-1082  
+1089  
 p_Á˘‹1
 ;
 
-1084  
+1091  
 p_Á˘‹2
 ;
 
-1085 
+1092 
 	}
 }
 
-1088 
+1095 
 v¨_ªc‹d
 * 
 	$ex±aû
@@ -10627,11 +10627,11 @@ p_Á˘‹1
 v¨_num
 )
 
-1090 
+1097 
 	`√xtTokí
 ();
 
-1091 if(
+1098 if(
 tokí
 ==
 gt
@@ -10647,7 +10647,7 @@ equ
 √qu
 )
 
-1094 
+1101 
 symbﬁ
  
 t
@@ -10655,7 +10655,7 @@ t
 tokí
 ;
 
-1096 
+1103 
 v¨_ªc‹d
 *
 p_Á˘‹2
@@ -10665,7 +10665,7 @@ p_Á˘‹2
 v¨_num
 );
 
-1097  
+1104  
 	`gíExp
 (
 p_Á˘‹1
@@ -10677,7 +10677,7 @@ p_Á˘‹2
 v¨_num
 );
 
-1099 if(
+1106 if(
 tokí
 ==
 idít
@@ -10691,23 +10691,23 @@ ch¨a
 Õ¨í
 )
 
-1101 
+1108 
 	`sy¡îr‹
 (
 ›∂o°
 ,-1);
 
-1102 
+1109 
 BACK
 
 
-1103 
+1110 
 	`ex¥
 (
 v¨_num
 );
 
-1105 if(
+1112 if(
 tokí
 ==
 £mic⁄
@@ -10717,7 +10717,7 @@ tokí
 comma
 
 
-1106 ||
+1113 ||
 tokí
 ==
 rbøc
@@ -10737,7 +10737,7 @@ rsv_whûe
 rsv_if
 
 
-1107 ||
+1114 ||
 tokí
 ==
 rsv_öt
@@ -10749,19 +10749,19 @@ rsv_ch¨
 rsv_°rög
 
 
-1110 
+1117 
 BACK
 
 
-1111  
+1118  
 NULL
 ;
 
-1115 
+1122 
 	`√xtTokí
 ();
 
-1116 if(
+1123 if(
 tokí
 ==
 £mic⁄
@@ -10771,21 +10771,21 @@ tokí
 comma
 )
 
-1118 
+1125 
 	`sy¡îr‹
 (
 ›pwr⁄g
 ,0);
 
-1119 
+1126 
 BACK
 
 
-1120  
+1127  
 NULL
 ;
 
-1122 if(
+1129 if(
 tokí
 ==
 idít
@@ -10799,73 +10799,73 @@ ch¨a
 Õ¨í
 )
 
-1124 
+1131 
 	`sy¡îr‹
 (
 ›pwr⁄g
 ,0);
 
-1125 
+1132 
 BACK
 
 
-1126 
+1133 
 	`ex¥
 (
 v¨_num
 );
 
-1130 
+1137 
 	`sy¡îr‹
 (
 ›pwr⁄g
 ,0);
 
-1131  
+1138  
 NULL
 ;
 
-1135 
+1142 
 	}
 }
 
-1137 
+1144 
 	$cmps
 ()
 
-1139 
+1146 
 tokí
 )
 
-1141 
+1148 
 gt
 :
 
-1143 
+1150 
 ge
 :
 
-1145 
+1152 
 …
 :
 
-1147 
+1154 
 À
 :
 
-1149 
+1156 
 equ
 :
 
-1151 
+1158 
 √qu
 :
 
-1154 
+1161 
 	}
 }
 
-1157 
+1165 
 v¨_ªc‹d
 * 
 	$Æ€xp
@@ -10873,7 +10873,7 @@ v¨_ªc‹d
 v¨_num
 )
 
-1159 
+1167 
 v¨_ªc‹d
 *
 p_Á˘‹1
@@ -10883,7 +10883,7 @@ p_Á˘‹1
 v¨_num
 );
 
-1160 
+1168 
 v¨_ªc‹d
 *
 p_Á˘‹2
@@ -10895,25 +10895,25 @@ p_Á˘‹1
 v¨_num
 );
 
-1161 if(
+1169 if(
 p_Á˘‹2
 ==
 NULL
 )
 
-1162  
+1170  
 p_Á˘‹1
 ;
 
-1164  
+1172  
 p_Á˘‹2
 ;
 
-1165 
+1173 
 	}
 }
 
-1168 
+1176 
 v¨_ªc‹d
 * 
 	$ôemèû
@@ -10925,11 +10925,11 @@ p_Á˘‹1
 v¨_num
 )
 
-1170 
+1178 
 	`√xtTokí
 ();
 
-1171 if(
+1179 if(
 tokí
 ==
 addi
@@ -10937,7 +10937,7 @@ addi
 subs
 )
 
-1174 
+1182 
 symbﬁ
  
 t
@@ -10945,7 +10945,7 @@ t
 tokí
 ;
 
-1176 
+1184 
 v¨_ªc‹d
 *
 p_Á˘‹2
@@ -10955,7 +10955,7 @@ p_Á˘‹2
 v¨_num
 );
 
-1177  
+1185  
 	`gíExp
 (
 p_Á˘‹1
@@ -10967,7 +10967,7 @@ p_Á˘‹2
 v¨_num
 );
 
-1179 if(
+1187 if(
 tokí
 ==
 idít
@@ -10981,59 +10981,59 @@ ch¨a
 Õ¨í
 )
 
-1181 
+1189 
 	`sy¡îr‹
 (
 ›∂o°
 ,-1);
 
-1182 
+1190 
 BACK
 
 
-1183 
+1191 
 	`Æ€xp
 (
 v¨_num
 );
 
-1188 
+1196 
 BACK
 
 
-1189  
+1197  
 NULL
 ;
 
-1191  
+1199  
 NULL
 ;
 
-1192 
+1200 
 	}
 }
 
-1194 
+1202 
 	$adds
 ()
 
-1196 
+1204 
 tokí
 )
 
-1198 
+1206 
 addi
 :
 
-1200 
+1208 
 subs
 :
 
-1203 
+1211 
 	}
 }
 
-1206 
+1215 
 v¨_ªc‹d
 * 
 	$ôem
@@ -11041,7 +11041,7 @@ v¨_ªc‹d
 v¨_num
 )
 
-1208 
+1217 
 v¨_ªc‹d
 *
 p_Á˘‹1
@@ -11051,7 +11051,7 @@ p_Á˘‹1
 v¨_num
 );
 
-1209 
+1218 
 v¨_ªc‹d
 *
 p_Á˘‹2
@@ -11063,25 +11063,25 @@ p_Á˘‹1
 v¨_num
 );
 
-1210 if(
+1219 if(
 p_Á˘‹2
 ==
 NULL
 )
 
-1211  
+1220  
 p_Á˘‹1
 ;
 
-1213  
+1222  
 p_Á˘‹2
 ;
 
-1214 
+1223 
 	}
 }
 
-1217 
+1226 
 v¨_ªc‹d
 * 
 	$Á˘‹èû
@@ -11093,11 +11093,11 @@ p_Á˘‹1
 v¨_num
 )
 
-1219 
+1228 
 	`√xtTokí
 ();
 
-1220 if(
+1229 if(
 tokí
 ==
 mu…
@@ -11105,7 +11105,7 @@ mu…
 divi
 )
 
-1223 
+1232 
 symbﬁ
  
 t
@@ -11113,7 +11113,7 @@ t
 tokí
 ;
 
-1225 
+1234 
 v¨_ªc‹d
 *
 p_Á˘‹2
@@ -11123,7 +11123,7 @@ p_Á˘‹2
 v¨_num
 );
 
-1226  
+1235  
 	`gíExp
 (
 p_Á˘‹1
@@ -11135,7 +11135,7 @@ p_Á˘‹2
 v¨_num
 );
 
-1228 if(
+1237 if(
 tokí
 ==
 idít
@@ -11149,59 +11149,59 @@ ch¨a
 Õ¨í
 )
 
-1230 
+1239 
 	`sy¡îr‹
 (
 ›∂o°
 ,-1);
 
-1231 
+1240 
 BACK
 
 
-1232 
+1241 
 	`ôem
 (
 v¨_num
 );
 
-1237 
+1246 
 BACK
 
 
-1238  
+1247  
 NULL
 ;
 
-1240  
+1249  
 NULL
 ;
 
-1241 
+1250 
 	}
 }
 
-1243 
+1252 
 	$muls
 ()
 
-1245 
+1254 
 tokí
 )
 
-1247 
+1256 
 mu…
 :
 
-1249 
+1258 
 divi
 :
 
-1252 
+1261 
 	}
 }
 
-1255 
+1265 
 v¨_ªc‹d
 * 
 	$Á˘‹
@@ -11209,11 +11209,11 @@ v¨_ªc‹d
 v¨_num
 )
 
-1257 
+1267 
 	`√xtTokí
 ();
 
-1258 
+1268 
 v¨_ªc‹d
 *
 p_tmpv¨
@@ -11221,31 +11221,31 @@ p_tmpv¨
 NULL
 ;
 
-1259 
+1269 
 °rög
  
 ª‚ame
 ="";
 
-1260 
+1270 
 tokí
 )
 
-1262 
+1272 
 idít
 :
 
-1263 
+1273 
 idítöex¥
 =1;
 
-1264 
+1274 
 ª‚ame
 +=
 id
 ;
 
-1265 
+1275 
 p_tmpv¨
 =
 	`idèû
@@ -11255,11 +11255,11 @@ p_tmpv¨
 v¨_num
 );
 
-1267 
+1277 
 numbî
 :
 
-1268 
+1278 
 p_tmpv¨
 =
 tfun
@@ -11271,11 +11271,11 @@ rsv_öt
 v¨_num
 );
 
-1270 
+1280 
 ch¨a
 :
 
-1271 
+1281 
 p_tmpv¨
 =
 tfun
@@ -11287,11 +11287,11 @@ rsv_ch¨
 v¨_num
 );
 
-1273 
+1283 
 Õ¨í
 :
 
-1274 
+1284 
 p_tmpv¨
 =
 	`ex¥
@@ -11299,31 +11299,31 @@ p_tmpv¨
 v¨_num
 );
 
-1275 
+1285 
 	`√xtTokí
 ();
 
-1276 if(!
+1286 if(!
 	`m©ch
 (
 Ω¨í
 ))
 
-1278 
+1288 
 	`sy¡îr‹
 (
 ex¥∑ª∆o°
 ,-1);
 
-1279 
+1289 
 BACK
 
 
-1282 
+1292 
 °rögs
 :
 
-1283 
+1293 
 p_tmpv¨
 =
 tfun
@@ -11335,7 +11335,7 @@ rsv_°rög
 v¨_num
 );
 
-1286 if(
+1296 if(
 tokí
 ==
 Ω¨í
@@ -11345,7 +11345,7 @@ tokí
 comma
 ||
 
-1287 
+1297 
 tokí
 ==
 gt
@@ -11361,7 +11361,7 @@ equ
 √qu
 ||
 
-1288 
+1298 
 tokí
 ==
 addi
@@ -11373,27 +11373,27 @@ mu…
 divi
 
 
-1291 
+1301 
 	`sy¡îr‹
 (
 ex¥lo°
 ,-1);
 
-1292 
+1302 
 BACK
 
 
-1296 
+1306 
 	`sy¡îr‹
 (
 ex¥wr⁄g
 ,0);
 
-1299  
+1309  
 p_tmpv¨
 ;
 
-1300 
+1310 
 	}
 }
 
@@ -12351,7 +12351,7 @@ f
 	}
 }
 
-207 
+208 
 v¨_ªc‹d
 *
 	gfun_ªc‹d
@@ -12367,15 +12367,15 @@ hasVÆ
 v¨_num
 )
 
-209 if(
+210 if(
 sy√º
 !=0)
 
-210  
+211  
 NULL
 ;
 
-212 
+213 
 v¨_ªc‹d
 *
 p_tmpv¨
@@ -12385,19 +12385,19 @@ p_tmpv¨
 	`v¨_ªc‹d
 ();
 
-213 
+214 
 ty≥
 )
 
-215 
+216 
 rsv_öt
 :
 
-216 if(
+217 if(
 hasVÆ
 )
 
-218 
+219 
 p_tmpv¨
 ->
 ötVÆ
@@ -12405,15 +12405,15 @@ p_tmpv¨
 num
 ;
 
-221 
+222 
 rsv_ch¨
 :
 
-222 if(
+223 if(
 hasVÆ
 )
 
-224 
+225 
 p_tmpv¨
 ->
 ch¨VÆ
@@ -12421,15 +12421,15 @@ ch¨VÆ
 Àâî
 ;
 
-227 
+228 
 rsv_°rög
 :
 
-228 if(
+229 if(
 hasVÆ
 )
 
-230 
+231 
 p_tmpv¨
 ->
 °rVÆId
@@ -12439,13 +12439,13 @@ p_tmpv¨
 	`add°rög
 ();
 
-234 
+235 
 p_tmpv¨
 ->
 °rVÆId
 =-1;
 
-238 
+239 
 p_tmpv¨
 ->
 «me
@@ -12455,17 +12455,17 @@ p_tmpv¨
 ty≥
 ,"");
 
-239 
+240 
 p_tmpv¨
 ->
 ty≥
 =type;
 
-241 
+242 
 v¨_num
 ++;
 
-244 
+245 
 this
 ->
 loˇlv¨s
@@ -12475,7 +12475,7 @@ loˇlv¨s
 p_tmpv¨
 );
 
-246 
+247 
 èbÀ
 .
 	`addv¨
@@ -12483,7 +12483,7 @@ p_tmpv¨
 p_tmpv¨
 );
 
-248 
+249 
 ¨g¶í
 =
 this
@@ -12493,7 +12493,7 @@ this
 	`size
 ();
 
-249 
+250 
 loˇlv¨Àn
 =
 this
@@ -12503,7 +12503,7 @@ loˇlv¨s
 	`size
 ();
 
-250 
+251 
 p_tmpv¨
 ->
 loˇlAddr
@@ -12513,7 +12513,7 @@ loˇlv¨Àn
 ¨g¶í
 );
 
-253 
+254 
 	`gíLocv¨
 (
 p_tmpv¨
@@ -12521,21 +12521,21 @@ p_tmpv¨
 °rVÆId
 );
 
-255  
+256  
 p_tmpv¨
 ;
 
-256 
+257 
 	}
 }
 
-260 
+262 
 	gfun_ªc‹d
 ::
 	$gëCurAddr
 ()
 
-263 
+265 
 ¨g¶í
 =
 this
@@ -12545,7 +12545,7 @@ this
 	`size
 ();
 
-264 
+266 
 loˇlv¨Àn
 =
 this
@@ -12555,23 +12555,23 @@ loˇlv¨s
 	`size
 ();
 
-265  -4*(
+267  -4*(
 loˇlv¨Àn
 -
 ¨g¶í
 );
 
-266 
+268 
 	}
 }
 
-267 
+269 
 	gfun_ªc‹d
 ::~
 	$fun_ªc‹d
 ()
 
-270 
+272 
 this
 ->
 ty≥
@@ -12579,23 +12579,23 @@ ty≥
 nuŒ
 ;
 
-271 
+273 
 this
 ->
 «me
 ="";
 
-273 if(
+275 if(
 loˇlv¨s
 !=
 NULL
 )
 
-275 if(
+277 if(
 Êushed
 ==0)
 
-277 
+279 
 Àn
 =
 ¨gs
@@ -12603,13 +12603,13 @@ NULL
 	`size
 ();
 
-278 
+280 
 i
 =0;i<
 Àn
 ;i++)
 
-281 
+283 
 	`dñëe
  (*
 loˇlv¨s
@@ -12617,81 +12617,81 @@ loˇlv¨s
 i
 ];
 
-285 
+287 
 this
 ->
 loˇlv¨s
 ->
 	`˛ór
 ();
-
-286 
-dñëe
- 
-loˇlv¨s
-;
 
 288 
-this
-->
-¨gs
-->
-	`˛ór
-();
-
-289 
 dñëe
  
-this
-->
-¨gs
+loˇlv¨s
 ;
 
 290 
 this
 ->
+¨gs
+->
+	`˛ór
+();
+
+291 
+dñëe
+ 
+this
+->
+¨gs
+;
+
+292 
+this
+->
 deföed
 =0;
 
-291 
+293 
 	}
 }
 
-293 
+295 
 	gTabÀ
 ::
 	$TabÀ
 ()
 
-295 
+297 
 v¨_m≠
 .
 	`˛ór
 ();
 
-296 
+298 
 fun_m≠
 .
 	`˛ór
 ();
 
-297 
+299 
 °rögTabÀ
 .
 	`˛ór
 ();
 
-298 
+300 
 ªÆ_¨gs_li°
 .
 	`˛ór
 ();
 
-299 
+301 
 	}
 }
 
-303 
+305 
 	gTabÀ
 ::
 	$addªÆ¨g
@@ -12703,11 +12703,11 @@ v¨_ªc‹d
 v¨_num
 )
 
-305 if(
+307 if(
 sy√º
 !=0)
 
-307 if(
+309 if(
 ¨g
 ->
 ty≥
@@ -12715,19 +12715,19 @@ ty≥
 rsv_°rög
 )
 
-311 
+313 
 v¨_ªc‹d
  
 emp°r
 ;
 
-312 
+314 
 °rög
  
 em≤ame
 ="";
 
-313 
+315 
 emp°r
 .
 	`öô
@@ -12737,7 +12737,7 @@ rsv_°rög
 em≤ame
 );
 
-314 
+316 
 ¨g
 =
 	`gíExp
@@ -12749,7 +12749,7 @@ addi
 v¨_num
 );
 
-317 
+319 
 ªÆ_¨gs_li°
 .
 	`push_back
@@ -12757,17 +12757,17 @@ v¨_num
 ¨g
 );
 
-318 
+320 
 	}
 }
 
-319 
+321 
 •
 (c⁄° * 
 msg
 );
 
-320 
+322 
 v¨_ªc‹d
 * 
 	gTabÀ
@@ -12781,7 +12781,7 @@ v¨_ªc‹d
 v¨_num
 )
 
-322 
+324 
 v¨_ªc‹d
 *
 pRec
@@ -12789,19 +12789,19 @@ pRec
 NULL
 ;
 
-323 if(
+325 if(
 îr‹Num
 !=0)
 
-324  
+326  
 NULL
 ;
 
-325 
+327 
 	`•
 ("ÂØπÂáΩÊï∞Ë∞ÉÁî®ËßÑÂàôËøõË°åËØ≠‰πâÊ£ÄÊü•");
 
-326 if(
+328 if(
 fun_m≠
 .
 	`föd
@@ -12811,7 +12811,7 @@ fun_m≠
 	`íd
 ())
 
-328 
+330 
 fun_ªc‹d
 *
 pfun
@@ -12821,7 +12821,7 @@ fun_m≠
 ‚ame
 ];
 
-331 if(
+333 if(
 ªÆ_¨gs_li°
 .
 	`size
@@ -12831,7 +12831,7 @@ pfun
 ¨gs
 ->size())
 
-333 
+335 
 l
 =
 ªÆ_¨gs_li°
@@ -12839,7 +12839,7 @@ l
 	`size
 ();
 
-334 
+336 
 m
 =
 pfun
@@ -12849,7 +12849,7 @@ pfun
 	`size
 ();
 
-335 
+337 
 i
 =
 l
@@ -12859,7 +12859,7 @@ j
 m
 -1;j>=0;i--,j--)
 
-337 if(
+339 if(
 ªÆ_¨gs_li°
 [
 i
@@ -12873,13 +12873,13 @@ pfun
 j
 ])
 
-339 
+341 
 	`£mîr‹
 (
 ªÆ_¨gs_îr
 );
 
-345 
+347 
 v¨_ªc‹d
 *
 ªt
@@ -12889,11 +12889,11 @@ v¨_ªc‹d
 i
 ];
 
-346 if(
+348 if(
 £mîr
 !=0)
 
-348 if(
+350 if(
 ªt
 ->
 ty≥
@@ -12901,7 +12901,7 @@ ty≥
 rsv_°rög
 )
 
-350 
+352 
 	`Ârötf
 (
 fout
@@ -12911,13 +12911,13 @@ fout
 loˇlAddr
 );
 
-354 if(
+356 if(
 ªt
 ->
 loˇlAddr
 ==0)
 
-355 
+357 
 	`Ârötf
 (
 fout
@@ -12929,13 +12929,13 @@ fout
 	`c_°r
 ());
 
-358 if(
+360 if(
 ªt
 ->
 loˇlAddr
 <0)
 
-359 
+361 
 	`Ârötf
 (
 fout
@@ -12945,7 +12945,7 @@ fout
 loˇlAddr
 );
 
-361 
+363 
 	`Ârötf
 (
 fout
@@ -12955,17 +12955,17 @@ fout
 loˇlAddr
 );
 
-364 
+366 
 	`Ârötf
 (
 fout
 ,"\tpushÉax\n");
 
-367 if(
+369 if(
 showGí
 )
 
-368 
+370 
 cout
 <<"‰∫ßÁîüÂáΩÊï∞"<<
 ‚ame
@@ -12973,7 +12973,7 @@ cout
 ídl
 ;
 
-370 
+372 
 	`Ârötf
 (
 fout
@@ -12983,7 +12983,7 @@ fout
 	`c_°r
 ());
 
-371 
+373 
 	`Ârötf
 (
 fout
@@ -12991,7 +12991,7 @@ fout
 l
 );
 
-373 if(
+375 if(
 pfun
 ->
 ty≥
@@ -12999,7 +12999,7 @@ ty≥
 rsv_void
 )
 
-375 
+377 
 pRec
 =
 tfun
@@ -13013,7 +13013,7 @@ ty≥
 v¨_num
 );
 
-376 
+378 
 	`Ârötf
 (
 fout
@@ -13023,7 +13023,7 @@ pRec
 loˇlAddr
 );
 
-377 if(
+379 if(
 pfun
 ->
 ty≥
@@ -13031,19 +13031,19 @@ ty≥
 rsv_°rög
 )
 
-379 
+381 
 v¨_ªc‹d
  
 emp°r
 ;
 
-380 
+382 
 °rög
  
 em≤ame
 ="";
 
-381 
+383 
 emp°r
 .
 	`öô
@@ -13053,7 +13053,7 @@ rsv_°rög
 em≤ame
 );
 
-383 
+385 
 pRec
 =
 	`gíExp
@@ -13065,55 +13065,55 @@ addi
 v¨_num
 );
 
-387 
+389 
 m
 --)
 
-388 
+390 
 ªÆ_¨gs_li°
 .
 	`p›_back
 ();
 
-392 
+394 
 	`£mîr‹
 (
 ªÆ_¨gs_îr
 );
 
-397 
+399 
 	`£mîr‹
 (
 fun_undec
 );
 
-400  
+402  
 pRec
 ;
 
-401 
+403 
 	}
 }
 
-402 
+404 
 	g°rögId
 =0;
 
-403 
+405 
 	gTabÀ
 ::
 	$add°rög
 ()
 
-405 if(
+407 if(
 sy√º
 !=0)
 
-407 
+409 
 °rögId
 ++;
 
-408 
+410 
 °rög
  * 
 ps
@@ -13123,13 +13123,13 @@ ps
 	`°rög
 ();
 
-409 *
+411 *
 ps
 +=
 °r
 ;
 
-410 
+412 
 °rögTabÀ
 .
 	`push_back
@@ -13137,11 +13137,11 @@ ps
 ps
 );
 
-411 if(
+413 if(
 showTab
 )
 
-412 
+414 
 cout
 <<"\t\t\t‰∏≤ "<<"\""<<
 °r
@@ -13151,15 +13151,15 @@ cout
 ídl
 ;
 
-413  
+415  
 °rögId
 ;
 
-414 
+416 
 	}
 }
 
-415 
+417 
 °rög
  
 	gTabÀ
@@ -13169,11 +13169,11 @@ cout
 ödex
 )
 
-417 if(
+419 if(
 sy√º
 !=0)
 
-419 if(
+421 if(
 ödex
 >0&&ödex<=
 °rögTabÀ
@@ -13181,27 +13181,27 @@ sy√º
 	`size
 ())
 
-421  *(
+423  *(
 °rögTabÀ
 [
 ödex
 -1]);
 
-425 
+427 
 	}
 }
 
-428 
+430 
 	gTabÀ
 ::
 	$addv¨
 ()
 
-430 if(
+432 if(
 sy√º
 !=0)
 
-432 if(
+434 if(
 v¨_m≠
 .
 	`föd
@@ -13213,7 +13213,7 @@ tv¨
 	`íd
 ())
 
-434 
+436 
 v¨_ªc‹d
  * 
 pv¨
@@ -13225,7 +13225,7 @@ pv¨
 tv¨
 );
 
-435 
+437 
 v¨_m≠
 [
 tv¨
@@ -13235,11 +13235,11 @@ tv¨
 pv¨
 ;
 
-436 if(
+438 if(
 showTab
 )
 
-437 
+439 
 cout
 <<"\t\t\tÂÖ®Â±ÄÂèòÈáè <"<<
 symName
@@ -13253,11 +13253,11 @@ ty≥
 ídl
 ;
 
-441 
+443 
 	`•
 ("ÂØπÂÖ®Â±ÄÂèòÈáèÁöÑÂÆö‰πâË°åËøõË°åËØ≠‰πâÊ£ÄÊü•");
 
-442 
+444 
 v¨_ªc‹d
  * 
 pv¨
@@ -13269,7 +13269,7 @@ tv¨
 «me
 ];
 
-444 
+446 
 dñëe
  
 v¨_m≠
@@ -13279,7 +13279,7 @@ tv¨
 «me
 ];
 
-445 
+447 
 v¨_m≠
 [
 tv¨
@@ -13289,17 +13289,17 @@ tv¨
 pv¨
 ;
 
-446 
+448 
 	`£mîr‹
 (
 v¨_ªdef
 );
 
-448 
+450 
 	}
 }
 
-451 
+453 
 	gTabÀ
 ::
 	$addv¨
@@ -13309,11 +13309,11 @@ v¨_ªc‹d
 v_r
 )
 
-453 if(
+455 if(
 sy√º
 !=0)
 
-455 if(
+457 if(
 v¨_m≠
 .
 	`föd
@@ -13325,7 +13325,7 @@ v_r
 	`íd
 ())
 
-457 
+459 
 v¨_m≠
 [
 v_r
@@ -13333,23 +13333,23 @@ v_r
 «me
 ]=v_r;
 
-461 
+463 
 	`£mîr‹
 (
 v¨_ªdef
 );
 
-462 
+464 
 dñëe
  
 v_r
 ;
 
-464 
+466 
 	}
 }
 
-465 
+468 
 v¨_ªc‹d
  * 
 	gTabÀ
@@ -13361,19 +13361,19 @@ v¨_ªc‹d
 «me
 )
 
-467 if(
+470 if(
 sy√º
 !=0)
 
-468  
+471  
 NULL
 ;
 
-469 
+472 
 	`•
 ("ÂØπÂºïÁî®ÂÖ®Â±ÄÂèòÈáèËøõË°åËØ≠‰πâÊ£ÄÊü•");
 
-470 if(
+473 if(
 èbÀ
 .
 	`ha¢ame
@@ -13381,27 +13381,27 @@ NULL
 «me
 ))
 
-472  
+475  
 v¨_m≠
 [
 «me
 ];
 
-476 
+479 
 	`£mîr‹
 (
 v¨_undec
 );
 
-477  
+480  
 NULL
 ;
 
-479 
+482 
 	}
 }
 
-481 
+484 
 	gTabÀ
 ::
 	$ha¢ame
@@ -13411,11 +13411,11 @@ NULL
 id_«me
 )
 
-483 if(
+486 if(
 sy√º
 !=0)
 
-485  (
+488  (
 v¨_m≠
 .
 	`föd
@@ -13429,11 +13429,11 @@ tfun
 	`ha¢ame
 (id_name));
 
-486 
+489 
 	}
 }
 
-487 
+490 
 	gTabÀ
 ::
 	$dñv¨
@@ -13443,11 +13443,11 @@ tfun
 v¨_«me
 )
 
-489 if(
+492 if(
 sy√º
 !=0)
 
-491 if(
+494 if(
 v¨_m≠
 .
 	`föd
@@ -13457,7 +13457,7 @@ v¨_«me
 	`íd
 ())
 
-493 
+496 
 v¨_ªc‹d
  * 
 pv¨
@@ -13467,13 +13467,13 @@ v¨_m≠
 v¨_«me
 ];
 
-494 
+497 
 dñëe
  
 pv¨
 ;
 
-495 
+498 
 v¨_m≠
 .
 	`îa£
@@ -13481,25 +13481,25 @@ v¨_m≠
 v¨_«me
 );
 
-501 
+504 
 	}
 }
 
-504 
+507 
 	gTabÀ
 ::
 	$addfun
 ()
 
-506 if(
+509 if(
 sy√º
 !=0)
 
-508 
+511 
 	`•
 ("ÂØπÂáΩÊï∞ÁöÑÂ£∞ÊòéÂÆö‰πâË°åËøõË°åËØ≠‰πâÊ£ÄÊü•");
 
-509 if(
+512 if(
 fun_m≠
 .
 	`föd
@@ -13511,7 +13511,7 @@ tfun
 	`íd
 ())
 
-511 
+514 
 fun_ªc‹d
  * 
 pfun
@@ -13523,7 +13523,7 @@ pfun
 tfun
 );
 
-512 
+515 
 fun_m≠
 [
 tfun
@@ -13533,11 +13533,11 @@ tfun
 pfun
 ;
 
-513 if(
+516 if(
 showTab
 )
 
-514 
+517 
 cout
 <<"\t\t\tÂáΩÊï∞ "<<
 symName
@@ -13551,23 +13551,23 @@ ty≥
 ídl
 ;
 
-516 if(
+519 if(
 pfun
 ->
 deföed
 ==1)
 
-519 
+522 
 tfun
 .
 	`Êush¨gs
 ();
 
-520 
+523 
 	`gíFunhód
 ();
 
-525 
+528 
 fun_ªc‹d
  * 
 pfun
@@ -13579,7 +13579,7 @@ tfun
 «me
 ];
 
-527 if(
+530 if(
 pfun
 ->
 	`equÆ
@@ -13587,47 +13587,47 @@ pfun
 tfun
 ))
 
-530 if(
+533 if(
 tfun
 .
 deföed
 ==1)
 
-532 if(
+535 if(
 pfun
 ->
 deföed
 ==1)
 
-535 
+538 
 	`£mîr‹
 (
 fun_ªdef
 );
 
-537 
-tfun
-.
-	`Êush¨gs
-();
-
-542 
-pfun
-->
-deföed
-=1;
-
-543 
+540 
 tfun
 .
 	`Êush¨gs
 ();
 
 545 
+pfun
+->
+deföed
+=1;
+
+546 
+tfun
+.
+	`Êush¨gs
+();
+
+548 
 	`gíFunhód
 ();
 
-553 
+556 
 fun_ªc‹d
  * 
 pfun
@@ -13639,7 +13639,7 @@ pfun
 tfun
 );
 
-554 
+557 
 dñëe
  
 fun_m≠
@@ -13649,7 +13649,7 @@ tfun
 «me
 ];
 
-555 
+558 
 fun_m≠
 [
 tfun
@@ -13659,55 +13659,55 @@ tfun
 pfun
 ;
 
-557 if(
+560 if(
 tfun
 .
 deföed
 ==1)
 
-559 
+562 
 	`£mîr‹
 (
 fun_def_îr
 );
 
-560 
+563 
 tfun
 .
 	`Êush¨gs
 ();
 
-564 
+567 
 	`£mîr‹
 (
 fun_dec_îr
 );
 
-568 
+571 
 	}
 }
 
-570 
+573 
 	gTabÀ
 ::
 	$ovî
 ()
 
-572 if(
+575 if(
 îr‹Num
 !=0)
 
-574 if(
+577 if(
 showGí
 )
 
-575 
+578 
 cout
 <<"ÁîüÊàêÊï∞ÊçÆÊÆµ‰∏≠ÁöÑÈùôÊÄÅÊï∞ÊçÆÂå∫„ÄÅÊñáÂ≠óÊ±†ÂíåËæÖÂä©Ê†à"<<
 ídl
 ;
 
-576 
+579 
 hash_m≠
 <
 °rög
@@ -13727,13 +13727,13 @@ v¨_m≠
 	`íd
 ();
 
-578 
+581 
 	`Ârötf
 (
 fout
 ,"section .data\n");
 
-579 
+582 
 v¨_i
 =
 v¨_m≠
@@ -13743,7 +13743,7 @@ v¨_m≠
 v¨_õnd
 ;var_i++)
 
-581 
+584 
 v¨_ªc‹d
  *
 p_v
@@ -13753,21 +13753,21 @@ v¨_i
 £c⁄d
 ;
 
-582 
+585 
 isEx
 =0;
 
-583 if(
+586 if(
 p_v
 ->
 exã∫ed
 )
 
-585 
+588 
 isEx
 =1;
 
-589 if(
+592 if(
 p_v
 ->
 ty≥
@@ -13775,7 +13775,7 @@ ty≥
 rsv_°rög
 )
 
-591 
+594 
 	`Ârötf
 (
 fout
@@ -13793,7 +13793,7 @@ p_v
 isEx
 );
 
-592 
+595 
 	`Ârötf
 (
 fout
@@ -13811,7 +13811,7 @@ p_v
 isEx
 );
 
-596 
+599 
 	`Ârötf
 (
 fout
@@ -13829,15 +13829,15 @@ p_v
 isEx
 );
 
-601 
+604 
 °rbuf
 [255];
 
-602 
+605 
 l
 ;
 
-603 
+606 
 i
 =0;i<
 °rögTabÀ
@@ -13845,7 +13845,7 @@ i
 	`size
 ();i++)
 
-605 
+608 
 	`°r˝y
 (
 °rbuf
@@ -13857,7 +13857,7 @@ i
 	`c_°r
 ());
 
-606 
+609 
 l
 =
 °rögTabÀ
@@ -13867,7 +13867,7 @@ i
 	`Àngth
 ();
 
-607 
+610 
 	`Ârötf
 (
 fout
@@ -13875,37 +13875,37 @@ fout
 i
 +1);
 
-608 
+611 
 ch∑ss
 =0;
 
-609 
+612 
 j
 =0;j<
 l
 ;j++)
 
-611 if(
+614 if(
 °rbuf
 [
 j
 ]==10||strbuf[j]==9||strbuf[j]=='\"')
 
-613 if(
+616 if(
 ch∑ss
 ==0)
 
-615 if(
+618 if(
 j
 !=0)
 
-616 
+619 
 	`Ârötf
 (
 fout
 ,",");
 
-617 
+620 
 	`Ârötf
 (
 fout
@@ -13915,7 +13915,7 @@ fout
 j
 ]);
 
-620 
+623 
 	`Ârötf
 (
 fout
@@ -13925,25 +13925,25 @@ fout
 j
 ]);
 
-621 
+624 
 ch∑ss
 =0;
 
-625 if(
+628 if(
 ch∑ss
 ==0)
 
-627 if(
+630 if(
 j
 !=0)
 
-628 
+631 
 	`Ârötf
 (
 fout
 ,",");
 
-629 
+632 
 	`Ârötf
 (
 fout
@@ -13953,19 +13953,19 @@ fout
 j
 ]);
 
-630 if(
+633 if(
 j
 ==
 l
 -1)
 
-631 
+634 
 	`Ârötf
 (
 fout
 ,"\"");
 
-635 
+638 
 	`Ârötf
 (
 fout
@@ -13975,39 +13975,39 @@ fout
 j
 ]);
 
-636 if(
+639 if(
 j
 ==
 l
 -1)
 
-637 
+640 
 	`Ârötf
 (
 fout
 ,"\"");
 
-639 
+642 
 ch∑ss
 =1;
 
-642 if(
+645 if(
 l
 ==0)
 
-643 
+646 
 	`Ârötf
 (
 fout
 ,"\"\"");
 
-644 
+647 
 	`Ârötf
 (
 fout
 ,"\n");
 
-646 
+649 
 	`Ârötf
 (
 fout
@@ -14019,17 +14019,17 @@ i
 	`Àngth
 ());
 
-650 
+653 
 	}
 }
 
-651 
+654 
 	gTabÀ
 ::
 	$˛ór
 ()
 
-654 
+657 
 hash_m≠
 <
 °rög
@@ -14045,7 +14045,7 @@ v¨_i
 v¨_õnd
 ;
 
-655 
+658 
 v¨_õnd
 =
 v¨_m≠
@@ -14053,7 +14053,7 @@ v¨_m≠
 	`íd
 ();
 
-656 
+659 
 v¨_i
 =
 v¨_m≠
@@ -14063,7 +14063,7 @@ v¨_m≠
 v¨_õnd
 ;var_i++)
 
-659 
+662 
 dñëe
  
 v¨_i
@@ -14071,13 +14071,13 @@ v¨_i
 £c⁄d
 ;
 
-661 
+664 
 v¨_m≠
 .
 	`˛ór
 ();
 
-663 
+666 
 hash_m≠
 <
 °rög
@@ -14093,7 +14093,7 @@ fun_i
 fun_õnd
 ;
 
-664 
+667 
 fun_õnd
 =
 fun_m≠
@@ -14101,7 +14101,7 @@ fun_m≠
 	`íd
 ();
 
-665 
+668 
 fun_i
 =
 fun_m≠
@@ -14111,7 +14111,7 @@ fun_m≠
 fun_õnd
 ;fun_i++)
 
-668 
+671 
 dñëe
  
 fun_i
@@ -14119,13 +14119,13 @@ fun_i
 £c⁄d
 ;
 
-670 
+673 
 fun_m≠
 .
 	`˛ór
 ();
 
-672 
+675 
 i
 =0;i<
 °rögTabÀ
@@ -14133,7 +14133,7 @@ i
 	`size
 ();i++)
 
-675 
+678 
 dñëe
  
 °rögTabÀ
@@ -14141,51 +14141,51 @@ dñëe
 i
 ];
 
-677 
+680 
 °rögTabÀ
 .
 	`˛ór
 ();
 
-680 
+683 
 ªÆ_¨gs_li°
 .
 	`˛ór
 ();
 
-681 
+684 
 	}
 }
 
-682 
+685 
 	gTabÀ
 ::~
 	$TabÀ
 ()
 
-684 
+687 
 this
 ->
 	`˛ór
 ();
 
-685 
+688 
 	}
 }
 
-687 
+690 
 v¨_ªc‹d
  
 	gtv¨
 ;
 
-688 
+691 
 fun_ªc‹d
  
 	gtfun
 ;
 
-689 
+692 
 TabÀ
  
 	gèbÀ

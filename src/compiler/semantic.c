@@ -204,6 +204,7 @@ int fun_record::equal(fun_record&f)
  * noVal——是否对常量封装
  * var_num——局部变量个数
  */
+//--
 var_record*fun_record::create_tmpvar(symbol type,int hasVal,int &var_num)
 {
   if(synerr!=0)//有错误，不处理./*即使有语意错误也要执行 2012-4-30*/
@@ -215,23 +216,23 @@ var_record*fun_record::create_tmpvar(symbol type,int hasVal,int &var_num)
     case rsv_int:
       if(hasVal)
       {
-	p_tmpvar->intVal=num;
+		p_tmpvar->intVal=num;
       }
       break;
     case rsv_char:
       if(hasVal)
       {
-	p_tmpvar->charVal=letter;
+		p_tmpvar->charVal=letter;
       }
       break;
     case rsv_string:
       if(hasVal)
       {
-	p_tmpvar->strValId=table.addstring();
+		p_tmpvar->strValId=table.addstring();
       }
       else
       {
-	p_tmpvar->strValId=-1;//是临时string
+		p_tmpvar->strValId=-1;//是临时string
       }
       break;
   }
@@ -463,6 +464,7 @@ void Table::addvar(var_record*v_r)
      delete v_r;//删除重复信息
   }
 }
+//--
 var_record * Table::getVar(string name)
 {
   if(synerr!=0)//有语法错误，不处理

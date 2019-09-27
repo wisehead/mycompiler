@@ -965,7 +965,7 @@ void returntail(int & var_num,int &level)
   }
 }
 //<idtail>	->	assign<expr>|lparen<realarg>rparen
-
+//--
 var_record* idtail(string refname,int &var_num)
 {
   nextToken();
@@ -1211,6 +1211,7 @@ void adds()
 }
 
 //<item>		->	<factor><factortail>
+//--
 var_record* item(int & var_num)
 {
   var_record*p_factor1=factor(var_num);
@@ -1260,6 +1261,7 @@ void muls()
 }
 
 //<factor>		->	ident<idtail>|number|chara|lparen<expr>rparen|strings
+//--
 var_record* factor(int & var_num)//临时变量替换方式,运算元素是地址！
 {
   nextToken();
@@ -1283,8 +1285,8 @@ var_record* factor(int & var_num)//临时变量替换方式,运算元素是地�
       nextToken();
       if(!match(rparen))
       {
-	synterror(exprparenlost,-1);
-	BACK
+		synterror(exprparenlost,-1);
+		BACK
       }
       break;
     case strings:
@@ -1292,16 +1294,16 @@ var_record* factor(int & var_num)//临时变量替换方式,运算元素是地�
       break;
     default:
       if(token==rparen||token==semicon||token==comma||
-	token==gt||token==ge||token==lt||token==le||token==equ||token==nequ||
-	token==addi||token==subs||token==mult||token==divi
-	)
+		token==gt||token==ge||token==lt||token==le||token==equ||token==nequ||
+		token==addi||token==subs||token==mult||token==divi
+		)
       {
-	synterror(exprlost,-1);//表达式丢失
-	BACK
+		synterror(exprlost,-1);//表达式丢失
+		BACK
       }
       else
       {
-	synterror(exprwrong,0);//无效的表达式
+		synterror(exprwrong,0);//无效的表达式
       }
   }
   return p_tmpvar;
