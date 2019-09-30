@@ -55,12 +55,12 @@ var_record* genExp(var_record*p_factor1,symbol opp,var_record*p_factor2,int &var
     return NULL;
   sp("对表达式操作数类型进行语义检查");
   //单独处理void
-    if(p_factor1->type==rsv_void||p_factor2->type==rsv_void)
-     {
-      //void不能参加运算
-    	semerror(void_ncal);
-      	return NULL;
-     }
+  if(p_factor1->type==rsv_void||p_factor2->type==rsv_void)
+  {
+     //void不能参加运算
+  	 semerror(void_ncal);
+     return NULL;
+  }
   int rsl_type=rsv_int;//默认int
   /*if(opp==gt||opp==ge||opp==lt||opp==le||opp==equ||opp==nequ)
   {

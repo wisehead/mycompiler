@@ -1,0 +1,6 @@
+1. readelf -h file.o
+
+查看ELF文件头的完整信息。
+
+2.
+
