@@ -2,5 +2,16 @@
 
 查看ELF文件头的完整信息。
 
-2.
+2.对齐的小技巧
+offset += (align - offset%align)%align;
 
+3. readelf -S file.o
+查看文件段表的完整信息。
+
+4.3. readelf -S file.o
+查看文件段表的完整信息。
+
+4.3. readelf -S file.o
+查看文件段表的完整信息。
+
+4.
