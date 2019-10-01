@@ -8,10 +8,15 @@ offset += (align - offset%align)%align;
 3. readelf -S file.o
 查看文件段表的完整信息。
 
-4.3. readelf -S file.o
-查看文件段表的完整信息。
+4. readelf -l file
+产看elf文件 程序头表的完整信息。
 
-4.3. readelf -S file.o
-查看文件段表的完整信息。
+5.readelf -s file.o
+elf文佳 符号表的完整信息
 
-4.
+6.readelf -r file.o
+elf文件 重定位表的完整信息
+
+7.readelf -C file.o
+elf文件的所有信息
+
