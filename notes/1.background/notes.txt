@@ -21,3 +21,8 @@
 
 8.gcc hello.o -o hello -static
 静态链接
+
+9.生成.o文件
+gcc -c demo.cpp [-lstdc++]
+
+生成一个demo.o文件，即obj文件
